@@ -1,0 +1,19 @@
+{
+  "name": "bella-flora-manipulacao",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Landing Page de Alta Conversão - Bella Flora Farmácia de Manipulação",
+  "scripts": {
+    "dev": "npx -y serve . -l 3000",
+    "start": "npx -y serve . -l 3000"
+  },
+  "keywords": [
+    "farmacia-de-manipulacao",
+    "landing-page",
+    "conversao",
+    "whatsapp",
+    "bella-flora"
+  ],
+  "author": "Raphael de Oliveira Lima",
+  "license": "MIT"
+}
