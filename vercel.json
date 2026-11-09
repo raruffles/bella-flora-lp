@@ -2,6 +2,16 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
   "trailingSlash": false,
+  "rewrites": [
+    { "source": "/laboratorio/formulas", "destination": "/index.html" },
+    { "source": "/laboratorio", "destination": "/index.html" },
+    { "source": "/laboratorio/(.*)", "destination": "/index.html" },
+    { "source": "/formulas", "destination": "/index.html" },
+    { "source": "/formulas/(.*)", "destination": "/index.html" },
+    { "source": "/orcamento/rapido", "destination": "/index.html" },
+    { "source": "/orcamento", "destination": "/index.html" },
+    { "source": "/orcamento/(.*)", "destination": "/index.html" }
+  ],
   "headers": [
     {
       "source": "/(.*)",

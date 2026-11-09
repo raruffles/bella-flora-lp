@@ -1,0 +1,36 @@
+{
+  "keywords": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"error\":\"billing\",\"message\":\"Your free trial credits are used up (0 credits left, this operation needs 5). Credits never expire. Plans are described at https://opus-growth.com/docs/plans and changed from the Opus Growth account.\"}"
+        }
+      ],
+      "structuredContent": {
+        "error": "billing",
+        "message": "Your free trial credits are used up (0 credits left, this operation needs 5). Credits never expire. Plans are described at https://opus-growth.com/docs/plans and changed from the Opus Growth account."
+      },
+      "isError": false
+    }
+  },
+  "rsa": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"error\":\"billing\",\"message\":\"Your free trial credits are used up (0 credits left, this operation needs 8). Credits never expire. Plans are described at https://opus-growth.com/docs/plans and changed from the Opus Growth account.\"}"
+        }
+      ],
+      "structuredContent": {
+        "error": "billing",
+        "message": "Your free trial credits are used up (0 credits left, this operation needs 8). Credits never expire. Plans are described at https://opus-growth.com/docs/plans and changed from the Opus Growth account."
+      },
+      "isError": false
+    }
+  }
+}

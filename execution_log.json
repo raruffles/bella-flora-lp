@@ -1,0 +1,335 @@
+{
+  "paused_ads": [
+    {
+      "ad_id": "823079890223",
+      "res": {
+        "jsonrpc": "2.0",
+        "id": 1,
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "{\"ok\":true,\"resource_name\":\"customers/9797555001/adGroupAds/200791794458~823079890223\",\"validate_only\":false}"
+            }
+          ],
+          "structuredContent": {
+            "ok": true,
+            "resource_name": "customers/9797555001/adGroupAds/200791794458~823079890223",
+            "validate_only": false
+          },
+          "isError": false
+        }
+      }
+    },
+    {
+      "ad_id": "667522936308",
+      "res": {
+        "jsonrpc": "2.0",
+        "id": 1,
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "{\"ok\":true,\"resource_name\":\"customers/9797555001/adGroupAds/149154581462~667522936308\",\"validate_only\":false}"
+            }
+          ],
+          "structuredContent": {
+            "ok": true,
+            "resource_name": "customers/9797555001/adGroupAds/149154581462~667522936308",
+            "validate_only": false
+          },
+          "isError": false
+        }
+      }
+    },
+    {
+      "ad_id": "667522936311",
+      "res": {
+        "jsonrpc": "2.0",
+        "id": 1,
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "{\"ok\":true,\"resource_name\":\"customers/9797555001/adGroupAds/149154581462~667522936311\",\"validate_only\":false}"
+            }
+          ],
+          "structuredContent": {
+            "ok": true,
+            "resource_name": "customers/9797555001/adGroupAds/149154581462~667522936311",
+            "validate_only": false
+          },
+          "isError": false
+        }
+      }
+    },
+    {
+      "ad_id": "665619539907",
+      "res": {
+        "jsonrpc": "2.0",
+        "id": 1,
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "{\"ok\":true,\"resource_name\":\"customers/9797555001/adGroupAds/149651066845~665619539907\",\"validate_only\":false}"
+            }
+          ],
+          "structuredContent": {
+            "ok": true,
+            "resource_name": "customers/9797555001/adGroupAds/149651066845~665619539907",
+            "validate_only": false
+          },
+          "isError": false
+        }
+      }
+    },
+    {
+      "ad_id": "666005617150",
+      "res": {
+        "jsonrpc": "2.0",
+        "id": 1,
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "{\"ok\":true,\"resource_name\":\"customers/9797555001/adGroupAds/149651066845~666005617150\",\"validate_only\":false}"
+            }
+          ],
+          "structuredContent": {
+            "ok": true,
+            "resource_name": "customers/9797555001/adGroupAds/149651066845~666005617150",
+            "validate_only": false
+          },
+          "isError": false
+        }
+      }
+    },
+    {
+      "ad_id": "736425750179",
+      "res": {
+        "jsonrpc": "2.0",
+        "id": 1,
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "{\"ok\":true,\"resource_name\":\"customers/9797555001/adGroupAds/153302559753~736425750179\",\"validate_only\":false}"
+            }
+          ],
+          "structuredContent": {
+            "ok": true,
+            "resource_name": "customers/9797555001/adGroupAds/153302559753~736425750179",
+            "validate_only": false
+          },
+          "isError": false
+        }
+      }
+    },
+    {
+      "ad_id": "829602640045",
+      "res": {
+        "jsonrpc": "2.0",
+        "id": 1,
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "{\"ok\":true,\"resource_name\":\"customers/9797555001/adGroupAds/200877713745~829602640045\",\"validate_only\":false}"
+            }
+          ],
+          "structuredContent": {
+            "ok": true,
+            "resource_name": "customers/9797555001/adGroupAds/200877713745~829602640045",
+            "validate_only": false
+          },
+          "isError": false
+        }
+      }
+    },
+    {
+      "ad_id": "829677915983",
+      "res": {
+        "jsonrpc": "2.0",
+        "id": 1,
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "{\"ok\":true,\"resource_name\":\"customers/9797555001/adGroupAds/200877713745~829677915983\",\"validate_only\":false}"
+            }
+          ],
+          "structuredContent": {
+            "ok": true,
+            "resource_name": "customers/9797555001/adGroupAds/200877713745~829677915983",
+            "validate_only": false
+          },
+          "isError": false
+        }
+      }
+    }
+  ],
+  "paused_keywords": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"ok\":true,\"affected\":19,\"failed\":0,\"results\":[{\"criterion_id\":\"10329410\",\"ok\":true,\"resource_name\":\"customers/9797555001/adGroupCriteria/200791794458~10329410\"},{\"criterion_id\":\"16833711\",\"ok\":true,\"resource_name\":\"customers/9797555001/adGroupCriteria/200791794458~16833711\"},{\"criterion_id\":\"18427900\",\"ok\":true,\"resource_name\":\"customers/9797555001/adGroupCriteria/200791794458~18427900\"},{\"criterion_id\":\"18427920\",\"ok\":true,\"resource_name\":\"customers/9797555001/adGroupCriteria/200791794458~18427920\"},{\"criterion_id\":\"93389695\",\"ok\":true,\"resource_name\":\"customers/9797555001/adGroupCriteria/200791794458~93389695\"},{\"criterion_id\":\"125990115\",\"ok\":true,\"resource_name\":\"customers/9797555001/adGroupCriteria/200791794458~125990115\"},{\"criterion_id\":\"125990455\",\"ok\":true,\"resource_name\":\"customers/9797555001/adGroupCriteria/200791794458~125990455\"},{\"criterion_id\":\"465518669\",\"ok\":true,\"resource_name\":\"customers/9797555001/adGroupCriteria/200791794458~465518669\"},{\"criterion_id\":\"465518729\",\"ok\":true,\"resource_name\":\"customers/9797555001/adGroupCriteria/200791794458~465518729\"},{\"criterion_id\":\"616543111\",\"ok\":true,\"resource_name\":\"customers/9797555001/adGroupCriteria/200791794458~616543111\"},{\"criterion_id\":\"4942271030\",\"ok\":true,\"resource_name\":\"customers/9797555001/adGroupCriteria/200791794458~4942271030\"},{\"criterion_id\":\"5724939750\",\"ok\":true,\"resource_name\":\"customers/9797555001/adGroupCriteria/200791794458~5724939750\"},{\"criterion_id\":\"296132538199\",\"ok\":true,\"resource_name\":\"customers/9797555001/adGroupCriteria/200791794458~296132538199\"},{\"criterion_id\":\"296742522845\",\"ok\":true,\"resource_name\":\"customers/9797555001/adGroupCriteria/200791794458~296742522845\"},{\"criterion_id\":\"296798071909\",\"ok\":true,\"resource_name\":\"customers/9797555001/adGroupCriteria/200791794458~296798071909\"},{\"criterion_id\":\"296798073549\",\"ok\":true,\"resource_name\":\"customers/9797555001/adGroupCriteria/200791794458~296798073549\"},{\"criterion_id\":\"299257047275\",\"ok\":true,\"resource_name\":\"customers/9797555001/adGroupCriteria/200791794458~299257047275\"},{\"criterion_id\":\"317712279536\",\"ok\":true,\"resource_name\":\"customers/9797555001/adGroupCriteria/200791794458~317712279536\"},{\"criterion_id\":\"326003720604\",\"ok\":true,\"resource_name\":\"customers/9797555001/adGroupCriteria/200791794458~326003720604\"}],\"results_truncated\":false,\"validate_only\":false}"
+        }
+      ],
+      "structuredContent": {
+        "ok": true,
+        "affected": 19,
+        "failed": 0,
+        "results": [
+          {
+            "criterion_id": "10329410",
+            "ok": true,
+            "resource_name": "customers/9797555001/adGroupCriteria/200791794458~10329410"
+          },
+          {
+            "criterion_id": "16833711",
+            "ok": true,
+            "resource_name": "customers/9797555001/adGroupCriteria/200791794458~16833711"
+          },
+          {
+            "criterion_id": "18427900",
+            "ok": true,
+            "resource_name": "customers/9797555001/adGroupCriteria/200791794458~18427900"
+          },
+          {
+            "criterion_id": "18427920",
+            "ok": true,
+            "resource_name": "customers/9797555001/adGroupCriteria/200791794458~18427920"
+          },
+          {
+            "criterion_id": "93389695",
+            "ok": true,
+            "resource_name": "customers/9797555001/adGroupCriteria/200791794458~93389695"
+          },
+          {
+            "criterion_id": "125990115",
+            "ok": true,
+            "resource_name": "customers/9797555001/adGroupCriteria/200791794458~125990115"
+          },
+          {
+            "criterion_id": "125990455",
+            "ok": true,
+            "resource_name": "customers/9797555001/adGroupCriteria/200791794458~125990455"
+          },
+          {
+            "criterion_id": "465518669",
+            "ok": true,
+            "resource_name": "customers/9797555001/adGroupCriteria/200791794458~465518669"
+          },
+          {
+            "criterion_id": "465518729",
+            "ok": true,
+            "resource_name": "customers/9797555001/adGroupCriteria/200791794458~465518729"
+          },
+          {
+            "criterion_id": "616543111",
+            "ok": true,
+            "resource_name": "customers/9797555001/adGroupCriteria/200791794458~616543111"
+          },
+          {
+            "criterion_id": "4942271030",
+            "ok": true,
+            "resource_name": "customers/9797555001/adGroupCriteria/200791794458~4942271030"
+          },
+          {
+            "criterion_id": "5724939750",
+            "ok": true,
+            "resource_name": "customers/9797555001/adGroupCriteria/200791794458~5724939750"
+          },
+          {
+            "criterion_id": "296132538199",
+            "ok": true,
+            "resource_name": "customers/9797555001/adGroupCriteria/200791794458~296132538199"
+          },
+          {
+            "criterion_id": "296742522845",
+            "ok": true,
+            "resource_name": "customers/9797555001/adGroupCriteria/200791794458~296742522845"
+          },
+          {
+            "criterion_id": "296798071909",
+            "ok": true,
+            "resource_name": "customers/9797555001/adGroupCriteria/200791794458~296798071909"
+          },
+          {
+            "criterion_id": "296798073549",
+            "ok": true,
+            "resource_name": "customers/9797555001/adGroupCriteria/200791794458~296798073549"
+          },
+          {
+            "criterion_id": "299257047275",
+            "ok": true,
+            "resource_name": "customers/9797555001/adGroupCriteria/200791794458~299257047275"
+          },
+          {
+            "criterion_id": "317712279536",
+            "ok": true,
+            "resource_name": "customers/9797555001/adGroupCriteria/200791794458~317712279536"
+          },
+          {
+            "criterion_id": "326003720604",
+            "ok": true,
+            "resource_name": "customers/9797555001/adGroupCriteria/200791794458~326003720604"
+          }
+        ],
+        "results_truncated": false,
+        "validate_only": false
+      },
+      "isError": false
+    }
+  },
+  "added_keywords": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"ok\":true,\"added\":6,\"resource_names\":[\"customers/9797555001/adGroupCriteria/200791794458~2510368783155\",\"customers/9797555001/adGroupCriteria/200791794458~2510368783195\",\"customers/9797555001/adGroupCriteria/200791794458~2510368783395\",\"customers/9797555001/adGroupCriteria/200791794458~2508570996653\",\"customers/9797555001/adGroupCriteria/200791794458~2502441059252\",\"customers/9797555001/adGroupCriteria/200791794458~2508569896053\"],\"validate_only\":false}"
+        }
+      ],
+      "structuredContent": {
+        "ok": true,
+        "added": 6,
+        "resource_names": [
+          "customers/9797555001/adGroupCriteria/200791794458~2510368783155",
+          "customers/9797555001/adGroupCriteria/200791794458~2510368783195",
+          "customers/9797555001/adGroupCriteria/200791794458~2510368783395",
+          "customers/9797555001/adGroupCriteria/200791794458~2508570996653",
+          "customers/9797555001/adGroupCriteria/200791794458~2502441059252",
+          "customers/9797555001/adGroupCriteria/200791794458~2508569896053"
+        ],
+        "validate_only": false
+      },
+      "isError": false
+    }
+  },
+  "created_rsa": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"ok\":true,\"resource_name\":\"customers/9797555001/adGroupAds/200791794458~831106258718\",\"status\":\"PAUSED\",\"validate_only\":false,\"next_step\":\"The ad was created PAUSED and stays paused even when the campaign is enabled. update_ad_status(..., 'ENABLED') puts it live, or status='ENABLED' at creation.\"}"
+        }
+      ],
+      "structuredContent": {
+        "ok": true,
+        "resource_name": "customers/9797555001/adGroupAds/200791794458~831106258718",
+        "status": "PAUSED",
+        "validate_only": false,
+        "next_step": "The ad was created PAUSED and stays paused even when the campaign is enabled. update_ad_status(..., 'ENABLED') puts it live, or status='ENABLED' at creation."
+      },
+      "isError": false
+    }
+  }
+}
