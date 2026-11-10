@@ -216,7 +216,135 @@
   }
   </script>
 
-  <style>
+  <style><style>
+    /* ============================================== */
+    /* APPLE DESIGN SYSTEM: MATERIALS & SPRING MOTION */
+    /* ============================================== */
+    *, html, body, button, input, select, textarea, h1, h2, h3, h4, h5, h6, p, span, a, label {
+      font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, sans-serif !important;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    h1, h2, h3, h4 {
+      letter-spacing: -0.025em;
+    }
+    body {
+      font-size: 14px;
+      color: #1D302A;
+      background-color: #FAF8F5;
+      overflow-x: hidden;
+    }
+    p, span, a, label, input, select, button, li, td, th {
+      font-size: max(14px, 1em);
+    }
+    ::selection {
+      background-color: #D2E2D4;
+      color: #081C15;
+    }
+
+    /* Apple Liquid Glass Navigation */
+    .apple-glass {
+      background: rgba(255, 255, 255, 0.78);
+      backdrop-filter: blur(24px) saturate(180%);
+      -webkit-backdrop-filter: blur(24px) saturate(180%);
+      border-bottom: 1px solid rgba(220, 215, 205, 0.5);
+      box-shadow: 0 4px 20px -2px rgba(8, 28, 21, 0.04);
+    }
+
+    /* Apple Frosted Pill */
+    .apple-pill {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(16px) saturate(160%);
+      -webkit-backdrop-filter: blur(16px) saturate(160%);
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      box-shadow: 0 8px 24px -4px rgba(8, 28, 21, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    }
+
+    /* Apple Depth Card with Spring Physics */
+    .apple-card {
+      background: #FFFFFF;
+      border: 1px solid rgba(225, 220, 210, 0.75);
+      box-shadow: 0 10px 30px -10px rgba(8, 28, 21, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+      will-change: transform;
+    }
+    .apple-card:hover {
+      transform: translateY(-6px) scale(1.008);
+      border-color: rgba(41, 162, 229, 0.4);
+      box-shadow: 0 26px 50px -15px rgba(8, 28, 21, 0.12), 0 0 0 1px rgba(41, 162, 229, 0.15);
+    }
+    .apple-card:active {
+      transform: scale(0.985);
+      transition-duration: 0.12s;
+    }
+
+    /* Tactile Instant Feedback on Buttons */
+    .apple-btn {
+      transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), filter 0.15s ease, box-shadow 0.15s ease;
+      will-change: transform;
+    }
+    .apple-btn:hover {
+      filter: brightness(1.03);
+      transform: translateY(-1.5px);
+    }
+    .apple-btn:active {
+      transform: scale(0.96) !important;
+      filter: brightness(0.95);
+    }
+
+    /* Smooth Scroll Reveals */
+    .reveal-on-scroll {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+    .reveal-on-scroll.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Gradient Text Accents */
+    .gradient-apple-text {
+      background: linear-gradient(135deg, #081C15 0%, #1B90D4 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Apple Modal Animation */
+    .apple-modal-content {
+      animation: appleModalEnter 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    @keyframes appleModalEnter {
+      0% {
+        opacity: 0;
+        transform: scale(0.95) translateY(10px);
+        filter: blur(4px);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+        filter: blur(0);
+      }
+    }
+
+    /* Accessibility: Respect Reduced Motion */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+      }
+      .reveal-on-scroll {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+      .apple-card:hover {
+        transform: none !important;
+      }
+    }
+
     *, html, body, button, input, select, textarea, h1, h2, h3, h4, h5, h6, p, span, a, label {
       font-family: 'Montserrat', system-ui, -apple-system, sans-serif !important;
     }
@@ -304,7 +432,7 @@
   <!-- ========================================== -->
   <!-- HEADER NAVEGAÇÃO FIXO COM LOGO OFICIAL -->
   <!-- ========================================== -->
-  <header class="sticky top-0 z-40 glass-nav border-b border-sand-200 transition-all">
+  <header class="sticky top-0 z-40 apple-glass transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       
       <!-- Logotipo Oficial da Bella Flora -->
@@ -326,28 +454,29 @@
       </a>
 
       <!-- Menu de Navegação Rápida (Desktop) -->
-      <nav class="hidden lg:flex items-center gap-8 text-sm font-semibold text-sage-700">
-        <a href="#como-funciona" class="hover:text-emerald-800 transition-colors">Como Funciona</a>
-        <a href="#simulador" class="hover:text-emerald-800 transition-colors">
-          Simular Orçamento
+      <nav class="hidden lg:flex items-center gap-6 xl:gap-8 text-sm font-semibold text-sage-700">
+        <a href="#como-funciona" class="hover:text-emerald-800 transition-colors whitespace-nowrap">Como Funciona</a>
+        <a href="#vitrine" class="hover:text-emerald-800 transition-colors inline-flex items-center gap-2 font-bold text-emerald-950 bg-emerald-50/90 hover:bg-emerald-100 px-3.5 py-1.5 rounded-full border border-emerald-200/90 whitespace-nowrap flex-shrink-0 shadow-sm transition-all apple-btn">
+          <i class="bi bi-bag-check-fill text-brandBlue"></i>
+          <span class="whitespace-nowrap">Vitrine BF</span>
+          <span class="text-[10px] bg-brandBlue text-white px-2 py-0.5 rounded-full font-bold uppercase tracking-wider whitespace-nowrap shadow-sm">Pronta-Entrega</span>
         </a>
-        <a href="#especialidades" class="hover:text-emerald-800 transition-colors">Especialidades</a>
-        <a href="#laboratorio" class="hover:text-emerald-800 transition-colors">Nosso Laboratório</a>
-        <a href="#duvidas" class="hover:text-emerald-800 transition-colors">FAQ</a>
+        <a href="#especialidades" class="hover:text-emerald-800 transition-colors whitespace-nowrap">Especialidades</a>
+        <a href="#laboratorio" class="hover:text-emerald-800 transition-colors whitespace-nowrap">Laboratório</a>
+        <a href="#duvidas" class="hover:text-emerald-800 transition-colors whitespace-nowrap">FAQ</a>
       </nav>
 
-      <!-- Botão CTA Principal do Header (WhatsApp Direto) -->
-      <div class="flex items-center gap-3">
+      <!-- Botão CTA Principal do Header com Margem Generosa do FAQ -->
+      <div class="flex items-center gap-3 ml-6 xl:ml-10 flex-shrink-0">
         <a
           href="https://wa.me/5512988164931?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Bella%20Flora%20e%20gostaria%20de%20fazer%20um%20or%C3%A7amento%20da%20minha%20receita."
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex items-center gap-2.5 bg-wa hover:bg-wa-hover text-white text-sm sm:text-sm font-bold px-4 sm:px-5 py-2.5 rounded-xl shadow-glow-wa transition-all duration-200 active:scale-95"
+          class="inline-flex items-center gap-2 bg-wa hover:bg-wa-hover text-white text-sm font-bold px-4 sm:px-5 py-2.5 rounded-xl shadow-glow-wa transition-all duration-200 active:scale-95 whitespace-nowrap apple-btn"
           aria-label="Fazer orçamento de receita pelo WhatsApp"
         >
           <i class="bi bi-whatsapp text-lg"></i>
-          <span class="hidden xs:inline">Enviar Receita no WhatsApp</span>
-          <span class="xs:hidden">Orçar Agora</span>
+          <span>Orçar no WhatsApp</span>
         </a>
       </div>
 
@@ -387,6 +516,14 @@
           </div>
 
           <!-- Bloco Duplo de CTAs Principais -->
+          <div class="mb-4 flex justify-center lg:justify-start">
+            <a href="#vitrine" class="inline-flex items-center gap-2 bg-emerald-50 hover:bg-emerald-100 text-emerald-950 border border-emerald-300 px-4 py-2 rounded-full text-xs font-bold transition-all shadow-sm">
+              <span class="w-2 h-2 rounded-full bg-brandBlue animate-ping"></span>
+              <i class="bi bi-boxes text-brandBlue"></i>
+              <span>Ver Vitrine de Suplementos Pronta-Entrega (Linha BF)</span>
+              <i class="bi bi-arrow-down-short text-base"></i>
+            </a>
+          </div>
           <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 justify-center lg:justify-start max-w-lg mx-auto lg:mx-0">
             
             <!-- CTA Primário (WhatsApp) -->
@@ -609,58 +746,82 @@
       </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-6 lg:gap-8 relative">
       
       <!-- Passo 1 -->
-      <div class="bg-white rounded-3xl p-7 border border-sand-200 shadow-soft relative card-hover text-center md:text-left">
-        <div class="w-20 h-20 rounded-2xl bg-brandBlue-light text-brandBlue flex items-center justify-center mb-6 mx-auto md:mx-0 shadow-sm relative">
-          <i class="bi bi-camera-fill text-3xl sm:text-4xl"></i>
-          <span class="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-emerald-950 text-white font-bold text-sm flex items-center justify-center shadow">1</span>
+      <div class="apple-card rounded-3xl p-6 sm:p-7 border border-sand-200/90 shadow-soft relative text-center md:text-left flex flex-col justify-between">
+        <div>
+          <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-brandBlue-light text-brandBlue flex items-center justify-center mb-5 mx-auto md:mx-0 shadow-sm relative">
+            <i class="bi bi-camera-fill text-2xl sm:text-3xl"></i>
+            <span class="absolute -top-1.5 -right-1.5 w-7 h-7 rounded-full bg-emerald-950 text-white font-bold text-xs flex items-center justify-center shadow">1</span>
+          </div>
+          <h3 class="font-serif text-lg sm:text-xl font-bold text-emerald-950 mb-2">Envie a Foto ou PDF</h3>
+          <p class="text-sage-700 text-xs sm:text-sm leading-relaxed">
+            Fotografe sua receita física ou envie o arquivo digital do seu médico (Memed / CFM) pelo nosso WhatsApp.
+          </p>
         </div>
-        <h3 class="font-serif text-xl font-bold text-emerald-950 mb-2.5">Envie a Foto ou PDF</h3>
-        <p class="text-sage-700 text-sm leading-relaxed">
-          Tire uma foto nítida do seu pedido físico ou compartilhe o link/PDF do pedido digital (Memed / CFM).
-        </p>
+        <div class="mt-4 pt-3 border-t border-sand-100">
+          <span class="inline-flex items-center gap-1.5 text-[11px] font-bold text-sage-600 bg-sand-50 px-2.5 py-1 rounded-md border border-sand-200">
+            <i class="bi bi-check2 text-brandBlue"></i> Receita Digital Aceita
+          </span>
+        </div>
       </div>
 
       <!-- Passo 2 -->
-      <div class="bg-white rounded-3xl p-7 border border-sand-200 shadow-soft relative card-hover text-center md:text-left">
-        <div class="w-20 h-20 rounded-2xl bg-brandBlue-light text-brandBlue flex items-center justify-center mb-6 mx-auto md:mx-0 shadow-sm relative">
-          <i class="bi bi-calculator-fill text-3xl sm:text-4xl"></i>
-          <span class="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-emerald-950 text-white font-bold text-sm flex items-center justify-center shadow">2</span>
+      <div class="apple-card rounded-3xl p-6 sm:p-7 border border-sand-200/90 shadow-soft relative text-center md:text-left flex flex-col justify-between">
+        <div>
+          <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-brandBlue-light text-brandBlue flex items-center justify-center mb-5 mx-auto md:mx-0 shadow-sm relative">
+            <i class="bi bi-calculator-fill text-2xl sm:text-3xl"></i>
+            <span class="absolute -top-1.5 -right-1.5 w-7 h-7 rounded-full bg-emerald-950 text-white font-bold text-xs flex items-center justify-center shadow">2</span>
+          </div>
+          <h3 class="font-serif text-lg sm:text-xl font-bold text-emerald-950 mb-2">Orçamento em Minutos</h3>
+          <p class="text-sage-700 text-xs sm:text-sm leading-relaxed">
+            Farmacêutico confere as dosagens, checa interações e envia o orçamento detalhado com opções de parcelamento.
+          </p>
         </div>
-        <h3 class="font-serif text-xl font-bold text-emerald-950 mb-2.5">Orçamento em Minutos</h3>
-        <p class="text-sage-700 text-sm leading-relaxed">
-          Nosso farmacêutico analisa a fórmula, confere interações e envia o orçamento detalhado com opções de parcelamento.
-        </p>
+        <div class="mt-4 pt-3 border-t border-sand-100">
+          <span class="inline-flex items-center gap-1.5 text-[11px] font-bold text-sage-600 bg-sand-50 px-2.5 py-1 rounded-md border border-sand-200">
+            <i class="bi bi-clock-history text-brandBlue"></i> Resposta em Minutos
+          </span>
+        </div>
       </div>
 
       <!-- Passo 3 -->
-      <div class="bg-white rounded-3xl p-7 border border-sand-200 shadow-soft relative card-hover text-center md:text-left">
-        <div class="w-20 h-20 rounded-2xl bg-brandBlue-light text-brandBlue flex items-center justify-center mb-6 mx-auto md:mx-0 shadow-sm relative">
-          <i class="bi bi-eyedropper text-3xl sm:text-4xl"></i>
-          <span class="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-emerald-950 text-white font-bold text-sm flex items-center justify-center shadow">3</span>
+      <div class="apple-card rounded-3xl p-6 sm:p-7 border border-sand-200/90 shadow-soft relative text-center md:text-left flex flex-col justify-between">
+        <div>
+          <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-brandBlue-light text-brandBlue flex items-center justify-center mb-5 mx-auto md:mx-0 shadow-sm relative">
+            <i class="bi bi-eyedropper text-2xl sm:text-3xl"></i>
+            <span class="absolute -top-1.5 -right-1.5 w-7 h-7 rounded-full bg-emerald-950 text-white font-bold text-xs flex items-center justify-center shadow">3</span>
+          </div>
+          <h3 class="font-serif text-lg sm:text-xl font-bold text-emerald-950 mb-2">Manipulação Estéril</h3>
+          <p class="text-sage-700 text-xs sm:text-sm leading-relaxed">
+            Sua fórmula é preparada sob cabine estéril com pesagem computadorizada monitorada e laudo de rastreabilidade.
+          </p>
         </div>
-        <h3 class="font-serif text-xl font-bold text-emerald-950 mb-2.5">Manipulação Estéril</h3>
-        <p class="text-sage-700 text-sm leading-relaxed">
-          Sua fórmula é preparada sob cabine estéril com pesagem computadorizada monitorada e laudo de rastreabilidade.
-        </p>
+        <div class="mt-4 pt-3 border-t border-sand-100">
+          <span class="inline-flex items-center gap-1.5 text-[11px] font-bold text-sage-600 bg-sand-50 px-2.5 py-1 rounded-md border border-sand-200">
+            <i class="bi bi-shield-check text-brandBlue"></i> Padrão Anvisa RDC 67
+          </span>
+        </div>
       </div>
 
       <!-- Passo 4 -->
-      <div class="bg-white rounded-3xl p-7 border border-sand-200 shadow-soft relative card-hover text-center md:text-left">
-        <div class="w-20 h-20 rounded-2xl bg-emerald-50 text-wa flex items-center justify-center mb-6 mx-auto md:mx-0 shadow-sm relative">
-          <i class="bi bi-box2-heart-fill text-3xl sm:text-4xl"></i>
-          <span class="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-wa text-white font-bold text-sm flex items-center justify-center shadow">4</span>
+      <div class="apple-card rounded-3xl p-6 sm:p-7 border border-sand-200/90 shadow-soft relative text-center md:text-left flex flex-col justify-between">
+        <div>
+          <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-emerald-50 text-wa flex items-center justify-center mb-5 mx-auto md:mx-0 shadow-sm relative">
+            <i class="bi bi-box2-heart-fill text-2xl sm:text-3xl"></i>
+            <span class="absolute -top-1.5 -right-1.5 w-7 h-7 rounded-full bg-wa text-white font-bold text-xs flex items-center justify-center shadow">4</span>
+          </div>
+          <h3 class="font-serif text-lg sm:text-xl font-bold text-emerald-950 mb-2">Entrega na sua Porta</h3>
+          <p class="text-sage-700 text-xs sm:text-sm leading-relaxed">
+            Delivery próprio via motoboy em <strong>SJC e Jacareí</strong>, e envio expresso pelos Correios para todo o Brasil.
+          </p>
         </div>
-        <h3 class="font-serif text-xl font-bold text-emerald-950 mb-2.5">Entrega Rápida & Correios</h3>
-        <p class="text-sage-700 text-sm leading-relaxed mb-3">
-          <strong>Delivery próprio via motoboy:</strong> Atendimento ágil com controle térmico para São José dos Campos e Jacareí.<br />
-          <strong>Envio expresso via Correios:</strong> Para Caçapava, Vale do Paraíba e todo o Brasil, com lacre de segurança inviolável e código de rastreamento.
-        </p>
-        <p class="text-xs font-semibold text-emerald-900 bg-sand-100 px-3 py-1.5 rounded-lg border border-sand-300">
-          Consulte nossa disponibilidade de entrega • Entrega grátis — consulte nossas condições de entrega.
-        </p>
+        <div class="mt-4 pt-3 border-t border-sand-100">
+          <span class="inline-flex items-center gap-1.5 text-[11px] font-bold text-emerald-900 bg-emerald-50 px-2.5 py-1 rounded-md border border-emerald-200">
+            <i class="bi bi-truck text-wa"></i> Entrega grátis (consulte condições)
+          </span>
+        </div>
       </div>
 
     </div>
@@ -680,6 +841,72 @@
         <i class="bi bi-whatsapp text-lg"></i>
         <span>Mandar Foto da Receita</span>
       </a>
+    </div>
+  </section>
+
+
+  <!-- ========================================== -->
+  <!-- APPLE-STYLE LOCAL GEO DELIVERY CHECKER -->
+  <!-- ========================================== -->
+  <section id="cobertura" class="py-14 px-4 sm:px-6 lg:px-8 bg-white border-b border-sand-200">
+    <div class="max-w-5xl mx-auto">
+      
+      <div class="apple-card rounded-3xl p-6 sm:p-10 border border-sand-200/90 relative overflow-hidden bg-gradient-to-b from-white to-sand-50/50">
+        
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b border-sand-200/70">
+          <div>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 text-emerald-900 border border-emerald-200 text-xs font-bold uppercase tracking-wider mb-2">
+              <span class="w-2 h-2 rounded-full bg-wa animate-ping"></span>
+              <span>Roteamento Logístico Inteligente</span>
+            </div>
+            <h3 class="font-serif text-2xl sm:text-3xl font-bold text-emerald-950">
+              Verifique a Entrega para sua Região
+            </h3>
+            <p class="text-sage-700 text-xs sm:text-sm mt-1">
+              Consulte nossa disponibilidade de entrega • Entrega grátis (consulte condições).
+            </p>
+          </div>
+          
+          <!-- Seleção de Cidade / Região -->
+          <div class="flex flex-wrap gap-2" id="geoTabsContainer">
+            <button
+              onclick="selectGeoCity('sjc', this)"
+              class="geo-pill-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-emerald-900 text-white shadow-sm transition-all apple-btn"
+              data-city="sjc"
+            >
+              📍 São José dos Campos
+            </button>
+            <button
+              onclick="selectGeoCity('jacarei', this)"
+              class="geo-pill-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white text-sage-800 border border-sand-200 hover:bg-sand-100 transition-all apple-btn"
+              data-city="jacarei"
+            >
+              📍 Jacareí
+            </button>
+            <button
+              onclick="selectGeoCity('cacapava', this)"
+              class="geo-pill-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white text-sage-800 border border-sand-200 hover:bg-sand-100 transition-all apple-btn"
+              data-city="cacapava"
+            >
+              📦 Caçapava & Vale
+            </button>
+            <button
+              onclick="selectGeoCity('brasil', this)"
+              class="geo-pill-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white text-sage-800 border border-sand-200 hover:bg-sand-100 transition-all apple-btn"
+              data-city="brasil"
+            >
+              🇧🇷 Outras Cidades / Brasil
+            </button>
+          </div>
+        </div>
+
+        <!-- Painel Dinâmico de Resposta do Local Selecionado -->
+        <div class="pt-6" id="geoCityContent">
+          <!-- Conteúdo dinâmico preenchido via JavaScript -->
+        </div>
+
+      </div>
+
     </div>
   </section>
 
@@ -892,6 +1119,537 @@
 
     </div>
   </section>
+
+
+  <!-- ========================================== -->
+  <!-- SEÇÃO VITRINE DE PRODUTOS & SUPLEMENTOS (LINHA BF) -->
+  <!-- ========================================== -->
+  <section id="vitrine" class="py-20 px-4 sm:px-6 lg:px-8 bg-sand-50/70 border-b border-sand-200 relative">
+    <div class="max-w-7xl mx-auto">
+      
+      <!-- Cabeçalho da Seção -->
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brandBlue-light border border-brandBlue/30 text-brandBlue-dark text-xs font-bold uppercase tracking-wider mb-3 shadow-sm">
+          <i class="bi bi-star-fill text-amber-500"></i>
+          <span>Linha Exclusiva Bella Flora (BF) • Pronta-Entrega</span>
+        </div>
+        <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-emerald-950 mb-4">
+          Vitrine de Suplementos & Nutracêuticos
+        </h2>
+        <p class="text-sage-700 text-sm sm:text-base leading-relaxed">
+          Fórmulas desenvolvidas com <strong>matérias-primas puras, grau farmacêutico e laudo analítico de pureza</strong>. Disponíveis para pronta-entrega e delivery imediato em <strong>São José dos Campos e Jacareí</strong>, e envio expresso via Correios para Caçapava e todo o Brasil.
+        </p>
+
+        <!-- Faixa de Logística e Frete -->
+        <div class="mt-5 inline-flex flex-wrap items-center justify-center gap-2 text-xs font-semibold text-emerald-950 bg-white border border-sand-300 px-4 py-2.5 rounded-2xl shadow-soft">
+          <span class="flex items-center gap-1.5 text-wa font-bold">
+            <i class="bi bi-truck text-base"></i> Delivery rápido para SJC & Jacareí • Correios p/ Brasil
+          </span>
+          <span class="hidden sm:inline text-sand-300">•</span>
+          <span class="text-sage-700">Consulte nossa disponibilidade de entrega • Entrega grátis (consulte nossas condições)</span>
+        </div>
+      </div>
+
+      <!-- Filtros por Categoria -->
+      <div class="flex flex-wrap items-center justify-center gap-2 mb-12" id="vitrineFilterContainer">
+        <button
+          onclick="filterVitrine('all', this)"
+          class="vitrine-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all bg-emerald-900 text-white shadow-soft"
+          data-filter="all"
+        >
+          Todos os Produtos (6)
+        </button>
+        <button
+          onclick="filterVitrine('energia', this)"
+          class="vitrine-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-white text-sage-700 hover:bg-sand-100 border border-sand-200"
+          data-filter="energia"
+        >
+          ⚡ Energia & Coração
+        </button>
+        <button
+          onclick="filterVitrine('imunidade', this)"
+          class="vitrine-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-white text-sage-700 hover:bg-sand-100 border border-sand-200"
+          data-filter="imunidade"
+        >
+          🛡️ Imunidade & Defesa
+        </button>
+        <button
+          onclick="filterVitrine('beleza', this)"
+          class="vitrine-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-white text-sage-700 hover:bg-sand-100 border border-sand-200"
+          data-filter="beleza"
+        >
+          ✨ Cabelo, Pele & Unhas
+        </button>
+        <button
+          onclick="filterVitrine('metabolismo', this)"
+          class="vitrine-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-white text-sage-700 hover:bg-sand-100 border border-sand-200"
+          data-filter="metabolismo"
+        >
+          🔥 Metabolismo & Peso
+        </button>
+        <button
+          onclick="filterVitrine('exames', this)"
+          class="vitrine-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-white text-sage-700 hover:bg-sand-100 border border-sand-200"
+          data-filter="exames"
+        >
+          🔬 Manitol & Exames
+        </button>
+      </div>
+
+      <!-- Grid com os Cards de Produtos -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="vitrineGrid">
+
+        <!-- PRODUTO 1: COENZIMA Q10 -->
+        <div class="vitrine-card cat-all cat-energia cat-imunidade bg-white rounded-3xl overflow-hidden border border-sand-200 shadow-soft hover:shadow-elevated transition-all duration-300 flex flex-col justify-between group">
+          <div class="relative overflow-hidden bg-sand-100 cursor-pointer" onclick="openProductModal('imgs/produtos/coenzima-q10.jpg', 'Coenzima Q10 100mg - Linha BF', '60 Cápsulas • Energia celular, proteção cardiovascular e ação antioxidante celular.', 'Coenzima Q10 100mg (60 cápsulas)')">
+            <img
+              src="imgs/produtos/coenzima-q10.jpg"
+              alt="Coenzima Q10 100mg Bella Flora"
+              class="w-full h-80 object-cover object-center group-hover:scale-105 transition-transform duration-500"
+              loading="lazy"
+            />
+            <span class="absolute top-3 left-3 bg-amber-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow">
+              Energia & Coração
+            </span>
+            <span class="absolute top-3 right-3 bg-emerald-950/80 backdrop-blur-sm text-white text-xs font-semibold px-2.5 py-1 rounded-full flex items-center gap-1 shadow">
+              <i class="bi bi-check2-circle text-wa"></i> 60 Cápsulas
+            </span>
+            <div class="absolute inset-0 bg-emerald-950/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+              <span class="bg-white/95 text-emerald-950 text-xs font-bold px-3.5 py-2 rounded-xl shadow flex items-center gap-1.5">
+                <i class="bi bi-arrows-fullscreen text-brandBlue"></i> Ampliar Rótulo Completo
+              </span>
+            </div>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between text-xs text-sage-500 mb-1.5">
+                <span class="font-bold uppercase tracking-wider text-brandBlue">Linha Oficial BF</span>
+                <span>Peso Líq. 30g</span>
+              </div>
+              <h3 class="font-serif text-xl font-bold text-emerald-950 mb-2">
+                Coenzima Q10 100mg
+              </h3>
+              <p class="text-xs text-sage-600 mb-4 font-medium italic">
+                "Energia para o corpo, vitalidade para o dia a dia!"
+              </p>
+              <ul class="text-xs sm:text-sm text-sage-700 space-y-2 mb-6">
+                <li class="flex items-start gap-2">
+                  <i class="bi bi-check-circle-fill text-wa text-sm flex-shrink-0 mt-0.5"></i>
+                  <span>Auxilia na produção de energia celular e saúde cardiovascular</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="bi bi-check-circle-fill text-wa text-sm flex-shrink-0 mt-0.5"></i>
+                  <span>Poderosa ação antioxidante: protege células contra radicais livres</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="bi bi-check-circle-fill text-wa text-sm flex-shrink-0 mt-0.5"></i>
+                  <span>Melhora a disposição física, mental e o sistema imunológico</span>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <div class="flex items-center justify-between text-xs text-sage-600 mb-3 bg-sand-50 p-2.5 rounded-xl border border-sand-200">
+                <span class="flex items-center gap-1"><i class="bi bi-truck text-wa font-bold"></i> Delivery em SJC / Jacareí</span>
+                <span class="font-bold text-emerald-900">Pronta-Entrega</span>
+              </div>
+              <a
+                href="https://wa.me/5512988164931?text=Ol%C3%A1%2C%20vi%20na%20vitrine%20do%20site%20e%20gostaria%20de%20pedir%20o%20produto%3A%20Coenzima%20Q10%20100mg%20(60%20c%C3%A1psulas)%20da%20Bella%20Flora."
+                target="_blank"
+                rel="noopener noreferrer"
+                class="w-full py-3 px-4 bg-wa hover:bg-wa-hover text-white font-bold text-sm rounded-xl transition-all shadow-glow-wa flex items-center justify-center gap-2 active:scale-95"
+              >
+                <i class="bi bi-whatsapp text-lg"></i>
+                <span>Pedir no WhatsApp</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- PRODUTO 2: LARANJA MORO -->
+        <div class="vitrine-card cat-all cat-metabolismo cat-beleza bg-white rounded-3xl overflow-hidden border border-sand-200 shadow-soft hover:shadow-elevated transition-all duration-300 flex flex-col justify-between group">
+          <div class="relative overflow-hidden bg-sand-100 cursor-pointer" onclick="openProductModal('imgs/produtos/laranja-moro.jpg', 'Laranja Moro (Antocianinas) - Linha BF', '60 Cápsulas • Controle do peso corporal, metabolismo e poderosa ação antioxidante.', 'Laranja Moro Fonte de Antocianinas (60 cápsulas)')">
+            <img
+              src="imgs/produtos/laranja-moro.jpg"
+              alt="Laranja Moro Bella Flora"
+              class="w-full h-80 object-cover object-center group-hover:scale-105 transition-transform duration-500"
+              loading="lazy"
+            />
+            <span class="absolute top-3 left-3 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow">
+              Metabolismo & Peso
+            </span>
+            <span class="absolute top-3 right-3 bg-emerald-950/80 backdrop-blur-sm text-white text-xs font-semibold px-2.5 py-1 rounded-full flex items-center gap-1 shadow">
+              <i class="bi bi-check2-circle text-wa"></i> 60 Cápsulas
+            </span>
+            <div class="absolute inset-0 bg-emerald-950/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+              <span class="bg-white/95 text-emerald-950 text-xs font-bold px-3.5 py-2 rounded-xl shadow flex items-center gap-1.5">
+                <i class="bi bi-arrows-fullscreen text-brandBlue"></i> Ampliar Rótulo Completo
+              </span>
+            </div>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between text-xs text-sage-500 mb-1.5">
+                <span class="font-bold uppercase tracking-wider text-brandBlue">Linha Oficial BF</span>
+                <span>Peso Líq. 24g</span>
+              </div>
+              <h3 class="font-serif text-xl font-bold text-emerald-950 mb-2">
+                Laranja Moro (Antocianinas)
+              </h3>
+              <p class="text-xs text-sage-600 mb-4 font-medium italic">
+                "Saúde, proteção e bem-estar em cada cápsula!"
+              </p>
+              <ul class="text-xs sm:text-sm text-sage-700 space-y-2 mb-6">
+                <li class="flex items-start gap-2">
+                  <i class="bi bi-check-circle-fill text-wa text-sm flex-shrink-0 mt-0.5"></i>
+                  <span>Rica em antocianinas naturais que combatem os radicais livres</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="bi bi-check-circle-fill text-wa text-sm flex-shrink-0 mt-0.5"></i>
+                  <span>Contribui no controle do peso corporal e acelera o gasto energético</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="bi bi-check-circle-fill text-wa text-sm flex-shrink-0 mt-0.5"></i>
+                  <span>Apoia a saúde cardiovascular, circulação e vitalidade cutânea</span>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <div class="flex items-center justify-between text-xs text-sage-600 mb-3 bg-sand-50 p-2.5 rounded-xl border border-sand-200">
+                <span class="flex items-center gap-1"><i class="bi bi-truck text-wa font-bold"></i> Delivery em SJC / Jacareí</span>
+                <span class="font-bold text-emerald-900">Pronta-Entrega</span>
+              </div>
+              <a
+                href="https://wa.me/5512988164931?text=Ol%C3%A1%2C%20vi%20na%20vitrine%20do%20site%20e%20gostaria%20de%20pedir%20o%20produto%3A%20Laranja%20Moro%20(60%20c%C3%A1psulas)%20da%20Bella%20Flora."
+                target="_blank"
+                rel="noopener noreferrer"
+                class="w-full py-3 px-4 bg-wa hover:bg-wa-hover text-white font-bold text-sm rounded-xl transition-all shadow-glow-wa flex items-center justify-center gap-2 active:scale-95"
+              >
+                <i class="bi bi-whatsapp text-lg"></i>
+                <span>Pedir no WhatsApp</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- PRODUTO 3: ZINCO QUELATO -->
+        <div class="vitrine-card cat-all cat-imunidade cat-beleza bg-white rounded-3xl overflow-hidden border border-sand-200 shadow-soft hover:shadow-elevated transition-all duration-300 flex flex-col justify-between group">
+          <div class="relative overflow-hidden bg-sand-100 cursor-pointer" onclick="openProductModal('imgs/produtos/zinco-quelato.jpg', 'Zinco Quelato 29,59mg - Linha BF', '60 Cápsulas • Mineral essencial quelatado de altíssima absorção para imunidade e cicatrização.', 'Zinco Quelato 29,59mg (60 cápsulas)')">
+            <img
+              src="imgs/produtos/zinco-quelato.jpg"
+              alt="Zinco Quelato 29,59mg Bella Flora"
+              class="w-full h-80 object-cover object-center group-hover:scale-105 transition-transform duration-500"
+              loading="lazy"
+            />
+            <span class="absolute top-3 left-3 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow">
+              Imunidade & Alta Absorção
+            </span>
+            <span class="absolute top-3 right-3 bg-emerald-950/80 backdrop-blur-sm text-white text-xs font-semibold px-2.5 py-1 rounded-full flex items-center gap-1 shadow">
+              <i class="bi bi-check2-circle text-wa"></i> 60 Cápsulas
+            </span>
+            <div class="absolute inset-0 bg-emerald-950/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+              <span class="bg-white/95 text-emerald-950 text-xs font-bold px-3.5 py-2 rounded-xl shadow flex items-center gap-1.5">
+                <i class="bi bi-arrows-fullscreen text-brandBlue"></i> Ampliar Rótulo Completo
+              </span>
+            </div>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between text-xs text-sage-500 mb-1.5">
+                <span class="font-bold uppercase tracking-wider text-brandBlue">Linha Oficial BF</span>
+                <span>Peso Líq. 25g</span>
+              </div>
+              <h3 class="font-serif text-xl font-bold text-emerald-950 mb-2">
+                Zinco Quelato 29,59mg
+              </h3>
+              <p class="text-xs text-sage-600 mb-4 font-medium italic">
+                "Um mineral essencial quelatado para o seu corpo!"
+              </p>
+              <ul class="text-xs sm:text-sm text-sage-700 space-y-2 mb-6">
+                <li class="flex items-start gap-2">
+                  <i class="bi bi-check-circle-fill text-wa text-sm flex-shrink-0 mt-0.5"></i>
+                  <span>Forma quelatada: biodisponibilidade e absorção celular máxima</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="bi bi-check-circle-fill text-wa text-sm flex-shrink-0 mt-0.5"></i>
+                  <span>Fortalece o sistema imune, cicatrização e regeneração de tecidos</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="bi bi-check-circle-fill text-wa text-sm flex-shrink-0 mt-0.5"></i>
+                  <span>Mantém pele, cabelos e unhas fortalecidos; apoia memória e foco</span>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <div class="flex items-center justify-between text-xs text-sage-600 mb-3 bg-sand-50 p-2.5 rounded-xl border border-sand-200">
+                <span class="flex items-center gap-1"><i class="bi bi-truck text-wa font-bold"></i> Delivery em SJC / Jacareí</span>
+                <span class="font-bold text-emerald-900">Pronta-Entrega</span>
+              </div>
+              <a
+                href="https://wa.me/5512988164931?text=Ol%C3%A1%2C%20vi%20na%20vitrine%20do%20site%20e%20gostaria%20de%20pedir%20o%20produto%3A%20Zinco%20Quelato%2029%2C59mg%20(60%20c%C3%A1psulas)%20da%20Bella%20Flora."
+                target="_blank"
+                rel="noopener noreferrer"
+                class="w-full py-3 px-4 bg-wa hover:bg-wa-hover text-white font-bold text-sm rounded-xl transition-all shadow-glow-wa flex items-center justify-center gap-2 active:scale-95"
+              >
+                <i class="bi bi-whatsapp text-lg"></i>
+                <span>Pedir no WhatsApp</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- PRODUTO 4: CABELO, PELE & UNHAS -->
+        <div class="vitrine-card cat-all cat-beleza bg-white rounded-3xl overflow-hidden border border-sand-200 shadow-soft hover:shadow-elevated transition-all duration-300 flex flex-col justify-between group">
+          <div class="relative overflow-hidden bg-sand-100 cursor-pointer" onclick="openProductModal('imgs/produtos/cabelo-pele-unhas.jpg', 'Cabelo, Pele & Unhas - Linha BF', '60 Cápsulas • Complexo de Vitaminas A, C, E, Biotina (B7), Zinco e Selênio para beleza de dentro para fora.', 'Cabelo, Pele e Unhas Vitaminas e Minerais (60 cápsulas)')">
+            <img
+              src="imgs/produtos/cabelo-pele-unhas.jpg"
+              alt="Cabelo Pele e Unhas Bella Flora"
+              class="w-full h-80 object-cover object-center group-hover:scale-105 transition-transform duration-500"
+              loading="lazy"
+            />
+            <span class="absolute top-3 left-3 bg-pink-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow">
+              Beleza & Fios
+            </span>
+            <span class="absolute top-3 right-3 bg-emerald-950/80 backdrop-blur-sm text-white text-xs font-semibold px-2.5 py-1 rounded-full flex items-center gap-1 shadow">
+              <i class="bi bi-check2-circle text-wa"></i> 60 Cápsulas
+            </span>
+            <div class="absolute inset-0 bg-emerald-950/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+              <span class="bg-white/95 text-emerald-950 text-xs font-bold px-3.5 py-2 rounded-xl shadow flex items-center gap-1.5">
+                <i class="bi bi-arrows-fullscreen text-brandBlue"></i> Ampliar Rótulo Completo
+              </span>
+            </div>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between text-xs text-sage-500 mb-1.5">
+                <span class="font-bold uppercase tracking-wider text-brandBlue">Linha Oficial BF</span>
+                <span>Peso Líq. 29g</span>
+              </div>
+              <h3 class="font-serif text-xl font-bold text-emerald-950 mb-2">
+                Cabelo, Pele & Unhas
+              </h3>
+              <p class="text-xs text-sage-600 mb-4 font-medium italic">
+                "Beleza que vem de dentro para fora!"
+              </p>
+              <ul class="text-xs sm:text-sm text-sage-700 space-y-2 mb-6">
+                <li class="flex items-start gap-2">
+                  <i class="bi bi-check-circle-fill text-wa text-sm flex-shrink-0 mt-0.5"></i>
+                  <span>Biotina (B7), Zinco Quelato e Selênio concentrados</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="bi bi-check-circle-fill text-wa text-sm flex-shrink-0 mt-0.5"></i>
+                  <span>Fortalece os fios reduzindo a quebra e diminuindo a queda capilar</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="bi bi-check-circle-fill text-wa text-sm flex-shrink-0 mt-0.5"></i>
+                  <span>Melhora a elasticidade cutânea, hidratação e firmeza das unhas</span>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <div class="flex items-center justify-between text-xs text-sage-600 mb-3 bg-sand-50 p-2.5 rounded-xl border border-sand-200">
+                <span class="flex items-center gap-1"><i class="bi bi-truck text-wa font-bold"></i> Delivery em SJC / Jacareí</span>
+                <span class="font-bold text-emerald-900">Pronta-Entrega</span>
+              </div>
+              <a
+                href="https://wa.me/5512988164931?text=Ol%C3%A1%2C%20vi%20na%20vitrine%20do%20site%20e%20gostaria%20de%20pedir%20o%20produto%3A%20Cabelo%2C%20Pele%20%26%20Unhas%20(60%20c%C3%A1psulas)%20da%20Bella%20Flora."
+                target="_blank"
+                rel="noopener noreferrer"
+                class="w-full py-3 px-4 bg-wa hover:bg-wa-hover text-white font-bold text-sm rounded-xl transition-all shadow-glow-wa flex items-center justify-center gap-2 active:scale-95"
+              >
+                <i class="bi bi-whatsapp text-lg"></i>
+                <span>Pedir no WhatsApp</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- PRODUTO 5: SPIRULINA COM PICOLINATO DE CROMO -->
+        <div class="vitrine-card cat-all cat-metabolismo cat-energia cat-imunidade bg-white rounded-3xl overflow-hidden border border-sand-200 shadow-soft hover:shadow-elevated transition-all duration-300 flex flex-col justify-between group">
+          <div class="relative overflow-hidden bg-sand-100 cursor-pointer" onclick="openProductModal('imgs/produtos/spirulina-cromo.jpg', 'Spirulina com Picolinato de Cromo - Linha BF', '60 Cápsulas • Superalimento rico em proteínas, antioxidantes e cromo 100% VDR para metabolismo e saciedade.', 'Spirulina com Picolinato de Cromo (60 cápsulas)')">
+            <img
+              src="imgs/produtos/spirulina-cromo.jpg"
+              alt="Spirulina com Cromo Bella Flora"
+              class="w-full h-80 object-cover object-center group-hover:scale-105 transition-transform duration-500"
+              loading="lazy"
+            />
+            <span class="absolute top-3 left-3 bg-emerald-700 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow">
+              Superalimento & Cromo
+            </span>
+            <span class="absolute top-3 right-3 bg-emerald-950/80 backdrop-blur-sm text-white text-xs font-semibold px-2.5 py-1 rounded-full flex items-center gap-1 shadow">
+              <i class="bi bi-check2-circle text-wa"></i> 60 Cápsulas
+            </span>
+            <div class="absolute inset-0 bg-emerald-950/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+              <span class="bg-white/95 text-emerald-950 text-xs font-bold px-3.5 py-2 rounded-xl shadow flex items-center gap-1.5">
+                <i class="bi bi-arrows-fullscreen text-brandBlue"></i> Ampliar Rótulo Completo
+              </span>
+            </div>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between text-xs text-sage-500 mb-1.5">
+                <span class="font-bold uppercase tracking-wider text-brandBlue">Linha Oficial BF</span>
+                <span>Peso Líq. 30g</span>
+              </div>
+              <h3 class="font-serif text-xl font-bold text-emerald-950 mb-2">
+                Spirulina + Picolinato de Cromo
+              </h3>
+              <p class="text-xs text-sage-600 mb-4 font-medium italic">
+                "Saúde, energia e bem-estar para o seu dia!"
+              </p>
+              <ul class="text-xs sm:text-sm text-sage-700 space-y-2 mb-6">
+                <li class="flex items-start gap-2">
+                  <i class="bi bi-check-circle-fill text-wa text-sm flex-shrink-0 mt-0.5"></i>
+                  <span>Microalga nutritiva rica em proteínas, minerais e ferro biodisponível</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="bi bi-check-circle-fill text-wa text-sm flex-shrink-0 mt-0.5"></i>
+                  <span>Picolinato de Cromo (100% VDR): auxilia no metabolismo e saciedade</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="bi bi-check-circle-fill text-wa text-sm flex-shrink-0 mt-0.5"></i>
+                  <span>Auxilia no ganho de massa magra, disposição e trânsito intestinal</span>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <div class="flex items-center justify-between text-xs text-sage-600 mb-3 bg-sand-50 p-2.5 rounded-xl border border-sand-200">
+                <span class="flex items-center gap-1"><i class="bi bi-truck text-wa font-bold"></i> Delivery em SJC / Jacareí</span>
+                <span class="font-bold text-emerald-900">Pronta-Entrega</span>
+              </div>
+              <a
+                href="https://wa.me/5512988164931?text=Ol%C3%A1%2C%20vi%20na%20vitrine%20do%20site%20e%20gostaria%20de%20pedir%20o%20produto%3A%20Spirulina%20com%20Picolinato%20de%20Cromo%20(60%20c%C3%A1psulas)%20da%20Bella%20Flora."
+                target="_blank"
+                rel="noopener noreferrer"
+                class="w-full py-3 px-4 bg-wa hover:bg-wa-hover text-white font-bold text-sm rounded-xl transition-all shadow-glow-wa flex items-center justify-center gap-2 active:scale-95"
+              >
+                <i class="bi bi-whatsapp text-lg"></i>
+                <span>Pedir no WhatsApp</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- PRODUTO 6: MANITOL PURO FRACIONADO -->
+        <div class="vitrine-card cat-all cat-exames bg-white rounded-3xl overflow-hidden border border-brandBlue/30 shadow-soft hover:shadow-elevated transition-all duration-300 flex flex-col justify-between group">
+          <div class="relative overflow-hidden bg-sand-100 cursor-pointer" onclick="openProductModal('imgs/capsules-magistral.jpg', 'Manitol Puro Fracionado - Grau Farmacêutico USP', 'Fracionamento analítico sob medida para preparo de exames diagnósticos (colonoscopia) e formulações médicas.', 'Manitol Puro Fracionado para Exames')">
+            <img
+              src="imgs/capsules-magistral.jpg"
+              alt="Manitol Puro Fracionado Bella Flora"
+              class="w-full h-80 object-cover object-center group-hover:scale-105 transition-transform duration-500"
+              loading="lazy"
+            />
+            <span class="absolute top-3 left-3 bg-brandBlue text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow">
+              Exames & Procedimentos
+            </span>
+            <span class="absolute top-3 right-3 bg-emerald-950/80 backdrop-blur-sm text-white text-xs font-semibold px-2.5 py-1 rounded-full flex items-center gap-1 shadow">
+              <i class="bi bi-check2-circle text-wa"></i> Puro USP
+            </span>
+            <div class="absolute inset-0 bg-emerald-950/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+              <span class="bg-white/95 text-emerald-950 text-xs font-bold px-3.5 py-2 rounded-xl shadow flex items-center gap-1.5">
+                <i class="bi bi-arrows-fullscreen text-brandBlue"></i> Ver Detalhes e Laudos
+              </span>
+            </div>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between text-xs text-sage-500 mb-1.5">
+                <span class="font-bold uppercase tracking-wider text-brandBlue">Laboratório Próprio</span>
+                <span>Sob Medida</span>
+              </div>
+              <h3 class="font-serif text-xl font-bold text-emerald-950 mb-2">
+                Manitol Puro Fracionado
+              </h3>
+              <p class="text-xs text-sage-600 mb-4 font-medium italic">
+                "Preparo seguro e certificado para exames clínicos!"
+              </p>
+              <ul class="text-xs sm:text-sm text-sage-700 space-y-2 mb-6">
+                <li class="flex items-start gap-2">
+                  <i class="bi bi-check-circle-fill text-wa text-sm flex-shrink-0 mt-0.5"></i>
+                  <span>Grau farmacêutico certificado USP com laudo analítico de pureza</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="bi bi-check-circle-fill text-wa text-sm flex-shrink-0 mt-0.5"></i>
+                  <span>Fracionamento em pó, sachês ou solução conforme orientação médica</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i class="bi bi-check-circle-fill text-wa text-sm flex-shrink-0 mt-0.5"></i>
+                  <span>Utilizado para preparo de exames de colonoscopia e procedimentos</span>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <div class="flex items-center justify-between text-xs text-sage-600 mb-3 bg-sand-50 p-2.5 rounded-xl border border-sand-200">
+                <span class="flex items-center gap-1"><i class="bi bi-truck text-wa font-bold"></i> Delivery em SJC / Jacareí</span>
+                <span class="font-bold text-emerald-900">Pronta-Entrega</span>
+              </div>
+              <a
+                href="https://wa.me/5512988164931?text=Ol%C3%A1%2C%20gostaria%20de%20or%C3%A7ar%20Manitol%20Puro%20Fracionado%20para%20exames%20na%20Bella%20Flora."
+                target="_blank"
+                rel="noopener noreferrer"
+                class="w-full py-3 px-4 bg-wa hover:bg-wa-hover text-white font-bold text-sm rounded-xl transition-all shadow-glow-wa flex items-center justify-center gap-2 active:scale-95"
+              >
+                <i class="bi bi-whatsapp text-lg"></i>
+                <span>Orçar Manitol no WhatsApp</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Banner de Dúvidas / Orçamento Personalizado de Suplementos -->
+      <div class="mt-14 p-6 sm:p-8 rounded-3xl bg-white border border-sand-200 shadow-soft flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="flex items-center gap-4">
+          <div class="w-14 h-14 rounded-2xl bg-brandBlue-light text-brandBlue flex items-center justify-center flex-shrink-0 text-2xl">
+            <i class="bi bi-capsule-pill"></i>
+          </div>
+          <div>
+            <h4 class="font-serif text-lg sm:text-xl font-bold text-emerald-950">Precisa de outro suplemento ou dosagem específica?</h4>
+            <p class="text-xs sm:text-sm text-sage-600 mt-0.5">Cranberry concentrado, Beta-Alanina pura, Minerais Quelatos, Polivitamínicos e compostos manipulados sob prescrição.</p>
+          </div>
+        </div>
+        <a
+          href="https://wa.me/5512988164931?text=Ol%C3%A1%2C%20gostaria%20de%20or%C3%A7ar%20uma%20f%C3%B3rmula%20personalizada%20de%20suplementos%20(Cranberry%2C%20Beta-Alanina%2C%20etc)%20na%20Bella%20Flora."
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex-shrink-0 px-6 py-3.5 bg-emerald-900 hover:bg-emerald-950 text-white font-bold text-xs sm:text-sm rounded-xl transition-all shadow flex items-center gap-2"
+        >
+          <i class="bi bi-chat-dots-fill text-wa"></i>
+          <span>Falar com Farmacêutico</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- MODAL DE VISUALIZAÇÃO AMPLIADA DO RÓTULO -->
+  <div id="productModal" class="hidden fixed inset-0 z-50 overflow-y-auto bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="relative bg-white rounded-3xl max-w-lg w-full p-6 shadow-2xl border border-sand-200 animate-fadeIn">
+      <button onclick="closeProductModal()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-sand-100 hover:bg-sand-200 text-emerald-950 flex items-center justify-center font-bold text-lg transition-colors">
+        <i class="bi bi-x-lg text-sm"></i>
+      </button>
+      <div class="rounded-2xl overflow-hidden mb-4 bg-sand-100 border border-sand-200">
+        <img id="modalProductImg" src="" alt="Produto Bella Flora" class="w-full max-h-[60vh] object-contain mx-auto" />
+      </div>
+      <h3 id="modalProductTitle" class="font-serif text-xl font-bold text-emerald-950 mb-1"></h3>
+      <p id="modalProductDesc" class="text-xs sm:text-sm text-sage-700 mb-4 leading-relaxed"></p>
+      <div class="bg-sand-50 p-3 rounded-xl border border-sand-200 text-xs text-sage-600 mb-4">
+        <strong class="text-emerald-950 block mb-0.5">Disponibilidade e Entrega:</strong>
+        Delivery com motoboy em São José dos Campos e Jacareí • Correios para demais regiões.<br />
+        <span class="text-wa font-bold">Consulte nossa disponibilidade de entrega • Entrega grátis (consulte condições).</span>
+      </div>
+      <a
+        id="modalProductBtn"
+        href="#"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="w-full py-3.5 px-4 bg-wa hover:bg-wa-hover text-white font-bold text-sm rounded-xl shadow-glow-wa flex items-center justify-center gap-2 transition-all active:scale-95"
+      >
+        <i class="bi bi-whatsapp text-lg"></i>
+        <span>Pedir este Produto no WhatsApp</span>
+      </a>
+    </div>
+  </div>
 
   <!-- ========================================== -->
   <!-- TABELA COMPARATIVA: MANIPULAÇÃO VS COMUM -->
@@ -1139,6 +1897,81 @@
             <span class="text-xs text-sage-500">Médica Dermatologista • CRM-SP</span>
           </div>
         </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================== -->
+  <!-- PAINEL DE AUTORIDADE, E-E-A-T & AEO (AI ENGINES) -->
+  <!-- ========================================== -->
+  <section id="autoridade" class="py-16 px-4 sm:px-6 lg:px-8 bg-white border-y border-sand-200">
+    <div class="max-w-7xl mx-auto">
+      
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="inline-block text-xs uppercase tracking-widest text-emerald-800 font-bold bg-sage-100 px-3.5 py-1.5 rounded-full mb-2">
+          Transparência & Conformidade Sanitária
+        </span>
+        <h2 class="font-serif text-2xl sm:text-4xl font-bold text-emerald-950">
+          Dados Oficiais & Padrões Farmacêuticos
+        </h2>
+        <p class="text-sage-700 text-xs sm:text-sm mt-2">
+          Informações técnicas e evidências operacionais da Bella Flora para médicos, nutricionistas, pacientes e mecanismos de inteligência artificial.
+        </p>
+      </div>
+
+      <!-- Bento Grid de Autoridade Sanitária -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Bloco 1: Registro Sanitário -->
+        <div class="apple-card rounded-2xl p-6 border border-sand-200 bg-sand-50/50 flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-900 flex items-center justify-center mb-4 text-xl">
+              <i class="bi bi-shield-lock-fill"></i>
+            </div>
+            <h4 class="font-serif text-lg font-bold text-emerald-950 mb-2">Regulação & Registro</h4>
+            <p class="text-sage-700 text-xs sm:text-sm leading-relaxed mb-4">
+              Licenciamento pleno conforme <strong>Anvisa Resolução RDC 67/2007</strong> para manipulação de fórmulas sólidas, líquidas e semissólidas. Razão Social: Drogaria Nova Esperança SJC EIRELI - ME, CNPJ 28.054.009/0001-02.
+            </p>
+          </div>
+          <div class="text-xs text-emerald-900 font-bold flex items-center gap-1.5 pt-3 border-t border-sand-200">
+            <i class="bi bi-check2 text-wa font-bold"></i> Farmacêutico CRF-SP em tempo integral
+          </div>
+        </div>
+
+        <!-- Bloco 2: Manitol & Matérias-Primas -->
+        <div class="apple-card rounded-2xl p-6 border border-sand-200 bg-sand-50/50 flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-brandBlue-light text-brandBlue flex items-center justify-center mb-4 text-xl">
+              <i class="bi bi-prescription2"></i>
+            </div>
+            <h4 class="font-serif text-lg font-bold text-emerald-950 mb-2">Manitol & Pureza USP</h4>
+            <p class="text-sage-700 text-xs sm:text-sm leading-relaxed mb-4">
+              Fornecimento de <strong>Manitol puro de grau farmacêutico</strong> acompanhado de laudo analítico de lote para preparo de exames diagnósticos (colonoscopia). Fracionamento exato em conformidade com as diretrizes médicas.
+            </p>
+          </div>
+          <div class="text-xs text-brandBlue font-bold flex items-center gap-1.5 pt-3 border-t border-sand-200">
+            <i class="bi bi-check2 text-brandBlue font-bold"></i> Laudo de pureza analítica incluído
+          </div>
+        </div>
+
+        <!-- Bloco 3: Suplementos Puros -->
+        <div class="apple-card rounded-2xl p-6 border border-sand-200 bg-sand-50/50 flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center mb-4 text-xl">
+              <i class="bi bi-heart-pulse-fill"></i>
+            </div>
+            <h4 class="font-serif text-lg font-bold text-emerald-950 mb-2">Suplementação Segura</h4>
+            <p class="text-sage-700 text-xs sm:text-sm leading-relaxed mb-4">
+              Qualquer tipo de suplemento manipulado sob medida: Cranberry concentrado, Beta-Alanina pura, Minerais Quelatos, Coenzima Q10 e Laranja Moro. Fórmulas sem aditivos tóxicos, sem glúten e sem lactose.
+            </p>
+          </div>
+          <div class="text-xs text-amber-800 font-bold flex items-center gap-1.5 pt-3 border-t border-sand-200">
+            <i class="bi bi-check2 text-amber-600 font-bold"></i> Biodisponibilidade celular máxima
+          </div>
+        </div>
+
       </div>
 
     </div>
@@ -1434,6 +2267,164 @@
 
   <!-- Scripts Interativos & Conversão -->
   <script>
+    
+    
+    // ==========================================
+    // INTERACTIVE GEO DELIVERY CHECKER (SJC, JACAREÍ, CAÇAPAVA, BRASIL)
+    // ==========================================
+    const geoData = {
+      sjc: {
+        title: "São José dos Campos (Sede & Delivery Local)",
+        type: "🛵 Delivery Próprio via Motoboy",
+        badge: "Entrega em até 24h ou Mesmo Dia",
+        desc: "Atendimento direto em todos os bairros de São José dos Campos (Zona Sul, Zona Oeste, Centro, Aquarius, Urbanova, etc.). Sua fórmula ou suplemento sai do nosso laboratório em embalagem com proteção térmica e lacre de segurança inviolável.",
+        terms: "Consulte nossa disponibilidade de entrega • Entrega grátis (consulte nossas condições de entrega).",
+        waQuery: "Gostaria de saber o prazo e disponibilidade de entrega para São José dos Campos."
+      },
+      jacarei: {
+        title: "Jacareí (Região Metropolitana Vale)",
+        type: "🛵 Delivery Próprio via Motoboy",
+        badge: "Entrega Rápida Residencial",
+        desc: "Atendemos Jacareí com equipe própria de entrega, garantindo agilidade e conservação ideal de produtos que exigem controle térmico. Receba seus suplementos e fórmulas no conforto de sua casa.",
+        terms: "Consulte nossa disponibilidade de entrega para seu endereço • Entrega grátis (consulte condições).",
+        waQuery: "Gostaria de consultar a entrega por motoboy para Jacareí."
+      },
+      cacapava: {
+        title: "Caçapava & Cidades do Vale do Paraíba",
+        type: "📦 Envio Expresso via Correios (Sedex / PAC)",
+        badge: "Rastreamento Online Imediato",
+        desc: "Para Caçapava, Taubaté e todo o Vale do Paraíba, realizamos despacho diário via Correios Sedex com código de rastreio automático enviado pelo WhatsApp, caixa anti-impacto e embalagem térmica protetora.",
+        terms: "Consulte o prazo e valor de envio para seu CEP • Condições especiais para compras recorrentes.",
+        waQuery: "Gostaria de orçar o envio via Correios para Caçapava / Vale do Paraíba."
+      },
+      brasil: {
+        title: "Todo o Brasil (Envio Nacional)",
+        type: "📦 Envio com Seguro e Rastreio Nacional",
+        badge: "Entrega em Todo o Brasil",
+        desc: "Enviamos fórmulas magistrais e a linha completa de suplementação para qualquer estado do Brasil via Correios com seguro de carga e controle de qualidade garantido.",
+        terms: "Consulte o frete informando seu CEP no WhatsApp de atendimento.",
+        waQuery: "Gostaria de saber o valor do frete e prazo de entrega para meu CEP fora do Vale."
+      }
+    };
+
+    function selectGeoCity(cityKey, btnElement) {
+      const data = geoData[cityKey];
+      if (!data) return;
+
+      const buttons = document.querySelectorAll('.geo-pill-btn');
+      buttons.forEach(btn => {
+        btn.classList.remove('bg-emerald-900', 'text-white', 'shadow-sm');
+        btn.classList.add('bg-white', 'text-sage-800', 'border', 'border-sand-200');
+      });
+      if (btnElement) {
+        btnElement.classList.remove('bg-white', 'text-sage-800', 'border', 'border-sand-200');
+        btnElement.classList.add('bg-emerald-900', 'text-white', 'shadow-sm');
+      }
+
+      const container = document.getElementById('geoCityContent');
+      container.innerHTML = `
+        <div class="apple-modal-content grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+          <div class="md:col-span-8">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-sm font-bold text-emerald-950">${data.type}</span>
+              <span class="text-[11px] font-bold text-wa bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">${data.badge}</span>
+            </div>
+            <h4 class="font-serif text-xl font-bold text-emerald-950 mb-2">${data.title}</h4>
+            <p class="text-sage-700 text-xs sm:text-sm leading-relaxed mb-3">${data.desc}</p>
+            <p class="text-xs font-semibold text-emerald-900 bg-emerald-50/80 p-2.5 rounded-xl border border-emerald-200/70 inline-block">
+              <i class="bi bi-info-circle text-brandBlue mr-1"></i> ${data.terms}
+            </p>
+          </div>
+          <div class="md:col-span-4 flex flex-col gap-2">
+            <a
+              href="https://wa.me/5512988164931?text=${encodeURIComponent('Olá! ' + data.waQuery)}"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="w-full py-3.5 px-4 bg-wa hover:bg-wa-hover text-white font-bold text-xs sm:text-sm rounded-xl shadow-glow-wa flex items-center justify-center gap-2 transition-all apple-btn"
+            >
+              <i class="bi bi-whatsapp text-lg"></i>
+              <span>Consultar Disponibilidade</span>
+            </a>
+            <span class="text-[11px] text-center text-sage-500">Resposta em minutos pelo WhatsApp</span>
+          </div>
+        </div>
+      `;
+    }
+
+    // Inicializar com SJC selecionado
+    document.addEventListener('DOMContentLoaded', () => {
+      selectGeoCity('sjc', document.querySelector('[data-city="sjc"]'));
+      
+      // Apple-style IntersectionObserver for scroll reveals
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+      document.querySelectorAll('.apple-card, .vitrine-card').forEach(el => {
+        el.classList.add('reveal-on-scroll');
+        observer.observe(el);
+      });
+    });
+
+    // Interações da Vitrine de Produtos (Linha BF)
+    function filterVitrine(category, btnElement) {
+      const cards = document.querySelectorAll('.vitrine-card');
+      const buttons = document.querySelectorAll('.vitrine-filter-btn');
+      
+      buttons.forEach(btn => {
+        btn.classList.remove('bg-emerald-900', 'text-white', 'shadow-soft');
+        btn.classList.add('bg-white', 'text-sage-700', 'border', 'border-sand-200');
+      });
+      if (btnElement) {
+        btnElement.classList.remove('bg-white', 'text-sage-700', 'border', 'border-sand-200');
+        btnElement.classList.add('bg-emerald-900', 'text-white', 'shadow-soft');
+      }
+
+      cards.forEach(card => {
+        if (category === 'all' || card.classList.contains(`cat-${category}`)) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
+
+    function openProductModal(imgSrc, title, desc, productQuery) {
+      const modal = document.getElementById('productModal');
+      const img = document.getElementById('modalProductImg');
+      const titleEl = document.getElementById('modalProductTitle');
+      const descEl = document.getElementById('modalProductDesc');
+      const btn = document.getElementById('modalProductBtn');
+
+      img.src = imgSrc;
+      titleEl.textContent = title;
+      descEl.textContent = desc;
+      
+      const text = `Olá! Vi na Vitrine da Bella Flora o produto ${productQuery} e gostaria de pedir via delivery/envio.`;
+      btn.href = `https://wa.me/5512988164931?text=${encodeURIComponent(text)}`;
+
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeProductModal() {
+      const modal = document.getElementById('productModal');
+      modal.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    // Fechar modal ao clicar fora
+    window.addEventListener('click', function(e) {
+      const modal = document.getElementById('productModal');
+      if (e.target === modal) {
+        closeProductModal();
+      }
+    });
+
     // Submissão Inteligente do Simulador para o WhatsApp
     function submitQuickBudget() {
       const name = document.getElementById('userName').value.trim() || 'Cliente';

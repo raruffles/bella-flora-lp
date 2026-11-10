@@ -10,7 +10,11 @@
     { "source": "/formulas/(.*)", "destination": "/index.html" },
     { "source": "/orcamento/rapido", "destination": "/index.html" },
     { "source": "/orcamento", "destination": "/index.html" },
-    { "source": "/orcamento/(.*)", "destination": "/index.html" }
+    { "source": "/orcamento/(.*)", "destination": "/index.html" },
+    { "source": "/vitrine", "destination": "/index.html" },
+    { "source": "/vitrine/(.*)", "destination": "/index.html" },
+    { "source": "/produtos", "destination": "/index.html" },
+    { "source": "/produtos/(.*)", "destination": "/index.html" }
   ],
   "headers": [
     {

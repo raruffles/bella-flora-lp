@@ -26,7 +26,9 @@ routes = [
     os.path.join(base_dir, 'laboratorio', 'formulas'),
     os.path.join(base_dir, 'formulas'),
     os.path.join(base_dir, 'orcamento'),
-    os.path.join(base_dir, 'orcamento', 'rapido')
+    os.path.join(base_dir, 'orcamento', 'rapido'),
+    os.path.join(base_dir, 'vitrine'),
+    os.path.join(base_dir, 'produtos')
 ]
 
 for r in routes:
