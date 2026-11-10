@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth">
+<html lang="pt-BR" class="scroll-smooth overflow-x-hidden">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
@@ -130,11 +130,11 @@
     "@context": "https://schema.org",
     "@type": "Pharmacy",
     "name": "Bella Flora Farmácia de Manipulação",
-    "legalName": "Drogaria Nova Esperança SJC EIRELI - ME",
+    
     "description": "Farmácia de manipulação com matérias-primas puras certificadas, pesagem computadorizada monitorada e farmacêutico em tempo integral.",
     "telephone": "+55-12-98816-4931",
     "image": "imgs/hero-pharmacist.jpg",
-    "openingHours": "Mo-Fr 08:00-20:30, Sa 08:00-14:00",
+    "openingHours": "Mo-Sa 08:00-20:00, Su 08:00-13:00",
     "priceRange": "$$",
     "aggregateRating": {
       "@type": "AggregateRating",
@@ -144,10 +144,8 @@
     },
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Avenida Carlos Alberto de Andrade Silva, 404",
       "addressLocality": "São José dos Campos",
       "addressRegion": "SP",
-      "postalCode": "12226-150",
       "addressCountry": "BR"
     },
     "hasMerchantReturnPolicy": {
@@ -216,7 +214,7 @@
   }
   </script>
 
-  <style><style>
+  <style>
     /* ============================================== */
     /* APPLE DESIGN SYSTEM: MATERIALS & SPRING MOTION */
     /* ============================================== */
@@ -417,11 +415,11 @@
           Plantão Ativo
         </span>
         <span class="text-sage-200 text-sm sm:text-sm">
-          Abertos hoje até às <strong>20:30</strong> • Farmacêuticos online para cálculo imediato de receitas
+          Seg a Sáb até às <strong>20:00</strong> • Dom até <strong>13:00</strong> • Farmacêuticos online para cálculo imediato de receitas
         </span>
       </div>
       <div class="hidden md:flex items-center gap-5 text-sage-300 text-sm">
-        <span class="flex items-center gap-1.5"><i class="bi bi-shield-check text-emerald-400"></i> Certificada Anvisa RDC 67</span>
+        <span class="flex items-center gap-1.5"><i class="bi bi-shield-check text-emerald-400"></i> Padrão Laboratorial Certificado</span>
         <span class="flex items-center gap-1.5"><i class="bi bi-qr-code-scan text-brandBlue"></i> Receita Digital (Memed / CFM)</span>
         <span class="flex items-center gap-1.5"><i class="bi bi-truck text-wa"></i> Delivery em SJC e Jacareí • Correios para demais regiões</span>
         <span class="flex items-center gap-1.5"><i class="bi bi-gift text-brandBlue"></i> Entrega grátis (consulte condições)</span>
@@ -467,16 +465,16 @@
       </nav>
 
       <!-- Botão CTA Principal do Header com Margem Generosa do FAQ -->
-      <div class="flex items-center gap-3 ml-6 xl:ml-10 flex-shrink-0">
+      <div class="flex items-center gap-3 ml-2 lg:ml-6 xl:ml-10 flex-shrink-0">
         <a
           href="https://wa.me/5512988164931?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Bella%20Flora%20e%20gostaria%20de%20fazer%20um%20or%C3%A7amento%20da%20minha%20receita."
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex items-center gap-2 bg-wa hover:bg-wa-hover text-white text-sm font-bold px-4 sm:px-5 py-2.5 rounded-xl shadow-glow-wa transition-all duration-200 active:scale-95 whitespace-nowrap apple-btn"
+          class="inline-flex items-center gap-2 bg-wa hover:bg-wa-hover text-white text-sm font-bold px-3 sm:px-5 py-2 sm:py-2.5 rounded-xl shadow-glow-wa transition-all duration-200 active:scale-95 whitespace-nowrap apple-btn"
           aria-label="Fazer orçamento de receita pelo WhatsApp"
         >
           <i class="bi bi-whatsapp text-lg"></i>
-          <span>Orçar no WhatsApp</span>
+          <span class="hidden sm:inline">Orçar no WhatsApp</span><span class="sm:hidden">Orçar</span>
         </a>
       </div>
 
@@ -1930,13 +1928,13 @@
             <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-900 flex items-center justify-center mb-4 text-xl">
               <i class="bi bi-shield-lock-fill"></i>
             </div>
-            <h4 class="font-serif text-lg font-bold text-emerald-950 mb-2">Regulação & Registro</h4>
+            <h4 class="font-serif text-lg font-bold text-emerald-950 mb-2">Boas Práticas & Qualidade</h4>
             <p class="text-sage-700 text-xs sm:text-sm leading-relaxed mb-4">
-              Licenciamento pleno conforme <strong>Anvisa Resolução RDC 67/2007</strong> para manipulação de fórmulas sólidas, líquidas e semissólidas. Razão Social: Drogaria Nova Esperança SJC EIRELI - ME, CNPJ 28.054.009/0001-02.
+              Atuação com rigor técnico e controle de qualidade contínuo no preparo de fórmulas personalizadas, suplementos puros e atendimento farmacêutico especializado em São José dos Campos e região.
             </p>
           </div>
           <div class="text-xs text-emerald-900 font-bold flex items-center gap-1.5 pt-3 border-t border-sand-200">
-            <i class="bi bi-check2 text-wa font-bold"></i> Farmacêutico CRF-SP em tempo integral
+            <i class="bi bi-check2 text-wa font-bold"></i> Acompanhamento Farmacêutico Dedicado
           </div>
         </div>
 
@@ -2111,97 +2109,73 @@
   </section>
 
   <!-- ========================================== -->
-  <!-- FOOTER REGULATÓRIO & COMPLIANCE SANITÁRIO (ALTO CONTRASTE E 100% LEGÍVEL) -->
-  <!-- ========================================== -->
+  <!-- FOOTER CLEAN & MINIMALISTA -->
   <footer class="bg-[#061A13] text-gray-100 text-sm py-14 px-4 sm:px-6 lg:px-8 border-t border-emerald-800/80">
     <div class="max-w-7xl mx-auto">
       
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-10 border-b border-emerald-800/60">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 pb-10 border-b border-emerald-800/60">
         
-        <!-- Coluna 1: Marca & Razão Social -->
-        <div class="md:col-span-1">
+        <!-- Coluna 1: Marca & Localização -->
+        <div>
           <div class="flex items-center gap-3 mb-4">
             <div class="w-12 h-12 rounded-xl overflow-hidden shadow-sm bg-[#29A2E5] p-0.5">
               <img src="imgs/logo.png" alt="Bella Flora" class="w-full h-full object-cover rounded-lg" />
             </div>
             <div>
               <span class="font-serif text-xl font-bold text-white block">Bella Flora</span>
-              <span class="text-sm text-brandBlue font-bold uppercase tracking-wider block">Manipulação</span>
+              <span class="text-sm text-brandBlue font-bold uppercase tracking-wider block">Manipulação & Suplementos</span>
             </div>
           </div>
-          <div class="leading-relaxed text-gray-200 text-sm space-y-1">
-            <strong class="text-white block font-bold text-sm">Razão Social:</strong>
-            <span class="text-gray-100">Drogaria Nova Esperança SJC EIRELI - ME</span><br />
-            <strong class="text-white font-semibold">CNPJ:</strong> <span class="text-gray-100">28.054.009/0001-02</span><br />
-            <strong class="text-white font-semibold">Endereço:</strong> <span class="text-gray-100">Av. Carlos Alberto de Andrade Silva, 404<br />Parque Nova Esperança, São José dos Campos - SP, CEP 12226-150</span>
+          <p class="leading-relaxed text-gray-300 text-sm max-w-sm">
+            Atendimento especializado em fórmulas personalizadas, Manitol e linha própria de suplementação pura em São José dos Campos e Jacareí, com envios para todo o Brasil.
+          </p>
+        </div>
+
+        <!-- Coluna 2: Horários e Atendimento -->
+        <div>
+          <h4 class="font-serif text-sm font-bold text-white mb-3 uppercase tracking-wider">
+            Horários & Atendimento
+          </h4>
+          <div class="leading-relaxed text-gray-200 text-sm space-y-2">
+            <div>
+              <strong class="text-white font-semibold">Segunda a Sábado:</strong>
+              <span class="text-gray-100">08:00 às 20:00</span>
+            </div>
+            <div>
+              <strong class="text-white font-semibold">Domingos:</strong>
+              <span class="text-gray-100">08:00 às 13:00</span>
+            </div>
+            <div class="pt-2">
+              <strong class="text-white font-semibold">WhatsApp:</strong> <span class="text-wa font-bold">(12) 98816-4931</span><br />
+              <strong class="text-white font-semibold">E-mail:</strong> <span class="text-gray-100">contato@farmaciabellaflora.com.br</span>
+            </div>
           </div>
         </div>
 
-        <!-- Coluna 2: Responsabilidade Técnica & Licenças -->
-        <div class="md:col-span-1">
+        <!-- Coluna 3: Logística & Garantia -->
+        <div>
           <h4 class="font-serif text-sm font-bold text-white mb-3 uppercase tracking-wider">
-            Responsabilidade Técnica
+            Entregas & Origem
           </h4>
-          <div class="leading-relaxed text-gray-200 text-sm">
-            <strong class="text-white font-semibold block">Farmacêutico Responsável:</strong>
-            <span class="text-emerald-300 font-medium">Dra. Letícia M. Souza — CRF-SP: 54.821</span><br /><br />
-            <strong class="text-white font-semibold block">Licença Sanitária (CEVS):</strong>
-            <span class="text-gray-100">354990401-477-000000-1-0</span><br /><br />
-            <strong class="text-white font-semibold block">Autorização de Funcionamento (AFE):</strong>
-            <span class="text-gray-100">Anvisa nº 7.42190.4</span>
-          </div>
-        </div>
-
-        <!-- Coluna 3: Horários e Atendimento -->
-        <div class="md:col-span-1">
-          <h4 class="font-serif text-sm font-bold text-white mb-3 uppercase tracking-wider">
-            Horários de Atendimento
-          </h4>
-          <div class="leading-relaxed text-gray-200 text-sm">
-            <strong class="text-white font-semibold block">Segunda a Sexta-feira:</strong>
-            <span class="text-gray-100">08:00 às 20:30 (Ininterrupto)</span><br /><br />
-            <strong class="text-white font-semibold block">Sábados:</strong>
-            <span class="text-gray-100">08:00 às 14:00</span><br /><br />
-            <strong class="text-white font-semibold">WhatsApp Oficial:</strong> <span class="text-white font-bold">(12) 98816-4931</span><br />
-            <strong class="text-white font-semibold">E-mail:</strong> <span class="text-white">contato@farmaciabellaflora.com.br</span>
-          </div>
-        </div>
-
-        <!-- Coluna 4: Certificações e Selos -->
-        <div class="md:col-span-1">
-          <h4 class="font-serif text-sm font-bold text-white mb-3 uppercase tracking-wider">
-            Garantia de Origem
-          </h4>
-          <p class="leading-relaxed text-gray-200 text-sm mb-4">
-            Matérias-primas fracionadas em ambiente com temperatura e umidade monitoradas 24h por dia, com laudo de pureza arquivado.
+          <p class="leading-relaxed text-gray-300 text-sm mb-4">
+            Delivery rápido próprio em São José dos Campos e Jacareí. Envio expresso pelos Correios para Caçapava e todo o Brasil. Consulte condições de entrega grátis.
           </p>
           <div class="flex flex-wrap items-center gap-2">
-            <span class="px-3 py-1.5 rounded-lg bg-emerald-900/90 text-brandBlue font-bold text-sm border border-emerald-700">
-              ANVISA
+            <span class="px-3 py-1.5 rounded-lg bg-emerald-900/90 text-brandBlue font-bold text-xs border border-emerald-700">
+              QUALIDADE CERTIFICADA
             </span>
-            <span class="px-3 py-1.5 rounded-lg bg-emerald-900/90 text-white font-bold text-sm border border-emerald-700">
-              CRF-SP
-            </span>
-            <span class="px-3 py-1.5 rounded-lg bg-emerald-900/90 text-wa font-bold text-sm border border-emerald-700">
-              SITE SEGURO
+            <span class="px-3 py-1.5 rounded-lg bg-emerald-900/90 text-wa font-bold text-xs border border-emerald-700">
+              SITE SEGURO SSL
             </span>
           </div>
         </div>
 
       </div>
 
-      <!-- Texto Regulatório Obrigatório ANVISA RDC 67/2007 e RDC 44/2009 -->
-      <div class="mt-8 text-sm leading-relaxed text-gray-200 space-y-3">
-        <p>
-          <strong class="text-white font-bold">Aviso Regulatório Obrigatório:</strong> As informações contidas neste website são para fins estritamente informativos e não substituem o diagnóstico, posologia ou aconselhamento de profissionais habilitados (médicos, nutricionistas ou cirurgiões-dentistas). Fórmulas manipuladas sob medida são preparadas em estrita conformidade com as boas práticas laboratoriais e normas da Anvisa.
-        </p>
-        <p class="text-gray-300">
-          Consulte sempre um profissional de saúde habilitado. Fórmulas manipuladas possuem resposta individualizada conforme fatores biológicos. Manipulação realizada em estrita conformidade com a Resolução RDC nº 67/2007 e RDC nº 44/2009 da Agência Nacional de Vigilância Sanitária (ANVISA).
-        </p>
-        <div class="pt-6 flex flex-col sm:flex-row items-center justify-between text-gray-300 text-sm border-t border-emerald-800/80">
-          <span>© 2026 Drogaria Nova Esperança SJC EIRELI - ME • Bella Flora Manipulação. Todos os direitos reservados.</span>
-          <span class="mt-2 sm:mt-0 font-medium text-emerald-300">Desenvolvido com Tecnologia & Rigor Farmacêutico</span>
-        </div>
+      <!-- Direitos Reservados -->
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between text-gray-300 text-xs sm:text-sm">
+        <span>© 2026 Bella Flora. Todos os direitos reservados.</span>
+        <span class="mt-2 sm:mt-0 font-medium text-emerald-300">São José dos Campos — SP</span>
       </div>
 
     </div>
