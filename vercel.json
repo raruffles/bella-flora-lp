@@ -11,10 +11,10 @@
     { "source": "/orcamento/rapido", "destination": "/index.html" },
     { "source": "/orcamento", "destination": "/index.html" },
     { "source": "/orcamento/(.*)", "destination": "/index.html" },
-    { "source": "/vitrine", "destination": "/index.html" },
-    { "source": "/vitrine/(.*)", "destination": "/index.html" },
-    { "source": "/produtos", "destination": "/index.html" },
-    { "source": "/produtos/(.*)", "destination": "/index.html" }
+    { "source": "/vitrine", "destination": "/vitrine/index.html" },
+    { "source": "/vitrine/(.*)", "destination": "/vitrine/index.html" },
+    { "source": "/produtos", "destination": "/vitrine/index.html" },
+    { "source": "/produtos/(.*)", "destination": "/vitrine/index.html" }
   ],
   "headers": [
     {

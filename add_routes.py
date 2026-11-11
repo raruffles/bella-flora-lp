@@ -26,9 +26,7 @@ routes = [
     os.path.join(base_dir, 'laboratorio', 'formulas'),
     os.path.join(base_dir, 'formulas'),
     os.path.join(base_dir, 'orcamento'),
-    os.path.join(base_dir, 'orcamento', 'rapido'),
-    os.path.join(base_dir, 'vitrine'),
-    os.path.join(base_dir, 'produtos')
+    os.path.join(base_dir, 'orcamento', 'rapido')
 ]
 
 for r in routes:
@@ -36,5 +34,11 @@ for r in routes:
     target_file = os.path.join(r, 'index.html')
     shutil.copy2(html_path, target_file)
     print(f'Created route: {target_file}')
+
+vitrine_path = os.path.join(base_dir, 'vitrine', 'index.html')
+produtos_dir = os.path.join(base_dir, 'produtos')
+os.makedirs(produtos_dir, exist_ok=True)
+shutil.copy2(vitrine_path, os.path.join(produtos_dir, 'index.html'))
+print('Synced /produtos/index.html from dedicated /vitrine/index.html')
 
 print('All routes created successfully!')
