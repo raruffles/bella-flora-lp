@@ -1,6 +1,6 @@
 import os, shutil
 
-base_dir = r'c:\portfólio\Portfólio-site\bella-flora-lp'
+base_dir = os.path.dirname(os.path.abspath(__file__))
 html_path = os.path.join(base_dir, 'index.html')
 
 with open(html_path, 'r', encoding='utf-8') as f:

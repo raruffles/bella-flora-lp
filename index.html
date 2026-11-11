@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
   <base href="/" />
   
-  <!-- SEO & Metadados Estruturados de Farmácia de Manipulação -->
-  <title>Bella Flora Farmácia de Manipulação | Orçamento Rápido de Receitas no WhatsApp</title>
-  <meta name="description" content="Bella Flora Manipulação: fórmulas magistrais, suplementos puros, fitoterápicos e dermocosméticos de alta precisão. Envie sua receita pelo WhatsApp e receba orçamento em minutos com certificação Anvisa RDC 67." />
-  <meta name="keywords" content="farmácia de manipulação, bella flora manipulacao, fórmulas personalizadas são josé dos campos, orçamento manipulação, suplemento manipulado, dermocosméticos manipulados, farmácia de manipulação whatsapp, anvisa rdc 67" />
-  <meta name="author" content="Bella Flora Farmácia de Manipulação" />
+  <!-- SEO & Metadados: Linha Nutricional, Suplementos & Bem-Estar -->
+  <title>Bella Flora | Suplementos Nutricionais, Vitaminas e Bem-Estar no WhatsApp</title>
+  <meta name="description" content="Bella Flora: suplementos alimentares puros, Coenzima Q10, Zinco Quelato, Laranja Moro, Spirulina, Cranberry, Beta-Alanina e cosmética avançada. Peça pelo WhatsApp com entrega em São José dos Campos, Jacareí e Correios." />
+  <meta name="keywords" content="suplementos alimentares, bella flora, coenzima q10, zinco quelato, laranja moro, spirulina, cranberry, beta alanina, suplementação são josé dos campos, jacareí, vitaminas e minerais" />
+  <meta name="author" content="Bella Flora — Linha Nutricional" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <meta name="theme-color" content="#0E2A1E" />
-  <link rel="canonical" href="https://farmaciabellaflora.com.br/" />
+  <link rel="canonical" href="https://www.farmaciabellaflora.com.br/" />
 
   <!-- Metatags de Geolocalização & SEO Local (Vale do Paraíba / SP) -->
   <meta name="geo.region" content="BR-SP" />
@@ -23,19 +23,19 @@
   <!-- OpenGraph / Redes Sociais / WhatsApp Preview -->
   <meta property="og:locale" content="pt_BR" />
   <meta property="og:type" content="business.business" />
-  <meta property="og:site_name" content="Bella Flora Farmácia de Manipulação" />
-  <meta property="og:title" content="Bella Flora Manipulação | A dose exata e o cuidado que a sua saúde exige" />
-  <meta property="og:description" content="Laboratório com pesagem computadorizada e certificação Anvisa RDC 67. Fotografe sua receita médica e receba orçamento em minutos com nosso farmacêutico." />
-  <meta property="og:url" content="https://farmaciabellaflora.com.br/" />
+  <meta property="og:site_name" content="Bella Flora — Suplementos & Nutrição" />
+  <meta property="og:title" content="Bella Flora | Suplementação Pura e Bem-Estar no WhatsApp" />
+  <meta property="og:description" content="Suplementos puros de alta absorção, polivitamínicos, dermocosméticos e atendimento personalizado pelo WhatsApp em São José dos Campos, Jacareí e todo o Brasil." />
+  <meta property="og:url" content="https://www.farmaciabellaflora.com.br/" />
   <meta property="og:image" content="imgs/hero-pharmacist.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="800" />
-  <meta property="og:image:alt" content="Laboratório e Farmacêuticos da Bella Flora Manipulação" />
+  <meta property="og:image:alt" content="Equipe Bella Flora Suplementos e Nutrição" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Bella Flora Farmácia de Manipulação | Envie sua Receita" />
-  <meta name="twitter:description" content="Fórmulas magistrais, suplementação e dermocosméticos manipulados sob medida. Orçamento rápido pelo WhatsApp." />
+  <meta name="twitter:title" content="Bella Flora | Suplementos Nutricionais Linha BF" />
+  <meta name="twitter:description" content="Suplementos alimentares, vitaminas, Cranberry, Beta-Alanina e cosmética avançada. Atendimento rápido pelo WhatsApp." />
   <meta name="twitter:image" content="imgs/hero-pharmacist.jpg" />
 
   <!-- Favicon Oficial da Bella Flora -->
@@ -49,6 +49,42 @@
 
   <!-- Bootstrap Icons CDN -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- ======================================================== -->
+  <!-- RASTREAMENTO DE CONVERSÃO WHATSAPP (GOOGLE ADS / GTAG)   -->
+  <!-- Preencha GOOGLE_ADS_ID e GOOGLE_ADS_WA_SEND_TO quando     -->
+  <!-- criar a ação de conversão em Google Ads > Metas          -->
+  <!-- ======================================================== -->
+  <script>
+    window.GOOGLE_ADS_ID = ''; // Ex: 'AW-123456789'
+    window.GOOGLE_ADS_WA_SEND_TO = ''; // Ex: 'AW-123456789/AbCdEfGhIjKlMn'
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+
+    if (window.GOOGLE_ADS_ID) {
+      var gScript = document.createElement('script');
+      gScript.async = true;
+      gScript.src = 'https://www.googletagmanager.com/gtag/js?id=' + window.GOOGLE_ADS_ID;
+      document.head.appendChild(gScript);
+      gtag('js', new Date());
+      gtag('config', window.GOOGLE_ADS_ID);
+    }
+
+    function trackWhatsAppConversion(targetUrl, labelInfo) {
+      try {
+        gtag('event', 'whatsapp_click', {
+          'event_category': 'conversion',
+          'event_label': labelInfo || 'whatsapp_home'
+        });
+        if (window.GOOGLE_ADS_WA_SEND_TO && typeof gtag === 'function') {
+          gtag('event', 'conversion', {
+            'send_to': window.GOOGLE_ADS_WA_SEND_TO
+          });
+        }
+      } catch (e) {}
+      return true;
+    }
+  </script>
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -124,14 +160,13 @@
     }
   </script>
 
-  <!-- Schema.org Pharmacy Structured Data (SEO & E-E-A-T) -->
+  <!-- Schema.org Structured Data (SEO & Local Business) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Pharmacy",
-    "name": "Bella Flora Farmácia de Manipulação",
-    
-    "description": "Farmácia de manipulação com matérias-primas puras certificadas, pesagem computadorizada monitorada e farmacêutico em tempo integral.",
+    "@type": ["Store", "LocalBusiness"],
+    "name": "Bella Flora — Linha Nutricional & Suplementos",
+    "description": "Suplementos alimentares puros, minerais quelatos, antioxidantes e cosmética avançada com entrega em São José dos Campos, Jacareí e Correios para todo o Brasil.",
     "telephone": "+55-12-98816-4931",
     "image": "imgs/hero-pharmacist.jpg",
     "openingHours": "Mo-Sa 08:00-20:00, Su 08:00-13:00",
@@ -148,11 +183,12 @@
       "addressRegion": "SP",
       "addressCountry": "BR"
     },
-    "hasMerchantReturnPolicy": {
-      "@type": "MerchantReturnPolicy",
-      "applicableCountry": "BR",
-      "returnPolicyCategory": "https://schema.org/PharmacyReturnPolicy"
-    }
+    "areaServed": [
+      { "@type": "City", "name": "São José dos Campos" },
+      { "@type": "City", "name": "Jacareí" },
+      { "@type": "City", "name": "Caçapava" },
+      { "@type": "Country", "name": "Brasil" }
+    ]
   }
   </script>
 
@@ -164,18 +200,10 @@
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "Vocês aceitam receitas digitais com assinatura eletrônica e QR Code?",
+        "name": "Quais suplementos estão disponíveis na Linha BF para pronta-entrega?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sim! Aceitamos receitas eletrônicas emitidas através de plataformas homologadas pelo Conselho Federal de Medicina (CFM), Memed, documentos com certificado ICP-Brasil e links validados com QR Code. Basta encaminhar o PDF ou o link para o nosso WhatsApp."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Qual é o prazo médio para a fórmula ficar pronta?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "A maioria das fórmulas fica pronta entre 24 e 48 horas úteis após a aprovação do orçamento, assegurando tempo hábil para as análises de controle físico-químico e pesagem computadorizada. Fórmulas com urgência médica podem ser priorizadas mediante aviso ao farmacêutico."
+          "text": "Contamos com estoque imediato de Coenzima Q10 100mg, Laranja Moro, Zinco Quelato 29,59mg, Cabelo Pele & Unhas, Spirulina com Cromo, Cranberry e Beta-Alanina."
         }
       },
       {
@@ -188,26 +216,18 @@
       },
       {
         "@type": "Question",
-        "name": "Vocês manipulam Manitol e suplementos como Cranberry e Beta-Alanina?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Sim! Fornecemos Manitol de grau farmacêutico certificado para preparo de exames e formulações. Também manipulamos a linha completa de suplementos puros: Cranberry concentrado, Beta-Alanina pura, minerais quelatados e vitaminas sob medida."
-        }
-      },
-      {
-        "@type": "Question",
         "name": "Quais são as opções e facilidades de pagamento?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Você pode pagar via Pix com compensação imediata, link seguro de pagamento com cartão de crédito (com possibilidade de parcelamento) ou direto na maquininha no momento da entrega."
+          "text": "Você pode pagar via Pix com compensação imediata, link seguro de pagamento com cartão de crédito ou direto na maquininha no momento da entrega."
         }
       },
       {
         "@type": "Question",
-        "name": "Posso orçar cosméticos e suplementos sem receita médica?",
+        "name": "Posso pedir os suplementos e cosméticos direto pelo WhatsApp?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sim! Suplementos vitamínicos, minerais quelatados, antioxidantes, florais e dermocosméticos de venda livre (de venda livre conforme normas da Anvisa) podem ser orçados diretamente com nosso time."
+          "text": "Sim! Todos os suplementos nutricionais, minerais quelatados, vitaminas, antioxidantes e cosméticos de uso diário podem ser solicitados diretamente pelo nosso WhatsApp (12) 98816-4931."
         }
       }
     ]
@@ -415,12 +435,12 @@
           Plantão Ativo
         </span>
         <span class="text-sage-200 text-sm sm:text-sm">
-          Seg a Sáb até às <strong>20:00</strong> • Dom até <strong>13:00</strong> • Farmacêuticos online para cálculo imediato de receitas
+          Seg a Sáb até às <strong>20:00</strong> • Dom até <strong>13:00</strong> • Especialistas online pelo WhatsApp
         </span>
       </div>
       <div class="hidden md:flex items-center gap-5 text-sage-300 text-sm">
-        <span class="flex items-center gap-1.5"><i class="bi bi-shield-check text-emerald-400"></i> Padrão Laboratorial Certificado</span>
-        <span class="flex items-center gap-1.5"><i class="bi bi-qr-code-scan text-brandBlue"></i> Receita Digital (Memed / CFM)</span>
+        <span class="flex items-center gap-1.5"><i class="bi bi-shield-check text-emerald-400"></i> Matérias-Primas Puras</span>
+        <span class="flex items-center gap-1.5"><i class="bi bi-whatsapp text-wa"></i> Atendimento Direto Online</span>
         <span class="flex items-center gap-1.5"><i class="bi bi-truck text-wa"></i> Delivery em SJC e Jacareí • Correios para demais regiões</span>
         <span class="flex items-center gap-1.5"><i class="bi bi-gift text-brandBlue"></i> Entrega grátis (consulte condições)</span>
       </div>
@@ -434,9 +454,9 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       
       <!-- Logotipo Oficial da Bella Flora -->
-      <a href="#" class="flex items-center gap-3.5 group" aria-label="Bella Flora Farmácia de Manipulação">
+      <a href="#" class="flex items-center gap-3.5 group" aria-label="Bella Flora Suplementos e Nutrição">
         <div class="w-12 h-12 rounded-2xl overflow-hidden shadow-soft border border-sand-200 group-hover:scale-105 transition-transform bg-[#29A2E5] flex items-center justify-center p-0.5">
-          <img src="imgs/logo.png" alt="Bella Flora Farmácia de Manipulação" class="w-full h-full object-cover rounded-xl" />
+          <img src="imgs/logo.png" alt="Bella Flora Suplementos" class="w-full h-full object-cover rounded-xl" />
         </div>
         <div>
           <div class="flex items-center gap-1.5">
@@ -446,7 +466,7 @@
             <span class="w-2 h-2 rounded-full bg-brandBlue"></span>
           </div>
           <span class="text-sm sm:text-sm font-semibold text-sage-500 uppercase tracking-widest block mt-0.5">
-            Farmácia de Manipulação
+            Suplementos & Nutrição
           </span>
         </div>
       </a>
@@ -459,19 +479,19 @@
           <span class="whitespace-nowrap">Vitrine BF</span>
           <span class="text-[10px] bg-brandBlue text-white px-2 py-0.5 rounded-full font-bold uppercase tracking-wider whitespace-nowrap shadow-sm">Pronta-Entrega</span>
         </a>
-        <a href="#especialidades" class="hover:text-emerald-800 transition-colors whitespace-nowrap">Especialidades</a>
-        <a href="#laboratorio" class="hover:text-emerald-800 transition-colors whitespace-nowrap">Laboratório</a>
+        <a href="#especialidades" class="hover:text-emerald-800 transition-colors whitespace-nowrap">Linhas</a>
+        <a href="#laboratorio" class="hover:text-emerald-800 transition-colors whitespace-nowrap">Qualidade</a>
         <a href="#duvidas" class="hover:text-emerald-800 transition-colors whitespace-nowrap">FAQ</a>
       </nav>
 
       <!-- Botão CTA Principal do Header com Margem Generosa do FAQ -->
       <div class="flex items-center gap-3 ml-2 lg:ml-6 xl:ml-10 flex-shrink-0">
         <a
-          href="https://wa.me/5512988164931?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Bella%20Flora%20e%20gostaria%20de%20fazer%20um%20or%C3%A7amento%20da%20minha%20receita."
+          href="https://wa.me/5512988164931?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Bella%20Flora%20e%20gostaria%20de%20consultar%20os%20suplementos%20da%20Linha%20BF."
           target="_blank"
           rel="noopener noreferrer"
           class="inline-flex items-center gap-2 bg-wa hover:bg-wa-hover text-white text-sm font-bold px-3 sm:px-5 py-2 sm:py-2.5 rounded-xl shadow-glow-wa transition-all duration-200 active:scale-95 whitespace-nowrap apple-btn"
-          aria-label="Fazer orçamento de receita pelo WhatsApp"
+          aria-label="Falar com a Bella Flora pelo WhatsApp"
         >
           <i class="bi bi-whatsapp text-lg"></i>
           <span class="hidden sm:inline">Orçar no WhatsApp</span><span class="sm:hidden">Orçar</span>
@@ -492,20 +512,20 @@
         <!-- Coluna de Copy Persuasiva & Confiança -->
         <div class="lg:col-span-7 text-center lg:text-left">
           
-          <!-- Badge de Regulação e Agilidade -->
+          <!-- Badge de Agilidade -->
           <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brandBlue-light border border-brandBlue/30 text-brandBlue-dark text-sm font-semibold mb-6 shadow-sm">
             <span class="w-2 h-2 rounded-full bg-brandBlue animate-pulse"></span>
-            <span>Atendimento Farmacêutico Online • Resposta em Minutos</span>
+            <span>Atendimento Direto no WhatsApp • Resposta em Minutos</span>
           </div>
 
-          <!-- Título Principal com Estética de Boticário e Autoridade -->
+          <!-- Título Principal -->
           <h1 class="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold text-emerald-950 tracking-tight leading-[1.18] mb-6">
-            A dose exata e o cuidado que a sua saúde exige.
+            Suplementos puros e nutrição que o seu dia a dia exige.
           </h1>
 
-          <!-- Subtítulo Focado em Resolver Objeções -->
+          <!-- Subtítulo Focado em Suplementação e Entrega -->
           <p class="text-base sm:text-lg text-sage-700 max-w-2xl mx-auto lg:mx-0 leading-relaxed mb-4 font-normal">
-            Fórmulas magistrais sob medida, <strong>Manitol para preparo de exames</strong> e <strong>suplementação pura</strong> (Cranberry, Beta-Alanina, Minerais Quelatos e Vitaminas). Matérias-primas com laudo de pureza e rigor farmacêutico.
+            Linha completa de <strong>suplementação nutricional pura</strong> (Coenzima Q10, Laranja Moro, Zinco Quelato, Spirulina com Cromo, Cranberry e Beta-Alanina), polivitamínicos e cosmética de alta absorção. Atendimento rápido pelo WhatsApp.
           </p>
           <div class="inline-flex flex-wrap items-center gap-2 text-xs font-semibold text-emerald-950 bg-sand-100 border border-sand-300 px-3 py-1.5 rounded-xl mb-8">
             <span class="flex items-center gap-1 text-wa font-bold"><i class="bi bi-truck"></i> Delivery próprio em SJC e Jacareí • Correios para todo o Brasil</span>
@@ -526,21 +546,21 @@
             
             <!-- CTA Primário (WhatsApp) -->
             <a
-              href="https://wa.me/5512988164931?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Bella%20Flora%20e%20gostaria%20de%20fazer%20um%20or%C3%A7amento%20da%20minha%20receita."
+              href="https://wa.me/5512988164931?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Bella%20Flora%20e%20gostaria%20de%20pedir%20suplementos%20da%20Linha%20BF."
               target="_blank"
               rel="noopener noreferrer"
               class="inline-flex items-center justify-center gap-3 bg-wa hover:bg-wa-hover text-white font-bold text-base px-7 py-4 rounded-2xl shadow-glow-wa transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0"
             >
               <i class="bi bi-whatsapp text-2xl"></i>
-              <span>Enviar Foto da Receita</span>
+              <span>Pedir no WhatsApp</span>
             </a>
 
-            <!-- CTA Secundário (Simular Orçamento) -->
+            <!-- CTA Secundário (Simular Pedido) -->
             <a
               href="#simulador"
               class="inline-flex items-center justify-center bg-white hover:bg-sand-100 text-emerald-950 border border-sand-300 font-semibold text-base px-6 py-4 rounded-2xl shadow-soft transition-all duration-200 hover:border-brandBlue"
             >
-              Simular Orçamento
+              Simular Pedido
             </a>
 
           </div>
@@ -548,10 +568,10 @@
           <!-- Microcopy de Segurança & Redução de Atrito -->
           <div class="mt-8 flex flex-wrap items-center justify-center lg:justify-start gap-y-2 gap-x-6 text-sm text-sage-700 font-medium">
             <span class="flex items-center gap-1.5">
-              <i class="bi bi-check-circle-fill text-wa"></i> Orçamento gratuito sem compromisso
+              <i class="bi bi-check-circle-fill text-wa"></i> Orçamento rápido sem compromisso
             </span>
             <span class="flex items-center gap-1.5">
-              <i class="bi bi-check-circle-fill text-wa"></i> Aceitamos receitas digitais (Memed / CFM)
+              <i class="bi bi-check-circle-fill text-wa"></i> Suplementação pura sem conservantes
             </span>
             <span class="flex items-center gap-1.5">
               <i class="bi bi-check-circle-fill text-wa"></i> Delivery em SJC e Jacareí • Correios via Sedex/PAC
@@ -561,8 +581,8 @@
           <!-- Mini Prova Social na Hero com Avaliações Oficiais do Google -->
           <div class="mt-8 pt-6 border-t border-sand-200/80 flex items-center justify-center lg:justify-start gap-4">
             <div class="flex -space-x-2">
-              <img class="inline-block h-10 w-10 rounded-full ring-2 ring-white object-cover" src="imgs/hero-pharmacist.jpg" alt="Equipe Farmacêutica" />
-              <img class="inline-block h-10 w-10 rounded-full ring-2 ring-white object-cover" src="imgs/pharmacist-team.jpg" alt="Farmacêuticos" />
+              <img class="inline-block h-10 w-10 rounded-full ring-2 ring-white object-cover" src="imgs/hero-pharmacist.jpg" alt="Equipe Especializada" />
+              <img class="inline-block h-10 w-10 rounded-full ring-2 ring-white object-cover" src="imgs/pharmacist-team.jpg" alt="Atendimento" />
               <div class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#4285F4] text-white text-sm font-bold ring-2 ring-white shadow-sm">
                 <i class="bi bi-google text-xs"></i>
               </div>
@@ -573,7 +593,7 @@
                 <span class="text-emerald-950 font-bold ml-1">4,8</span>
                 <span class="text-sage-500 text-xs">(20 avaliações no Google)</span>
               </div>
-              <p class="text-sage-700 font-semibold mt-0.5">"Laboratório de manipulação na medida certa pra você. Delivery"</p>
+              <p class="text-sage-700 font-semibold mt-0.5">"Qualidade na medida certa pra você. Atendimento e Delivery rápidos"</p>
             </div>
           </div>
 
@@ -590,8 +610,8 @@
                   <img src="imgs/logo.png" alt="Bella Flora" class="w-full h-full object-cover rounded-lg" />
                 </div>
                 <div>
-                  <span class="text-sm font-bold uppercase tracking-wider text-brandBlue block">Canal Direto Farmacêutico</span>
-                  <h2 class="font-serif text-lg font-bold text-emerald-950">Orçamento Rápido de Receita</h2>
+                  <span class="text-sm font-bold uppercase tracking-wider text-brandBlue block">Atendimento Imediato</span>
+                  <h2 class="font-serif text-lg font-bold text-emerald-950">Orçamento Direto no WhatsApp</h2>
                 </div>
               </div>
             </div>
@@ -613,27 +633,27 @@
               </div>
 
               <div>
-                <label for="recipeType" class="block text-sm font-bold text-sage-800 mb-1.5">Especialidade da Fórmula:</label>
+                <label for="recipeType" class="block text-sm font-bold text-sage-800 mb-1.5">Linha / Produto de Interesse:</label>
                 <div class="relative">
                   <i class="bi bi-capsule absolute left-3.5 top-3.5 text-sage-500 text-base"></i>
                   <select
                     id="recipeType"
                     class="w-full pl-10 pr-4 py-3 text-sm rounded-xl bg-sand-50 border border-sand-200 focus:border-emerald-800 focus:bg-white focus:outline-none transition-colors cursor-pointer"
                   >
-                    <option value="Suplementação Personalizada (Cranberry, Beta-Alanina, Vitaminas)">Suplementação & Vitaminas (Cranberry, Beta-Alanina, Minerais)</option>
-                    <option value="Manitol (Preparo de Exames e Formulações)">Manitol (Preparo de Exames e Formulações)</option>
-                    <option value="Fórmula Magistral Personalizada">Fórmula Magistral Personalizada sob Medida</option>
-                    <option value="Emagrecimento Saudável e Metabolismo">Emagrecimento & Metabolismo</option>
-                    <option value="Dermocosmética e Skincare Personalizado">Dermocosmética / Skincare Personalizado</option>
-                    <option value="Fitoterápicos e Florais">Fitoterápicos, Florais & Modulação de Estresse</option>
-                    <option value="Saúde Capilar e Tricologia">Saúde Capilar e Tratamento de Queda</option>
-                    <option value="Outra Fórmula Específica">Outra formulação personalizada</option>
+                    <option value="Magnésio Glicinato / Dimalato & Minerais (Zinco, Ferro, Cálcio)">Magnésio Glicinato / Dimalato & Minerais</option>
+                    <option value="Vitaminas (D3, B12, C, K2, Complexo B, Ácido Fólico)">Vitaminas (D3, B12, C, K2, Complexo B, Ácido Fólico)</option>
+                    <option value="Ômega 3 EPA/DHA, Colágeno & Coenzima Q10">Ômega 3 EPA/DHA, Colágeno & Coenzima Q10</option>
+                    <option value="Psyllium, Probióticos & Saúde Intestinal">Psyllium, Probióticos & Saúde Intestinal</option>
+                    <option value="Glutamina, L-Carnitina, Beta-Alanina & Cranberry">Glutamina, L-Carnitina, Beta-Alanina & Cranberry</option>
+                    <option value="Melatonina, Inositol, Curcumina & NAC">Melatonina, Inositol, Curcumina & NAC</option>
+                    <option value="Cabelo, Pele & Unhas (Biotina e Vitaminas)">Cabelo, Pele & Unhas (Biotina, Laranja Moro, Spirulina)</option>
+                    <option value="Outro Suplemento Específico">Outro suplemento ou item da Vitrine</option>
                   </select>
                 </div>
               </div>
 
               <div>
-                <label class="block text-sm font-bold text-sage-800 mb-1.5">Tempo Estimado de Tratamento:</label>
+                <label class="block text-sm font-bold text-sage-800 mb-1.5">Quantidade Estimada:</label>
                 <div class="grid grid-cols-3 gap-2 text-sm">
                   <label class="flex items-center justify-center p-2.5 rounded-xl border border-sand-200 bg-sand-50 cursor-pointer hover:bg-white has-[:checked]:border-brandBlue has-[:checked]:bg-brandBlue-light has-[:checked]:font-bold transition-all">
                     <input type="radio" name="duration" value="30 dias" checked class="hidden">
@@ -658,7 +678,7 @@
                     <span>Receber em Casa</span>
                   </label>
                   <label class="flex items-center gap-2 p-2.5 rounded-xl border border-sand-200 bg-sand-50 cursor-pointer hover:bg-white has-[:checked]:border-emerald-800 has-[:checked]:bg-emerald-50 has-[:checked]:font-bold transition-all">
-                    <input type="radio" name="delivery" value="Retirar no Balcão da Farmácia" class="text-emerald-800 focus:ring-emerald-800">
+                    <input type="radio" name="delivery" value="Retirar na Loja" class="text-emerald-800 focus:ring-emerald-800">
                     <span>Retirar na Loja</span>
                   </label>
                 </div>
@@ -669,12 +689,12 @@
                 class="w-full mt-3 bg-wa hover:bg-wa-hover text-white font-bold py-4 px-4 rounded-xl text-sm shadow-glow-wa flex items-center justify-center gap-2.5 transition-all duration-200 hover:scale-[1.02] active:scale-95"
               >
                 <i class="bi bi-whatsapp text-xl"></i>
-                <span>Prosseguir no WhatsApp com a Receita</span>
+                <span>Continuar para o WhatsApp</span>
               </button>
             </form>
 
             <p class="text-sm text-center text-sage-500 mt-4 leading-normal flex items-center justify-center gap-1.5">
-              <i class="bi bi-lock-fill text-emerald-800"></i> Seus dados médicos e receitas são tratados sob sigilo farmacêutico absoluto (LGPD).
+              <i class="bi bi-lock-fill text-emerald-800"></i> Atendimento seguro e dados protegidos com total privacidade (LGPD).
             </p>
 
           </div>
@@ -688,7 +708,7 @@
   <!-- ========================================== -->
   <!-- BARRA DE CONFIANÇA & TRUST BADGES -->
   <!-- ========================================== -->
-  <section class="bg-white border-b border-sand-200 py-8 px-4" aria-label="Certificações e Credenciais Farmacêuticas">
+  <section class="bg-white border-b border-sand-200 py-8 px-4" aria-label="Credenciais e Qualidade">
     <div class="max-w-7xl mx-auto">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
         
@@ -696,32 +716,32 @@
           <div class="w-12 h-12 rounded-2xl bg-sage-100 text-emerald-800 flex items-center justify-center mb-2.5 shadow-sm">
             <i class="bi bi-patch-check-fill text-2xl text-emerald-700"></i>
           </div>
-          <span class="font-bold text-emerald-950 text-sm tracking-tight">Anvisa RDC 67/2007</span>
-          <span class="text-sm text-sage-500 mt-0.5">Boas Práticas de Manipulação</span>
+          <span class="font-bold text-emerald-950 text-sm tracking-tight">Pureza Garantida</span>
+          <span class="text-sm text-sage-500 mt-0.5">Matérias-Primas Selecionadas</span>
         </div>
 
         <div class="flex flex-col items-center justify-center p-3 border-r last:border-r-0 border-sand-100">
           <div class="w-12 h-12 rounded-2xl bg-sage-100 text-emerald-800 flex items-center justify-center mb-2.5 shadow-sm">
-            <i class="bi bi-person-badge-fill text-2xl text-emerald-700"></i>
+            <i class="bi bi-whatsapp text-2xl text-wa"></i>
           </div>
-          <span class="font-bold text-emerald-950 text-sm tracking-tight">CRF-SP Ativo</span>
-          <span class="text-sm text-sage-500 mt-0.5">Farmacêutico em Tempo Integral</span>
+          <span class="font-bold text-emerald-950 text-sm tracking-tight">Suporte Direto</span>
+          <span class="text-sm text-sage-500 mt-0.5">Atendimento Rápido Online</span>
         </div>
 
         <div class="flex flex-col items-center justify-center p-3 border-r last:border-r-0 border-sand-100">
           <div class="w-12 h-12 rounded-2xl bg-sage-100 text-emerald-800 flex items-center justify-center mb-2.5 shadow-sm">
             <i class="bi bi-shield-fill-check text-2xl text-emerald-700"></i>
           </div>
-          <span class="font-bold text-emerald-950 text-sm tracking-tight">Laudos Analíticos USP</span>
-          <span class="text-sm text-sage-500 mt-0.5">Matérias-Primas Certificadas</span>
+          <span class="font-bold text-emerald-950 text-sm tracking-tight">Controle de Qualidade</span>
+          <span class="text-sm text-sage-500 mt-0.5">Opções Sem Glúten e Lactose</span>
         </div>
 
         <div class="flex flex-col items-center justify-center p-3">
           <div class="w-12 h-12 rounded-2xl bg-sage-100 text-emerald-800 flex items-center justify-center mb-2.5 shadow-sm">
-            <i class="bi bi-cpu-fill text-2xl text-emerald-700"></i>
+            <i class="bi bi-truck text-2xl text-brandBlue"></i>
           </div>
-          <span class="font-bold text-emerald-950 text-sm tracking-tight">Pesagem Monitorada</span>
-          <span class="text-sm text-sage-500 mt-0.5">Tolerância Zero a Desvios</span>
+          <span class="font-bold text-emerald-950 text-sm tracking-tight">Delivery & Correios</span>
+          <span class="text-sm text-sage-500 mt-0.5">SJC, Jacareí e Todo Brasil</span>
         </div>
 
       </div>
@@ -737,10 +757,10 @@
         Simples, Rápido e Seguro
       </span>
       <h2 class="font-serif text-3xl sm:text-4xl font-bold text-emerald-950 mt-3 mb-4">
-        Como pedir sua fórmula personalizada sem sair de casa
+        Como pedir seus suplementos sem sair de casa
       </h2>
       <p class="text-sage-700 text-sm sm:text-base leading-relaxed">
-        Eliminamos filas e deslocamentos. O mesmo rigor dos melhores laboratórios com a conveniência do WhatsApp.
+        Eliminamos filas e deslocamentos. Todo o cuidado com a qualidade nutricional somado à praticidade do WhatsApp.
       </p>
     </div>
 
@@ -750,17 +770,17 @@
       <div class="apple-card rounded-3xl p-6 sm:p-7 border border-sand-200/90 shadow-soft relative text-center md:text-left flex flex-col justify-between">
         <div>
           <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-brandBlue-light text-brandBlue flex items-center justify-center mb-5 mx-auto md:mx-0 shadow-sm relative">
-            <i class="bi bi-camera-fill text-2xl sm:text-3xl"></i>
+            <i class="bi bi-bag-check-fill text-2xl sm:text-3xl"></i>
             <span class="absolute -top-1.5 -right-1.5 w-7 h-7 rounded-full bg-emerald-950 text-white font-bold text-xs flex items-center justify-center shadow">1</span>
           </div>
-          <h3 class="font-serif text-lg sm:text-xl font-bold text-emerald-950 mb-2">Envie a Foto ou PDF</h3>
+          <h3 class="font-serif text-lg sm:text-xl font-bold text-emerald-950 mb-2">Escolha na Vitrine</h3>
           <p class="text-sage-700 text-xs sm:text-sm leading-relaxed">
-            Fotografe sua receita física ou envie o arquivo digital do seu médico (Memed / CFM) pelo nosso WhatsApp.
+            Selecione os suplementos da Linha BF ou envie sua lista de vitaminas diretamente pelo nosso WhatsApp.
           </p>
         </div>
         <div class="mt-4 pt-3 border-t border-sand-100">
           <span class="inline-flex items-center gap-1.5 text-[11px] font-bold text-sage-600 bg-sand-50 px-2.5 py-1 rounded-md border border-sand-200">
-            <i class="bi bi-check2 text-brandBlue"></i> Receita Digital Aceita
+            <i class="bi bi-check2 text-brandBlue"></i> Pedido Sem Burocracia
           </span>
         </div>
       </div>
@@ -774,7 +794,7 @@
           </div>
           <h3 class="font-serif text-lg sm:text-xl font-bold text-emerald-950 mb-2">Orçamento em Minutos</h3>
           <p class="text-sage-700 text-xs sm:text-sm leading-relaxed">
-            Farmacêutico confere as dosagens, checa interações e envia o orçamento detalhado com opções de parcelamento.
+            Nossa equipe confere os itens solicitados e envia rapidamente os valores, prazos e opções de pagamento.
           </p>
         </div>
         <div class="mt-4 pt-3 border-t border-sand-100">
@@ -788,17 +808,17 @@
       <div class="apple-card rounded-3xl p-6 sm:p-7 border border-sand-200/90 shadow-soft relative text-center md:text-left flex flex-col justify-between">
         <div>
           <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-brandBlue-light text-brandBlue flex items-center justify-center mb-5 mx-auto md:mx-0 shadow-sm relative">
-            <i class="bi bi-eyedropper text-2xl sm:text-3xl"></i>
+            <i class="bi bi-patch-check-fill text-2xl sm:text-3xl"></i>
             <span class="absolute -top-1.5 -right-1.5 w-7 h-7 rounded-full bg-emerald-950 text-white font-bold text-xs flex items-center justify-center shadow">3</span>
           </div>
-          <h3 class="font-serif text-lg sm:text-xl font-bold text-emerald-950 mb-2">Manipulação Estéril</h3>
+          <h3 class="font-serif text-lg sm:text-xl font-bold text-emerald-950 mb-2">Separação Segura</h3>
           <p class="text-sage-700 text-xs sm:text-sm leading-relaxed">
-            Sua fórmula é preparada sob cabine estéril com pesagem computadorizada monitorada e laudo de rastreabilidade.
+            Seus suplementos passam por rigorosa conferência de qualidade, lote e embalagem lacrada inviolável.
           </p>
         </div>
         <div class="mt-4 pt-3 border-t border-sand-100">
           <span class="inline-flex items-center gap-1.5 text-[11px] font-bold text-sage-600 bg-sand-50 px-2.5 py-1 rounded-md border border-sand-200">
-            <i class="bi bi-shield-check text-brandBlue"></i> Padrão Anvisa RDC 67
+            <i class="bi bi-shield-check text-brandBlue"></i> Qualidade Garantida
           </span>
         </div>
       </div>
@@ -827,17 +847,17 @@
     <!-- Banner Rápido de Ação -->
     <div class="mt-12 p-6 sm:p-8 rounded-3xl bg-emerald-900 text-white flex flex-col sm:flex-row items-center justify-between gap-6 shadow-elevated">
       <div class="text-center sm:text-left">
-        <h3 class="font-serif text-xl sm:text-2xl font-bold">Tem uma receita em mãos agora?</h3>
-        <p class="text-sage-200 text-sm mt-1">Não espere! Farmacêuticos online disponíveis para orçamento imediato.</p>
+        <h3 class="font-serif text-xl sm:text-2xl font-bold">Pronto para pedir seus suplementos hoje?</h3>
+        <p class="text-sage-200 text-sm mt-1">Nossa equipe está online agora mesmo para atender seu pedido no WhatsApp.</p>
       </div>
       <a
-        href="https://wa.me/5512988164931?text=Ol%C3%A1%2C%20tenho%20uma%20receita%20m%C3%A9dica%20aqui%20e%20gostaria%20de%20um%20or%C3%A7amento%20r%C3%A1pido."
+        href="https://wa.me/5512988164931?text=Ol%C3%A1%2C%20gostaria%20de%20pedir%20suplementos%20da%20Linha%20BF%20agora."
         target="_blank"
         rel="noopener noreferrer"
         class="inline-flex items-center gap-2.5 bg-wa hover:bg-wa-hover text-white font-bold text-sm px-7 py-3.5 rounded-xl shadow-glow-wa transition-all active:scale-95 flex-shrink-0"
       >
         <i class="bi bi-whatsapp text-lg"></i>
-        <span>Mandar Foto da Receita</span>
+        <span>Chamar no WhatsApp</span>
       </a>
     </div>
   </section>
@@ -909,51 +929,51 @@
   </section>
 
   <!-- ========================================== -->
-  <!-- SEÇÃO DE ESPECIALIDADES COM FOTOS REAIS -->
+  <!-- SEÇÃO DE LINHAS NUTRICIONAIS & BEM-ESTAR -->
   <!-- ========================================== -->
   <section id="especialidades" class="py-20 px-4 sm:px-6 lg:px-8 bg-white border-y border-sand-200">
     <div class="max-w-7xl mx-auto">
       <div class="text-center max-w-3xl mx-auto mb-16">
         <span class="text-sm uppercase tracking-widest text-emerald-800 font-bold bg-sage-100 px-3.5 py-1.5 rounded-md">
-          Manipulação de Alta Precisão
+          Pureza & Alta Absorção
         </span>
         <h2 class="font-serif text-3xl sm:text-4xl font-bold text-emerald-950 mt-3 mb-4">
-          Nossas Especialidades Farmacêuticas
+          Nossas Linhas de Suplementos & Cuidados
         </h2>
         <p class="text-sage-700 text-sm sm:text-base leading-relaxed">
-          Fórmulas individualizadas que respeitam a dosagem exata indicada pelo seu médico ou nutricionista, sem excipientes tóxicos ou corantes artificiais.
+          Fórmulas limpas e nutrientes selecionados com dosagens equilibradas, livres de corantes artificiais e excessos de aditivos.
         </p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         
-        <!-- Card 1: Manitol & Fórmulas Magistrais -->
+        <!-- Card 1: Complexos Nutricionais -->
         <div class="bg-sand-50 rounded-3xl overflow-hidden border border-sand-200 shadow-soft card-hover flex flex-col justify-between">
           <div class="h-48 overflow-hidden relative">
-            <img src="imgs/capsules-magistral.jpg" alt="Manitol e Fórmulas Magistrais" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy" />
+            <img src="imgs/capsules-magistral.jpg" alt="Complexos Nutricionais em Cápsulas" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy" />
             <span class="absolute top-3 left-3 bg-emerald-950 text-white text-sm font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">
-              Manitol & Fórmulas
+              Alta Pureza
             </span>
           </div>
           <div class="p-6 flex-1 flex flex-col justify-between">
             <div>
-              <h3 class="font-serif text-xl font-bold text-emerald-950 mb-2">Manitol & Fórmulas Magistrais</h3>
+              <h3 class="font-serif text-xl font-bold text-emerald-950 mb-2">Complexos Nutricionais</h3>
               <p class="text-sage-700 text-sm leading-relaxed mb-4">
-                <strong>Manitol puro fracionado</strong> para preparo de exames diagnósticos e formulações terapêuticas. Cápsulas e sachês dosados com precisão analítica.
+                Cápsulas selecionadas com nutrientes essenciais e minerais quelatados para o equilíbrio nutricional do seu dia a dia.
               </p>
               <ul class="text-sm text-sage-600 space-y-1.5 mb-6">
-                <li class="flex items-center gap-1.5"><i class="bi bi-check2 text-emerald-700 font-bold"></i> Manitol com laudo de pureza farmacêutica</li>
-                <li class="flex items-center gap-1.5"><i class="bi bi-check2 text-emerald-700 font-bold"></i> Cápsulas gastrorresistentes e sachês solúveis</li>
+                <li class="flex items-center gap-1.5"><i class="bi bi-check2 text-emerald-700 font-bold"></i> Matérias-primas de alta absorção</li>
+                <li class="flex items-center gap-1.5"><i class="bi bi-check2 text-emerald-700 font-bold"></i> Opções livres de glúten e lactose</li>
               </ul>
             </div>
             <a
-              href="https://wa.me/5512988164931?text=Ol%C3%A1%2C%20gostaria%20de%20or%C3%A7ar%20Manitol%20ou%20uma%20F%C3%B3rmula%20Magistral."
+              href="https://wa.me/5512988164931?text=Ol%C3%A1%2C%20gostaria%20de%20consultar%20os%20Complexos%20Nutricionais%20da%20Linha%20BF."
               target="_blank"
               rel="noopener noreferrer"
               class="w-full py-2.5 px-4 bg-white hover:bg-emerald-800 hover:text-white text-emerald-950 border border-sand-300 font-bold text-sm rounded-xl transition-colors flex items-center justify-center gap-2"
             >
               <i class="bi bi-whatsapp"></i>
-              <span>Orçar Manitol / Fórmula</span>
+              <span>Consultar no WhatsApp</span>
             </a>
           </div>
         </div>
@@ -961,20 +981,20 @@
         <!-- Card 2: Suplementos Personalizados (Cranberry, Beta-Alanina, Vitaminas) -->
         <div class="bg-sand-50 rounded-3xl overflow-hidden border border-sand-200 shadow-soft card-hover flex flex-col justify-between">
           <div class="h-48 overflow-hidden relative">
-            <img src="imgs/vitamins-supplements.jpg" alt="Suplementos Personalizados Cranberry Beta-Alanina" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy" />
+            <img src="imgs/vitamins-supplements.jpg" alt="Suplementos Cranberry Beta-Alanina" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy" />
             <span class="absolute top-3 left-3 bg-brandBlue text-white text-sm font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">
-              Suplementação Sob Medida
+              Suplementação Pura
             </span>
           </div>
           <div class="p-6 flex-1 flex flex-col justify-between">
             <div>
               <h3 class="font-serif text-xl font-bold text-emerald-950 mb-2">Suplementação & Vitaminas</h3>
               <p class="text-sage-700 text-sm leading-relaxed mb-4">
-                Qualquer tipo de suplemento sob medida: <strong>Cranberry concentrado</strong>, <strong>Beta-Alanina pura</strong> para resistência e força, Minerais Quelatos, Coenzima Q10 e polivitamínicos bioidênticos.
+                Linha completa de suplementos: <strong>Cranberry concentrado</strong>, <strong>Beta-Alanina pura</strong> para resistência e treino, Minerais Quelatos, Coenzima Q10 e polivitamínicos diários.
               </p>
               <ul class="text-sm text-sage-600 space-y-1.5 mb-6">
                 <li class="flex items-center gap-1.5"><i class="bi bi-check2 text-emerald-700 font-bold"></i> Matérias-primas puras sem conservantes</li>
-                <li class="flex items-center gap-1.5"><i class="bi bi-check2 text-emerald-700 font-bold"></i> Absorção superior e dosagem exata</li>
+                <li class="flex items-center gap-1.5"><i class="bi bi-check2 text-emerald-700 font-bold"></i> Absorção superior e alta concentração</li>
               </ul>
             </div>
             <a
@@ -992,30 +1012,30 @@
         <!-- Card 3: Dermocosméticos & Skincare -->
         <div class="bg-sand-50 rounded-3xl overflow-hidden border border-sand-200 shadow-soft card-hover flex flex-col justify-between">
           <div class="h-48 overflow-hidden relative">
-            <img src="imgs/skincare-serum.jpg" alt="Dermocosméticos e Séruns com Conta-Gotas" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy" />
+            <img src="imgs/skincare-serum.jpg" alt="Cosméticos e Séruns com Conta-Gotas" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy" />
             <span class="absolute top-3 left-3 bg-emerald-800 text-white text-sm font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">
-              Dermatologia Avançada
+              Skincare Avançado
             </span>
           </div>
           <div class="p-6 flex-1 flex flex-col justify-between">
             <div>
-              <h3 class="font-serif text-xl font-bold text-emerald-950 mb-2">Cosmética Dermatológica</h3>
+              <h3 class="font-serif text-xl font-bold text-emerald-950 mb-2">Cosmética & Skincare</h3>
               <p class="text-sage-700 text-sm leading-relaxed mb-4">
-                Séruns de toque seco com Ácido Hialurônico fracionado, Vitamina C estabilizada, Clareadores e Fotoprotetores hipoalergênicos.
+                Séruns de toque seco com Ácido Hialurônico, Vitamina C estabilizada e hidratantes desenvolvidos para peles sensíveis.
               </p>
               <ul class="text-sm text-sage-600 space-y-1.5 mb-6">
-                <li class="flex items-center gap-1.5"><i class="bi bi-check2 text-emerald-700 font-bold"></i> Veículos adequados para peles sensíveis</li>
+                <li class="flex items-center gap-1.5"><i class="bi bi-check2 text-emerald-700 font-bold"></i> Texturas leves para peles sensíveis</li>
                 <li class="flex items-center gap-1.5"><i class="bi bi-check2 text-emerald-700 font-bold"></i> Livre de parabenos e essências fortes</li>
               </ul>
             </div>
             <a
-              href="https://wa.me/5512988164931?text=Ol%C3%A1%2C%20gostaria%20de%20or%C3%A7ar%20uma%20f%C3%B3rmula%20Dermatol%C3%B3gica%2FSkincare."
+              href="https://wa.me/5512988164931?text=Ol%C3%A1%2C%20gostaria%20de%20conhecer%20a%20linha%20de%20Skincare%20da%20Bella%20Flora."
               target="_blank"
               rel="noopener noreferrer"
               class="w-full py-2.5 px-4 bg-white hover:bg-emerald-800 hover:text-white text-emerald-950 border border-sand-300 font-bold text-sm rounded-xl transition-colors flex items-center justify-center gap-2"
             >
               <i class="bi bi-whatsapp"></i>
-              <span>Orçar Dermocosmético</span>
+              <span>Orçar Skincare</span>
             </a>
           </div>
         </div>
@@ -1023,92 +1043,92 @@
         <!-- Card 4: Fitoterapia & Equilíbrio -->
         <div class="bg-sand-50 rounded-3xl overflow-hidden border border-sand-200 shadow-soft card-hover flex flex-col justify-between">
           <div class="h-48 overflow-hidden relative">
-            <img src="imgs/herbal-phytotherapy.jpg" alt="Fitoterapia e Ervas Medicinais" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy" />
+            <img src="imgs/herbal-phytotherapy.jpg" alt="Extratos Naturais e Botânicos" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy" />
             <span class="absolute top-3 left-3 bg-emerald-900 text-white text-sm font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">
               100% Botânico
             </span>
           </div>
           <div class="p-6 flex-1 flex flex-col justify-between">
             <div>
-              <h3 class="font-serif text-xl font-bold text-emerald-950 mb-2">Fitoterápicos & Florais</h3>
+              <h3 class="font-serif text-xl font-bold text-emerald-950 mb-2">Extratos Naturais & Florais</h3>
               <p class="text-sage-700 text-sm leading-relaxed mb-4">
-                Extratos padronizados de Passiflora, Ashwagandha, Rhodiola Rosea e compostos calmantes para qualidade do sono e foco.
+                Compostos botânicos com Passiflora, Ashwagandha, Rhodiola Rosea e ingredientes naturais voltados ao relaxamento e foco diário.
               </p>
               <ul class="text-sm text-sage-600 space-y-1.5 mb-6">
-                <li class="flex items-center gap-1.5"><i class="bi bi-check2 text-emerald-700 font-bold"></i> Concentração titulada de princípios ativos</li>
-                <li class="flex items-center gap-1.5"><i class="bi bi-check2 text-emerald-700 font-bold"></i> Sem induzir sonolência residual diurna</li>
+                <li class="flex items-center gap-1.5"><i class="bi bi-check2 text-emerald-700 font-bold"></i> Extratos concentrados padronizados</li>
+                <li class="flex items-center gap-1.5"><i class="bi bi-check2 text-emerald-700 font-bold"></i> Apoio natural para rotina equilibrada</li>
               </ul>
             </div>
             <a
-              href="https://wa.me/5512988164931?text=Ol%C3%A1%2C%20gostaria%20de%20or%C3%A7ar%20uma%20f%C3%B3rmula%20Fitoter%C3%A1pica."
+              href="https://wa.me/5512988164931?text=Ol%C3%A1%2C%20gostaria%20de%20consultar%20os%20Extratos%20Naturais%20e%20Florais."
               target="_blank"
               rel="noopener noreferrer"
               class="w-full py-2.5 px-4 bg-white hover:bg-emerald-800 hover:text-white text-emerald-950 border border-sand-300 font-bold text-sm rounded-xl transition-colors flex items-center justify-center gap-2"
             >
               <i class="bi bi-whatsapp"></i>
-              <span>Orçar Fitoterápico</span>
+              <span>Consultar Naturais</span>
             </a>
           </div>
         </div>
 
-        <!-- Card 5: Emagrecimento Saudável -->
+        <!-- Card 5: Antioxidantes & Metabolismo Ativo -->
         <div class="bg-sand-50 rounded-3xl overflow-hidden border border-sand-200 shadow-soft card-hover flex flex-col justify-between">
           <div class="h-48 overflow-hidden relative">
-            <img src="imgs/pharmacist-team.jpg" alt="Emagrecimento e Modulação Metabólica" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy" />
+            <img src="imgs/pharmacist-team.jpg" alt="Antioxidantes e Vitalidade Diária" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy" />
             <span class="absolute top-3 left-3 bg-brandBlue text-white text-sm font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">
-              Modulação Metabólica
+              Vitalidade & Energia
             </span>
           </div>
           <div class="p-6 flex-1 flex flex-col justify-between">
             <div>
-              <h3 class="font-serif text-xl font-bold text-emerald-950 mb-2">Emagrecimento & Saciedade</h3>
+              <h3 class="font-serif text-xl font-bold text-emerald-950 mb-2">Antioxidantes & Disposição</h3>
               <p class="text-sage-700 text-sm leading-relaxed mb-4">
-                Fórmulas termogênicas, redutores de compulsão por doces (Picolinato de Cromo, 5-HTP), drenantes e aceleradores metabólicos.
+                Combinações nutricionais ricas em Laranja Moro, Picolinato de Cromo, Spirulina e ativos naturais para rotina ativa.
               </p>
               <ul class="text-sm text-sage-600 space-y-1.5 mb-6">
-                <li class="flex items-center gap-1.5"><i class="bi bi-check2 text-emerald-700 font-bold"></i> Fórmulas indicadas por endocrinologistas</li>
-                <li class="flex items-center gap-1.5"><i class="bi bi-check2 text-emerald-700 font-bold"></i> Acompanhamento farmacêutico individual</li>
+                <li class="flex items-center gap-1.5"><i class="bi bi-check2 text-emerald-700 font-bold"></i> Apoio ao metabolismo energético</li>
+                <li class="flex items-center gap-1.5"><i class="bi bi-check2 text-emerald-700 font-bold"></i> Seleção de ingredientes naturais puros</li>
               </ul>
             </div>
             <a
-              href="https://wa.me/5512988164931?text=Ol%C3%A1%2C%20gostaria%20de%20or%C3%A7ar%20uma%20f%C3%B3rmula%20de%20Emagrecimento%20e%20Metabolismo."
+              href="https://wa.me/5512988164931?text=Ol%C3%A1%2C%20gostaria%20de%20conhecer%20os%20suplementos%20Antioxidantes%20e%20de%20Energia."
               target="_blank"
               rel="noopener noreferrer"
               class="w-full py-2.5 px-4 bg-white hover:bg-emerald-800 hover:text-white text-emerald-950 border border-sand-300 font-bold text-sm rounded-xl transition-colors flex items-center justify-center gap-2"
             >
               <i class="bi bi-whatsapp"></i>
-              <span>Orçar Fórmula Metabólica</span>
+              <span>Consultar no WhatsApp</span>
             </a>
           </div>
         </div>
 
-        <!-- Card 6: Saúde Capilar -->
+        <!-- Card 6: Nutrição Capilar -->
         <div class="bg-sand-50 rounded-3xl overflow-hidden border border-sand-200 shadow-soft card-hover flex flex-col justify-between">
           <div class="h-48 overflow-hidden relative">
-            <img src="imgs/hero-pharmacist.jpg" alt="Tricologia e Saúde Capilar" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy" />
+            <img src="imgs/hero-pharmacist.jpg" alt="Nutrição Capilar e Unhas" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy" />
             <span class="absolute top-3 left-3 bg-emerald-950 text-white text-sm font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">
-              Tricologia Avançada
+              Beleza & Fios
             </span>
           </div>
           <div class="p-6 flex-1 flex flex-col justify-between">
             <div>
-              <h3 class="font-serif text-xl font-bold text-emerald-950 mb-2">Tricologia & Queda Capilar</h3>
+              <h3 class="font-serif text-xl font-bold text-emerald-950 mb-2">Nutrição Capilar & Beleza</h3>
               <p class="text-sage-700 text-sm leading-relaxed mb-4">
-                Minoxidil turbinado com fatores de crescimento, loções antiqueda com cafeína pura, e cápsulas com Biotina, Silício Orgânico e Cisteína.
+                Complexos vitamínicos com Biotina (B7), Zinco Quelato, Selênio, Silício Orgânico e Vitaminas A, C e E para cabelos, pele e unhas.
               </p>
               <ul class="text-sm text-sage-600 space-y-1.5 mb-6">
-                <li class="flex items-center gap-1.5"><i class="bi bi-check2 text-emerald-700 font-bold"></i> Veículos de rápida absorção sem oleosidade</li>
-                <li class="flex items-center gap-1.5"><i class="bi bi-check2 text-emerald-700 font-bold"></i> Estímulo direto no folículo piloso</li>
+                <li class="flex items-center gap-1.5"><i class="bi bi-check2 text-emerald-700 font-bold"></i> Nutrientes focados em brilho e força dos fios</li>
+                <li class="flex items-center gap-1.5"><i class="bi bi-check2 text-emerald-700 font-bold"></i> Suporte à firmeza e vitalidade da pele</li>
               </ul>
             </div>
             <a
-              href="https://wa.me/5512988164931?text=Ol%C3%A1%2C%20gostaria%20de%20or%C3%A7ar%20um%20Tratamento%20Capilar."
+              href="https://wa.me/5512988164931?text=Ol%C3%A1%2C%20gostaria%20de%20pedir%20o%20complexo%20Cabelo%2C%20Pele%20e%20Unhas%20no%20WhatsApp."
               target="_blank"
               rel="noopener noreferrer"
               class="w-full py-2.5 px-4 bg-white hover:bg-emerald-800 hover:text-white text-emerald-950 border border-sand-300 font-bold text-sm rounded-xl transition-colors flex items-center justify-center gap-2"
             >
               <i class="bi bi-whatsapp"></i>
-              <span>Orçar Fórmula Capilar</span>
+              <span>Pedir Linha Beleza</span>
             </a>
           </div>
         </div>
@@ -1135,7 +1155,7 @@
           Vitrine de Suplementos & Nutracêuticos
         </h2>
         <p class="text-sage-700 text-sm sm:text-base leading-relaxed">
-          Fórmulas desenvolvidas com <strong>matérias-primas puras, grau farmacêutico e laudo analítico de pureza</strong>. Disponíveis para pronta-entrega e delivery imediato em <strong>São José dos Campos e Jacareí</strong>, e envio expresso via Correios para Caçapava e todo o Brasil.
+          Suplementos desenvolvidos com <strong>matérias-primas selecionadas e pureza garantida</strong>. Disponíveis para pronta-entrega e delivery imediato em <strong>São José dos Campos e Jacareí</strong>, e envio expresso via Correios para Caçapava e todo o Brasil.
         </p>
 
         <!-- Faixa de Logística e Frete -->
@@ -1162,7 +1182,7 @@
           class="vitrine-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-white text-sage-700 hover:bg-sand-100 border border-sand-200"
           data-filter="energia"
         >
-          ⚡ Energia & Coração
+          ⚡ Energia & Performance
         </button>
         <button
           onclick="filterVitrine('imunidade', this)"
@@ -1183,14 +1203,7 @@
           class="vitrine-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-white text-sage-700 hover:bg-sand-100 border border-sand-200"
           data-filter="metabolismo"
         >
-          🔥 Metabolismo & Peso
-        </button>
-        <button
-          onclick="filterVitrine('exames', this)"
-          class="vitrine-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-white text-sage-700 hover:bg-sand-100 border border-sand-200"
-          data-filter="exames"
-        >
-          🔬 Manitol & Exames
+          🌿 Antioxidantes & Nutrição
         </button>
       </div>
 
@@ -1265,7 +1278,7 @@
 
         <!-- PRODUTO 2: LARANJA MORO -->
         <div class="vitrine-card cat-all cat-metabolismo cat-beleza bg-white rounded-3xl overflow-hidden border border-sand-200 shadow-soft hover:shadow-elevated transition-all duration-300 flex flex-col justify-between group">
-          <div class="relative overflow-hidden bg-sand-100 cursor-pointer" onclick="openProductModal('imgs/produtos/laranja-moro.jpg', 'Laranja Moro (Antocianinas) - Linha BF', '60 Cápsulas • Controle do peso corporal, metabolismo e poderosa ação antioxidante.', 'Laranja Moro Fonte de Antocianinas (60 cápsulas)')">
+          <div class="relative overflow-hidden bg-sand-100 cursor-pointer" onclick="openProductModal('imgs/produtos/laranja-moro.jpg', 'Laranja Moro (Antocianinas) - Linha BF', '60 Cápsulas • Fonte natural de antocianinas antioxidantes e proteção celular diária.', 'Laranja Moro Fonte de Antocianinas (60 cápsulas)')">
             <img
               src="imgs/produtos/laranja-moro.jpg"
               alt="Laranja Moro Bella Flora"
@@ -1273,7 +1286,7 @@
               loading="lazy"
             />
             <span class="absolute top-3 left-3 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow">
-              Metabolismo & Peso
+              Antioxidante Natural
             </span>
             <span class="absolute top-3 right-3 bg-emerald-950/80 backdrop-blur-sm text-white text-xs font-semibold px-2.5 py-1 rounded-full flex items-center gap-1 shadow">
               <i class="bi bi-check2-circle text-wa"></i> 60 Cápsulas
@@ -1294,20 +1307,20 @@
                 Laranja Moro (Antocianinas)
               </h3>
               <p class="text-xs text-sage-600 mb-4 font-medium italic">
-                "Saúde, proteção e bem-estar em cada cápsula!"
+                "Proteção antioxidante e equilíbrio em cada cápsula!"
               </p>
               <ul class="text-xs sm:text-sm text-sage-700 space-y-2 mb-6">
                 <li class="flex items-start gap-2">
                   <i class="bi bi-check-circle-fill text-wa text-sm flex-shrink-0 mt-0.5"></i>
-                  <span>Rica em antocianinas naturais que combatem os radicais livres</span>
+                  <span>Rica em antocianinas naturais que protegem as células</span>
                 </li>
                 <li class="flex items-start gap-2">
                   <i class="bi bi-check-circle-fill text-wa text-sm flex-shrink-0 mt-0.5"></i>
-                  <span>Contribui no controle do peso corporal e acelera o gasto energético</span>
+                  <span>Contribui no equilíbrio nutricional e na rotina ativa</span>
                 </li>
                 <li class="flex items-start gap-2">
                   <i class="bi bi-check-circle-fill text-wa text-sm flex-shrink-0 mt-0.5"></i>
-                  <span>Apoia a saúde cardiovascular, circulação e vitalidade cutânea</span>
+                  <span>Apoia a vitalidade cutânea, circulação e bem-estar geral</span>
                 </li>
               </ul>
             </div>
@@ -1435,7 +1448,7 @@
                 </li>
                 <li class="flex items-start gap-2">
                   <i class="bi bi-check-circle-fill text-wa text-sm flex-shrink-0 mt-0.5"></i>
-                  <span>Fortalece os fios reduzindo a quebra e diminuindo a queda capilar</span>
+                  <span>Fortalece os fios auxiliando na resistência e brilho natural</span>
                 </li>
                 <li class="flex items-start gap-2">
                   <i class="bi bi-check-circle-fill text-wa text-sm flex-shrink-0 mt-0.5"></i>
@@ -1497,15 +1510,15 @@
               <ul class="text-xs sm:text-sm text-sage-700 space-y-2 mb-6">
                 <li class="flex items-start gap-2">
                   <i class="bi bi-check-circle-fill text-wa text-sm flex-shrink-0 mt-0.5"></i>
-                  <span>Microalga nutritiva rica em proteínas, minerais e ferro biodisponível</span>
+                  <span>Microalga nutritiva rica em proteínas, minerais e ferro</span>
                 </li>
                 <li class="flex items-start gap-2">
                   <i class="bi bi-check-circle-fill text-wa text-sm flex-shrink-0 mt-0.5"></i>
-                  <span>Picolinato de Cromo (100% VDR): auxilia no metabolismo e saciedade</span>
+                  <span>Picolinato de Cromo (100% VDR): apoio ao metabolismo diário</span>
                 </li>
                 <li class="flex items-start gap-2">
                   <i class="bi bi-check-circle-fill text-wa text-sm flex-shrink-0 mt-0.5"></i>
-                  <span>Auxilia no ganho de massa magra, disposição e trânsito intestinal</span>
+                  <span>Mais disposição física e bem-estar para rotina ativa</span>
                 </li>
               </ul>
             </div>
@@ -1527,51 +1540,51 @@
           </div>
         </div>
 
-        <!-- PRODUTO 6: MANITOL PURO FRACIONADO -->
-        <div class="vitrine-card cat-all cat-exames bg-white rounded-3xl overflow-hidden border border-brandBlue/30 shadow-soft hover:shadow-elevated transition-all duration-300 flex flex-col justify-between group">
-          <div class="relative overflow-hidden bg-sand-100 cursor-pointer" onclick="openProductModal('imgs/capsules-magistral.jpg', 'Manitol Puro Fracionado - Grau Farmacêutico USP', 'Fracionamento analítico sob medida para preparo de exames diagnósticos (colonoscopia) e formulações médicas.', 'Manitol Puro Fracionado para Exames')">
+        <!-- PRODUTO 6: CRANBERRY & BETA-ALANINA -->
+        <div class="vitrine-card cat-all cat-energia cat-metabolismo bg-white rounded-3xl overflow-hidden border border-brandBlue/30 shadow-soft hover:shadow-elevated transition-all duration-300 flex flex-col justify-between group">
+          <div class="relative overflow-hidden bg-sand-100 cursor-pointer" onclick="openProductModal('imgs/vitamins-supplements.jpg', 'Cranberry Concentrado & Beta-Alanina Pura', 'Suplementação nutricional de alta pureza para atletas e bem-estar diário. Consulte disponibilidade no WhatsApp.', 'Cranberry e Beta-Alanina Pura')">
             <img
-              src="imgs/capsules-magistral.jpg"
-              alt="Manitol Puro Fracionado Bella Flora"
+              src="imgs/vitamins-supplements.jpg"
+              alt="Cranberry e Beta-Alanina Bella Flora"
               class="w-full h-80 object-cover object-center group-hover:scale-105 transition-transform duration-500"
               loading="lazy"
             />
             <span class="absolute top-3 left-3 bg-brandBlue text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow">
-              Exames & Procedimentos
+              Performance & Bem-Estar
             </span>
             <span class="absolute top-3 right-3 bg-emerald-950/80 backdrop-blur-sm text-white text-xs font-semibold px-2.5 py-1 rounded-full flex items-center gap-1 shadow">
-              <i class="bi bi-check2-circle text-wa"></i> Puro USP
+              <i class="bi bi-check2-circle text-wa"></i> Alta Pureza
             </span>
             <div class="absolute inset-0 bg-emerald-950/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
               <span class="bg-white/95 text-emerald-950 text-xs font-bold px-3.5 py-2 rounded-xl shadow flex items-center gap-1.5">
-                <i class="bi bi-arrows-fullscreen text-brandBlue"></i> Ver Detalhes e Laudos
+                <i class="bi bi-arrows-fullscreen text-brandBlue"></i> Ampliar Detalhes
               </span>
             </div>
           </div>
           <div class="p-6 flex-1 flex flex-col justify-between">
             <div>
               <div class="flex items-center justify-between text-xs text-sage-500 mb-1.5">
-                <span class="font-bold uppercase tracking-wider text-brandBlue">Laboratório Próprio</span>
-                <span>Sob Medida</span>
+                <span class="font-bold uppercase tracking-wider text-brandBlue">Suplementação Direta</span>
+                <span>Linha BF</span>
               </div>
               <h3 class="font-serif text-xl font-bold text-emerald-950 mb-2">
-                Manitol Puro Fracionado
+                Cranberry & Beta-Alanina
               </h3>
               <p class="text-xs text-sage-600 mb-4 font-medium italic">
-                "Preparo seguro e certificado para exames clínicos!"
+                "Desempenho esportivo e bem-estar nutricional diário!"
               </p>
               <ul class="text-xs sm:text-sm text-sage-700 space-y-2 mb-6">
                 <li class="flex items-start gap-2">
                   <i class="bi bi-check-circle-fill text-wa text-sm flex-shrink-0 mt-0.5"></i>
-                  <span>Grau farmacêutico certificado USP com laudo analítico de pureza</span>
+                  <span>Beta-Alanina pura: suporte à resistência física e treino</span>
                 </li>
                 <li class="flex items-start gap-2">
                   <i class="bi bi-check-circle-fill text-wa text-sm flex-shrink-0 mt-0.5"></i>
-                  <span>Fracionamento em pó, sachês ou solução conforme orientação médica</span>
+                  <span>Cranberry concentrado rico em antioxidantes naturais</span>
                 </li>
                 <li class="flex items-start gap-2">
                   <i class="bi bi-check-circle-fill text-wa text-sm flex-shrink-0 mt-0.5"></i>
-                  <span>Utilizado para preparo de exames de colonoscopia e procedimentos</span>
+                  <span>Pronta-entrega em SJC/Jacareí ou envio pelos Correios</span>
                 </li>
               </ul>
             </div>
@@ -1581,13 +1594,13 @@
                 <span class="font-bold text-emerald-900">Pronta-Entrega</span>
               </div>
               <a
-                href="https://wa.me/5512988164931?text=Ol%C3%A1%2C%20gostaria%20de%20or%C3%A7ar%20Manitol%20Puro%20Fracionado%20para%20exames%20na%20Bella%20Flora."
+                href="https://wa.me/5512988164931?text=Ol%C3%A1%2C%20gostaria%20de%20consultar%20Cranberry%20e%20Beta-Alanina%20na%20Bella%20Flora."
                 target="_blank"
                 rel="noopener noreferrer"
                 class="w-full py-3 px-4 bg-wa hover:bg-wa-hover text-white font-bold text-sm rounded-xl transition-all shadow-glow-wa flex items-center justify-center gap-2 active:scale-95"
               >
                 <i class="bi bi-whatsapp text-lg"></i>
-                <span>Orçar Manitol no WhatsApp</span>
+                <span>Consultar no WhatsApp</span>
               </a>
             </div>
           </div>
@@ -1595,25 +1608,25 @@
 
       </div>
 
-      <!-- Banner de Dúvidas / Orçamento Personalizado de Suplementos -->
+      <!-- Banner de Dúvidas / Atendimento Personalizado de Suplementos -->
       <div class="mt-14 p-6 sm:p-8 rounded-3xl bg-white border border-sand-200 shadow-soft flex flex-col md:flex-row items-center justify-between gap-6">
         <div class="flex items-center gap-4">
           <div class="w-14 h-14 rounded-2xl bg-brandBlue-light text-brandBlue flex items-center justify-center flex-shrink-0 text-2xl">
             <i class="bi bi-capsule-pill"></i>
           </div>
           <div>
-            <h4 class="font-serif text-lg sm:text-xl font-bold text-emerald-950">Precisa de outro suplemento ou dosagem específica?</h4>
-            <p class="text-xs sm:text-sm text-sage-600 mt-0.5">Cranberry concentrado, Beta-Alanina pura, Minerais Quelatos, Polivitamínicos e compostos manipulados sob prescrição.</p>
+            <h4 class="font-serif text-lg sm:text-xl font-bold text-emerald-950">Procurando algum suplemento específico?</h4>
+            <p class="text-xs sm:text-sm text-sage-600 mt-0.5">Magnésio Glicinato e Dimalato, Vitaminas D3, B12, C, K2 e Complexo B, Ômega 3, Colágeno, Psyllium, Probióticos, Melatonina, Glutamina, L-Carnitina, Ferro Quelato, Curcumina, Inositol, NAC, Cálcio, Cranberry e Beta-Alanina.</p>
           </div>
         </div>
         <a
-          href="https://wa.me/5512988164931?text=Ol%C3%A1%2C%20gostaria%20de%20or%C3%A7ar%20uma%20f%C3%B3rmula%20personalizada%20de%20suplementos%20(Cranberry%2C%20Beta-Alanina%2C%20etc)%20na%20Bella%20Flora."
+          href="https://wa.me/5512988164931?text=Ol%C3%A1%2C%20gostaria%20de%20consultar%20os%20suplementos%20dispon%C3%ADveis%20(Cranberry%2C%20Beta-Alanina%2C%20etc)%20na%20Bella%20Flora."
           target="_blank"
           rel="noopener noreferrer"
           class="flex-shrink-0 px-6 py-3.5 bg-emerald-900 hover:bg-emerald-950 text-white font-bold text-xs sm:text-sm rounded-xl transition-all shadow flex items-center gap-2"
         >
           <i class="bi bi-chat-dots-fill text-wa"></i>
-          <span>Falar com Farmacêutico</span>
+          <span>Falar no WhatsApp</span>
         </a>
       </div>
 
@@ -1650,7 +1663,7 @@
   </div>
 
   <!-- ========================================== -->
-  <!-- TABELA COMPARATIVA: MANIPULAÇÃO VS COMUM -->
+  <!-- TABELA COMPARATIVA: LINHA PURA VS COMUM -->
   <!-- ========================================== -->
   <section class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
     <div class="text-center max-w-3xl mx-auto mb-16">
@@ -1658,10 +1671,10 @@
         Transparência & Vantagens
       </span>
       <h2 class="font-serif text-3xl sm:text-4xl font-bold text-emerald-950 mt-3 mb-4">
-        Por que manipular na Bella Flora?
+        Por que escolher os suplementos Bella Flora?
       </h2>
       <p class="text-sage-700 text-sm sm:text-base leading-relaxed">
-        Compare a experiência de uma fórmula manipulada sob medida com as caixas padronizadas de opções industriais.
+        Compare a qualidade e pureza da Linha Nutricional BF com opções comuns de mercado.
       </p>
     </div>
 
@@ -1669,50 +1682,50 @@
       <table class="w-full text-left border-collapse text-sm">
         <thead>
           <tr class="border-b border-sand-200 bg-sand-100">
-            <th class="p-5 font-bold text-emerald-950">Critério de Saúde</th>
-            <th class="p-5 font-bold text-sage-600">Comércio Industrial</th>
+            <th class="p-5 font-bold text-emerald-950">Critério de Qualidade</th>
+            <th class="p-5 font-bold text-sage-600">Comércio Comum</th>
             <th class="p-5 font-bold text-emerald-900 bg-emerald-50 border-l border-emerald-200">
               <div class="flex items-center gap-2">
                 <i class="bi bi-award-fill text-brandBlue text-lg"></i>
-                <span>Bella Flora Manipulação</span>
+                <span>Bella Flora Linha BF</span>
               </div>
             </th>
           </tr>
         </thead>
         <tbody class="divide-y divide-sand-200">
           <tr class="hover:bg-sand-50 transition-colors">
-            <td class="p-5 font-semibold text-emerald-950">Dosagem Personalizada</td>
-            <td class="p-5 text-sage-600">Doses fixas (ex: apenas 20mg ou 40mg)</td>
+            <td class="p-5 font-semibold text-emerald-950">Concentração Real</td>
+            <td class="p-5 text-sage-600">Baixa concentração e misturas genéricas</td>
             <td class="p-5 font-bold text-emerald-900 bg-emerald-50/50 border-l border-emerald-200 flex items-center gap-2">
-              <i class="bi bi-check-circle-fill text-wa"></i> Miligramagem e dose exata sob medida
+              <i class="bi bi-check-circle-fill text-wa"></i> Matérias-primas concentradas e puras
             </td>
           </tr>
           <tr class="hover:bg-sand-50 transition-colors">
-            <td class="p-5 font-semibold text-emerald-950">Associação de Vários Ativos</td>
-            <td class="p-5 text-sage-600">Você precisa comprar 3 a 5 caixas diferentes</td>
+            <td class="p-5 font-semibold text-emerald-950">Biodisponibilidade</td>
+            <td class="p-5 text-sage-600">Minerais comuns de difícil absorção</td>
             <td class="p-5 font-bold text-emerald-900 bg-emerald-50/50 border-l border-emerald-200 flex items-center gap-2">
-              <i class="bi bi-check-circle-fill text-wa"></i> Todos os ativos combinados em 1 cápsula só
+              <i class="bi bi-check-circle-fill text-wa"></i> Formas quelatadas de absorção superior
             </td>
           </tr>
           <tr class="hover:bg-sand-50 transition-colors">
-            <td class="p-5 font-semibold text-emerald-950">Alergias & Excipientes</td>
+            <td class="p-5 font-semibold text-emerald-950">Alergias & Aditivos</td>
             <td class="p-5 text-sage-600">Podem conter corantes, lactose e glúten</td>
             <td class="p-5 font-bold text-emerald-900 bg-emerald-50/50 border-l border-emerald-200 flex items-center gap-2">
-              <i class="bi bi-check-circle-fill text-wa"></i> Fórmulas hipoalergênicas e puras
+              <i class="bi bi-check-circle-fill text-wa"></i> Fórmulas limpas sem aditivos excessivos
             </td>
           </tr>
           <tr class="hover:bg-sand-50 transition-colors">
-            <td class="p-5 font-semibold text-emerald-950">Economia no Tratamento</td>
-            <td class="p-5 text-sage-600">Sobram comprimidos que vão para o lixo</td>
+            <td class="p-5 font-semibold text-emerald-950">Praticidade Diária</td>
+            <td class="p-5 text-sage-600">Vários frascos separados sem orientação</td>
             <td class="p-5 font-bold text-emerald-900 bg-emerald-50/50 border-l border-emerald-200 flex items-center gap-2">
-              <i class="bi bi-check-circle-fill text-wa"></i> Quantidade exata para os dias do tratamento
+              <i class="bi bi-check-circle-fill text-wa"></i> Doses equilibradas e envio rápido
             </td>
           </tr>
           <tr class="hover:bg-sand-50 transition-colors">
-            <td class="p-5 font-semibold text-emerald-950">Suporte Farmacêutico</td>
-            <td class="p-5 text-sage-600">Atendimento impessoal em balcão comum</td>
+            <td class="p-5 font-semibold text-emerald-950">Suporte Humano</td>
+            <td class="p-5 text-sage-600">Atendimento impessoal em gôndola</td>
             <td class="p-5 font-bold text-emerald-900 bg-emerald-50/50 border-l border-emerald-200 flex items-center gap-2">
-              <i class="bi bi-check-circle-fill text-wa"></i> Farmacêutico dedicado no WhatsApp para dúvidas
+              <i class="bi bi-check-circle-fill text-wa"></i> Atendimento direto pelo WhatsApp para dúvidas
             </td>
           </tr>
         </tbody>
@@ -1721,7 +1734,7 @@
   </section>
 
   <!-- ========================================== -->
-  <!-- O LABORATÓRIO & RIGOR CIENTÍFICO -->
+  <!-- CONTROLE DE QUALIDADE & PUREZA -->
   <!-- ========================================== -->
   <section id="laboratorio" class="py-20 px-4 sm:px-6 lg:px-8 bg-emerald-950 text-white relative overflow-hidden">
     <!-- Efeito luminoso de fundo -->
@@ -1733,13 +1746,13 @@
         
         <div class="lg:col-span-6">
           <span class="text-sm uppercase tracking-widest text-brandBlue font-bold bg-emerald-900/80 px-3.5 py-1.5 rounded-md border border-brandBlue/30 inline-block mb-4">
-            Estrutura Laboratorial Avançada
+            Padrão Elevado de Pureza
           </span>
           <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-6">
-            Rigor analítico onde cada miligrama faz a diferença.
+            Rigor técnico onde cada miligrama faz a diferença.
           </h2>
           <p class="text-sage-200 text-sm sm:text-base leading-relaxed mb-6 font-normal">
-            Nosso laboratório conta com cabines de fluxo laminar, salas de pesagem isoladas com pressão diferencial e controle ininterrupto de umidade e temperatura. Cada matéria-prima passa por quarentena e análise de teor antes de ser aprovada para manipulação.
+            Trabalhamos com seleção criteriosa de matérias-primas, ambiente com controle contínuo de temperatura e umidade e checagem lote a lote para garantir que você receba suplementos íntegros em sua casa.
           </p>
 
           <div class="space-y-4 mb-8">
@@ -1748,8 +1761,8 @@
                 <i class="bi bi-shield-check text-lg"></i>
               </div>
               <div>
-                <h4 class="font-bold text-white text-sm">Pesagem Computadorizada com Código de Barras</h4>
-                <p class="text-sage-300 text-sm mt-0.5">O sistema só libera o frasco quando a balança analítica atinge exatamente a massa calculada.</p>
+                <h4 class="font-bold text-white text-sm">Seleção de Fornecedores Certificados</h4>
+                <p class="text-sage-300 text-sm mt-0.5">Ingredientes acompanhados de controle de origem e verificação de qualidade.</p>
               </div>
             </div>
 
@@ -1759,7 +1772,7 @@
               </div>
               <div>
                 <h4 class="font-bold text-white text-sm">Rastreabilidade Total de Lote</h4>
-                <p class="text-sage-300 text-sm mt-0.5">Histórico completo: data, operador responsável, laudo de pureza do fornecedor e arquivamento de amostra.</p>
+                <p class="text-sage-300 text-sm mt-0.5">Registro completo de lote, validade e integridade em todas as embalagens.</p>
               </div>
             </div>
 
@@ -1768,20 +1781,20 @@
                 <i class="bi bi-thermometer-half text-lg"></i>
               </div>
               <div>
-                <h4 class="font-bold text-white text-sm">Controle Térmico na Entrega</h4>
-                <p class="text-sage-300 text-sm mt-0.5">Produtos termolábeis e biológicos viajam em caixas isotérmicas com monitoramento de frio.</p>
+                <h4 class="font-bold text-white text-sm">Embalagem Protegida na Entrega</h4>
+                <p class="text-sage-300 text-sm mt-0.5">Frascos enviados com proteção anti-UV, lacre de segurança e entrega rápida.</p>
               </div>
             </div>
           </div>
 
           <a
-            href="https://wa.me/5512988164931?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20o%20laborat%C3%B3rio%20e%20fazer%20um%20or%C3%A7amento."
+            href="https://wa.me/5512988164931?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20a%20Linha%20BF%20de%20suplementos%20e%20fazer%20um%20pedido."
             target="_blank"
             rel="noopener noreferrer"
             class="inline-flex items-center gap-2.5 bg-wa hover:bg-wa-hover text-white font-bold text-sm px-6 py-3.5 rounded-xl shadow-glow-wa transition-all"
           >
             <i class="bi bi-whatsapp text-lg"></i>
-            <span>Falar com o Farmacêutico Responsável</span>
+            <span>Falar com Nossa Equipe</span>
           </a>
 
         </div>
@@ -1789,10 +1802,10 @@
         <div class="lg:col-span-6">
           <div class="grid grid-cols-2 gap-4">
             <div class="rounded-3xl overflow-hidden shadow-elevated border border-emerald-800/80">
-              <img src="imgs/lab-sterile.jpg" alt="Laboratório Farmacêutico Estéril" class="w-full h-64 object-cover hover:scale-105 transition-transform duration-500" loading="lazy" />
+              <img src="imgs/lab-sterile.jpg" alt="Ambiente Controlado de Qualidade" class="w-full h-64 object-cover hover:scale-105 transition-transform duration-500" loading="lazy" />
             </div>
             <div class="rounded-3xl overflow-hidden shadow-elevated border border-emerald-800/80 mt-8">
-              <img src="imgs/pharmacist-team.jpg" alt="Farmacêuticos Analisando Fórmula" class="w-full h-64 object-cover hover:scale-105 transition-transform duration-500" loading="lazy" />
+              <img src="imgs/pharmacist-team.jpg" alt="Equipe Técnica Especializada" class="w-full h-64 object-cover hover:scale-105 transition-transform duration-500" loading="lazy" />
             </div>
           </div>
         </div>
@@ -1810,10 +1823,10 @@
         Opinião de Quem Confia
       </span>
       <h2 class="font-serif text-3xl sm:text-4xl font-bold text-emerald-950 mt-3 mb-4">
-        O que dizem médicos e pacientes
+        O que dizem nossos clientes
       </h2>
       <p class="text-sage-700 text-sm sm:text-base leading-relaxed">
-        Relações de confiança construídas com profissionais de saúde e pacientes que não abrem mão da qualidade.
+        Avaliações reais de clientes que confiam na pureza, transparência e pontualidade da Bella Flora.
       </p>
     </div>
 
@@ -1831,7 +1844,7 @@
             </span>
           </div>
           <p class="text-sage-800 text-sm italic leading-relaxed mb-6">
-            "Os funcionários são muito atenciosos e educados. Atendimento nota 10, entrega pontual e fórmulas com procedência garantida!"
+            "Os atendentes são muito atenciosos e educados. Atendimento nota 10, entrega pontual e suplementos com procedência garantida!"
           </p>
         </div>
         <div class="flex items-center gap-3 pt-4 border-t border-sand-100">
@@ -1857,7 +1870,7 @@
             </span>
           </div>
           <p class="text-sage-800 text-sm italic leading-relaxed mb-6">
-            "Atendimento perfeito! Sou cliente há anos. Todos muito educados e prestativos, confio de olhos fechados nas formulações da Bella Flora."
+            "Atendimento perfeito! Sou cliente há anos. Todos muito educados e prestativos, confio de olhos fechados na qualidade da Bella Flora."
           </p>
         </div>
         <div class="flex items-center gap-3 pt-4 border-t border-sand-100">
@@ -1871,7 +1884,7 @@
         </div>
       </div>
 
-      <!-- Depoimento 3: Dra. Camila Ribeiro (Dermatologista Parceira) -->
+      <!-- Depoimento 3: Camila Ribeiro (Especialista em Nutrição Parceira) -->
       <div class="bg-white rounded-3xl p-7 border border-sand-200 shadow-soft flex flex-col justify-between">
         <div>
           <div class="flex items-center justify-between mb-4">
@@ -1879,11 +1892,11 @@
               <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
             </div>
             <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-sage-600 bg-sand-100 px-2.5 py-1 rounded-full">
-              <i class="bi bi-patch-check-fill text-emerald-700"></i> Médica Parceira
+              <i class="bi bi-patch-check-fill text-emerald-700"></i> Cliente Recorrente
             </span>
           </div>
           <p class="text-sage-800 text-sm italic leading-relaxed mb-6">
-            "Como médica dermatologista em São José dos Campos, exijo veículos cosméticos finos e pesagem computadorizada exata. Meus pacientes sempre elogiam o resultado."
+            “Indico sempre a Linha BF em São José dos Campos pela pureza dos ingredientes, zero aditivos artificiais e entrega pontual pelo WhatsApp.”
           </p>
         </div>
         <div class="flex items-center gap-3 pt-4 border-t border-sand-100">
@@ -1891,8 +1904,8 @@
             CR
           </div>
           <div>
-            <span class="font-bold text-emerald-950 text-sm block">Dra. Camila Ribeiro</span>
-            <span class="text-xs text-sage-500">Médica Dermatologista • CRM-SP</span>
+            <span class="font-bold text-emerald-950 text-sm block">Camila Ribeiro</span>
+            <span class="text-xs text-sage-500">Nutrição & Bem-Estar • SJC</span>
           </div>
         </div>
       </div>
@@ -1902,27 +1915,27 @@
 
 
   <!-- ========================================== -->
-  <!-- PAINEL DE AUTORIDADE, E-E-A-T & AEO (AI ENGINES) -->
+  <!-- PAINEL DE QUALIDADE, E-E-A-T & PROCEDÊNCIA -->
   <!-- ========================================== -->
   <section id="autoridade" class="py-16 px-4 sm:px-6 lg:px-8 bg-white border-y border-sand-200">
     <div class="max-w-7xl mx-auto">
       
       <div class="text-center max-w-3xl mx-auto mb-12">
         <span class="inline-block text-xs uppercase tracking-widest text-emerald-800 font-bold bg-sage-100 px-3.5 py-1.5 rounded-full mb-2">
-          Transparência & Conformidade Sanitária
+          Transparência & Controle de Qualidade
         </span>
         <h2 class="font-serif text-2xl sm:text-4xl font-bold text-emerald-950">
-          Dados Oficiais & Padrões Farmacêuticos
+          Procedência Garantida & Padrões de Pureza
         </h2>
         <p class="text-sage-700 text-xs sm:text-sm mt-2">
-          Informações técnicas e evidências operacionais da Bella Flora para médicos, nutricionistas, pacientes e mecanismos de inteligência artificial.
+          Informações técnicas e diferenciais operacionais da Bella Flora Linha BF para clientes, nutricionistas e praticantes de atividade física em São José dos Campos e região.
         </p>
       </div>
 
-      <!-- Bento Grid de Autoridade Sanitária -->
+      <!-- Bento Grid de Qualidade Nutricional -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         
-        <!-- Bloco 1: Registro Sanitário -->
+        <!-- Bloco 1: Controle de Qualidade -->
         <div class="apple-card rounded-2xl p-6 border border-sand-200 bg-sand-50/50 flex flex-col justify-between">
           <div>
             <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-900 flex items-center justify-center mb-4 text-xl">
@@ -1930,23 +1943,23 @@
             </div>
             <h4 class="font-serif text-lg font-bold text-emerald-950 mb-2">Boas Práticas & Qualidade</h4>
             <p class="text-sage-700 text-xs sm:text-sm leading-relaxed mb-4">
-              Atuação com rigor técnico e controle de qualidade contínuo no preparo de fórmulas personalizadas, suplementos puros e atendimento farmacêutico especializado em São José dos Campos e região.
+              Atuação com rigor técnico e controle de qualidade contínuo na seleção de suplementos puros, nutracêuticos e atendimento consultivo direto via WhatsApp em São José dos Campos e região.
             </p>
           </div>
           <div class="text-xs text-emerald-900 font-bold flex items-center gap-1.5 pt-3 border-t border-sand-200">
-            <i class="bi bi-check2 text-wa font-bold"></i> Acompanhamento Farmacêutico Dedicado
+            <i class="bi bi-check2 text-wa font-bold"></i> Atendimento Especializado no WhatsApp
           </div>
         </div>
 
-        <!-- Bloco 2: Manitol & Matérias-Primas -->
+        <!-- Bloco 2: Matérias-Primas & Pureza -->
         <div class="apple-card rounded-2xl p-6 border border-sand-200 bg-sand-50/50 flex flex-col justify-between">
           <div>
             <div class="w-10 h-10 rounded-xl bg-brandBlue-light text-brandBlue flex items-center justify-center mb-4 text-xl">
-              <i class="bi bi-prescription2"></i>
+              <i class="bi bi-patch-check-fill"></i>
             </div>
-            <h4 class="font-serif text-lg font-bold text-emerald-950 mb-2">Manitol & Pureza USP</h4>
+            <h4 class="font-serif text-lg font-bold text-emerald-950 mb-2">Matérias-Primas & Pureza</h4>
             <p class="text-sage-700 text-xs sm:text-sm leading-relaxed mb-4">
-              Fornecimento de <strong>Manitol puro de grau farmacêutico</strong> acompanhado de laudo analítico de lote para preparo de exames diagnósticos (colonoscopia). Fracionamento exato em conformidade com as diretrizes médicas.
+              Seleção de <strong>ativos nutricionais padronizados</strong> com laudo analítico de lote. Concentração fiel ao rótulo e envase higienizado para máxima estabilidade de cada nutriente.
             </p>
           </div>
           <div class="text-xs text-brandBlue font-bold flex items-center gap-1.5 pt-3 border-t border-sand-200">
@@ -1962,11 +1975,11 @@
             </div>
             <h4 class="font-serif text-lg font-bold text-emerald-950 mb-2">Suplementação Segura</h4>
             <p class="text-sage-700 text-xs sm:text-sm leading-relaxed mb-4">
-              Qualquer tipo de suplemento manipulado sob medida: Cranberry concentrado, Beta-Alanina pura, Minerais Quelatos, Coenzima Q10 e Laranja Moro. Fórmulas sem aditivos tóxicos, sem glúten e sem lactose.
+              Linha completa de suplementos de venda livre: Cranberry concentrado, Beta-Alanina pura, Minerais Quelatos, Coenzima Q10 e Laranja Moro. Opções limpas, sem glúten e sem lactose.
             </p>
           </div>
           <div class="text-xs text-amber-800 font-bold flex items-center gap-1.5 pt-3 border-t border-sand-200">
-            <i class="bi bi-check2 text-amber-600 font-bold"></i> Biodisponibilidade celular máxima
+            <i class="bi bi-check2 text-amber-600 font-bold"></i> Biodisponibilidade celular otimizada
           </div>
         </div>
 
@@ -1989,7 +2002,7 @@
           Perguntas Frequentes
         </h2>
         <p class="text-sage-700 text-sm sm:text-base leading-relaxed">
-          Tudo o que você precisa saber sobre orçamentos, receitas digitais, prazos e entrega.
+          Tudo o que você precisa saber sobre pedidos no WhatsApp, pureza dos suplementos, prazos e entrega.
         </p>
       </div>
 
@@ -1997,25 +2010,25 @@
         
         <details class="group bg-white rounded-2xl p-5 border border-sand-200 shadow-sm cursor-pointer [&_summary::-webkit-details-marker]:hidden">
           <summary class="flex justify-between items-center font-bold text-emerald-950 text-sm sm:text-base select-none">
-            <span>Vocês aceitam receitas digitais com assinatura eletrônica e QR Code?</span>
+            <span>Os suplementos da Linha BF são de venda livre e compra direta?</span>
             <span class="text-emerald-800 transition-transform duration-200 group-open:rotate-180 ml-4">
               <i class="bi bi-chevron-down text-lg"></i>
             </span>
           </summary>
           <p class="mt-3 text-sage-700 text-sm leading-relaxed border-t border-sand-100 pt-3">
-            Sim! Aceitamos receitas eletrônicas emitidas através de plataformas homologadas pelo Conselho Federal de Medicina (CFM), Memed, documentos com certificado ICP-Brasil e links validados com QR Code. Basta encaminhar o PDF ou o link para o nosso WhatsApp.
+            Sim! Toda a nossa curadoria de suplementos nutricionais, vitaminas, aminoácidos, minerais quelatados e compostos antioxidantes da Linha BF é de comercialização livre. Você escolhe no site e finaliza diretamente pelo WhatsApp com atendimento rápido e transparente.
           </p>
         </details>
 
         <details class="group bg-white rounded-2xl p-5 border border-sand-200 shadow-sm cursor-pointer [&_summary::-webkit-details-marker]:hidden">
           <summary class="flex justify-between items-center font-bold text-emerald-950 text-sm sm:text-base select-none">
-            <span>Qual é o prazo médio para a fórmula ficar pronta?</span>
+            <span>Qual é o prazo para separação e envio do meu pedido?</span>
             <span class="text-emerald-800 transition-transform duration-200 group-open:rotate-180 ml-4">
               <i class="bi bi-chevron-down text-lg"></i>
             </span>
           </summary>
           <p class="mt-3 text-sage-700 text-sm leading-relaxed border-t border-sand-100 pt-3">
-            A maioria das fórmulas fica pronta entre 24 e 48 horas úteis após a aprovação do orçamento, assegurando tempo hábil para as análises de controle físico-químico e pesagem computadorizada. Fórmulas com urgência médica podem ser priorizadas mediante aviso ao farmacêutico.
+            Pedidos confirmados no WhatsApp entram em separação imediata, com despacho em até 24 horas úteis, embalagem lacrada e proteção térmica adequada para manter a integridade dos suplementos até a sua casa.
           </p>
         </details>
 
@@ -2027,20 +2040,20 @@
             </span>
           </summary>
           <p class="mt-3 text-sage-700 text-sm leading-relaxed border-t border-sand-100 pt-3">
-            Dispomos de serviço de <strong>delivery próprio via motoboy para São José dos Campos e Jacareí</strong>, garantindo agilidade e controle de temperatura. Para <strong>Caçapava, demais cidades do Vale do Paraíba e todo o Brasil</strong>, realizamos envio expresso via <strong>Correios (Sedex ou PAC)</strong> com código de rastreamento e embalagem protetora.<br /><br />
+            Dispomos de serviço de <strong>delivery próprio via motoboy para São José dos Campos e Jacareí</strong>, garantindo agilidade e cuidado no transporte. Para <strong>Caçapava, demais cidades do Vale do Paraíba e todo o Brasil</strong>, realizamos envio expresso via <strong>Correios (Sedex ou PAC)</strong> com código de rastreamento e embalagem protetora.<br /><br />
             <em>Consulte nossa disponibilidade de entrega para o seu endereço. Entrega grátis — consulte nossas condições de entrega!</em>
           </p>
         </details>
 
         <details class="group bg-white rounded-2xl p-5 border border-sand-200 shadow-sm cursor-pointer [&_summary::-webkit-details-marker]:hidden">
           <summary class="flex justify-between items-center font-bold text-emerald-950 text-sm sm:text-base select-none">
-            <span>Vocês manipulam Manitol e suplementos como Cranberry e Beta-Alanina?</span>
+            <span>Quais linhas de suplementos como Cranberry e Beta-Alanina estão disponíveis?</span>
             <span class="text-emerald-800 transition-transform duration-200 group-open:rotate-180 ml-4">
               <i class="bi bi-chevron-down text-lg"></i>
             </span>
           </summary>
           <p class="mt-3 text-sage-700 text-sm leading-relaxed border-t border-sand-100 pt-3">
-            Sim! Fornecemos <strong>Manitol de grau farmacêutico</strong> com laudo de pureza (muito procurado para preparo de exames diagnósticos e formulações terapêuticas específicas). Também manipulamos a linha completa de suplementação individualizada: <strong>Cranberry concentrado</strong>, <strong>Beta-Alanina pura</strong>, Coenzima Q10, minerais quelatados de alta absorção e compostos vitamínicos personalizados. Qualquer tipo de suplemento que você necessite pode ser manipulado sob medida.
+            Contamos com suplementos puros de alta biodisponibilidade: <strong>Cranberry concentrado</strong>, <strong>Beta-Alanina pura</strong>, Coenzima Q10, Laranja Moro, Zinco Quelato, Spirulina + Cromo, Cabelo, Pele & Unhas e compostos vitamínicos de rotina diária — todos sem glúten e sem lactose.
           </p>
         </details>
 
@@ -2058,13 +2071,13 @@
 
         <details class="group bg-white rounded-2xl p-5 border border-sand-200 shadow-sm cursor-pointer [&_summary::-webkit-details-marker]:hidden">
           <summary class="flex justify-between items-center font-bold text-emerald-950 text-sm sm:text-base select-none">
-            <span>Posso orçar cosméticos e suplementos sem receita médica?</span>
+            <span>Posso tirar dúvidas sobre os ingredientes e combinações de suplementos antes de pedir?</span>
             <span class="text-emerald-800 transition-transform duration-200 group-open:rotate-180 ml-4">
               <i class="bi bi-chevron-down text-lg"></i>
             </span>
           </summary>
           <p class="mt-3 text-sage-700 text-sm leading-relaxed border-t border-sand-100 pt-3">
-            Sim! Suplementos vitamínicos, minerais quelatados, antioxidantes, florais e dermocosméticos de grau cosmético de venda livre (de venda livre conforme normas da Anvisa) podem ser orçados diretamente com nosso time.
+            Sim! Você pode falar diretamente com nossa equipe no WhatsApp para esclarecer dúvidas sobre os suplementos vitamínicos, minerais quelatados, aminoácidos e antioxidantes de venda livre disponíveis na Linha BF.
           </p>
         </details>
 
@@ -2079,30 +2092,30 @@
   <section class="py-20 px-4 sm:px-6 lg:px-8 bg-emerald-900 text-white text-center relative overflow-hidden">
     <div class="max-w-4xl mx-auto relative z-10">
       <span class="inline-block px-3.5 py-1.5 rounded-full bg-emerald-800 text-emerald-200 font-bold text-sm uppercase tracking-wider mb-4 border border-emerald-700">
-        Pronto para Começar seu Tratamento?
+        Pronto para Elevar sua Rotina?
       </span>
       <h2 class="font-serif text-3xl sm:text-5xl font-bold mb-6 leading-tight">
-        Sua receita nas mãos de quem entende de precisão farmacêutica.
+        Suplementos puros de alta biodisponibilidade com envio ágil.
       </h2>
       <p class="text-sage-200 text-base sm:text-lg mb-8 max-w-2xl mx-auto leading-relaxed">
-        Envie uma foto da sua receita no WhatsApp agora mesmo. Nosso time de farmacêuticos responderá com agilidade e todo o suporte que você merece.
+        Chame nossa equipe no WhatsApp agora mesmo. Confira lotes disponíveis, combinações da Linha BF e valores de entrega para sua região.
       </p>
       
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
         <a
-          href="https://wa.me/5512988164931?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20o%20or%C3%A7amento%20da%20minha%20receita%20m%C3%A9dica%20agora."
+          href="https://wa.me/5512988164931?text=Ol%C3%A1%2C%20gostaria%20de%20pedir%20suplementos%20da%20Linha%20BF%20pelo%20WhatsApp."
           target="_blank"
           rel="noopener noreferrer"
           class="inline-flex items-center gap-3 bg-wa hover:bg-wa-hover text-white font-bold text-base px-8 py-4 rounded-2xl shadow-glow-wa transition-all duration-200 hover:scale-105 active:scale-95"
         >
           <i class="bi bi-whatsapp text-2xl"></i>
-          <span>Enviar Minha Receita pelo WhatsApp</span>
+          <span>Pedir Suplementos pelo WhatsApp</span>
         </a>
       </div>
 
       <div class="mt-8 flex flex-wrap justify-center items-center gap-6 text-sm text-sage-300">
         <span class="flex items-center gap-1.5"><i class="bi bi-clock-history text-emerald-400"></i> Atendimento imediato</span>
-        <span class="flex items-center gap-1.5"><i class="bi bi-shield-check text-emerald-400"></i> Orçamento sem compromisso</span>
+        <span class="flex items-center gap-1.5"><i class="bi bi-shield-check text-emerald-400"></i> Cotação sem compromisso</span>
         <span class="flex items-center gap-1.5"><i class="bi bi-truck text-emerald-400"></i> Delivery em SJC e Jacareí • Correios para todo o Brasil</span>
       </div>
     </div>
@@ -2123,11 +2136,11 @@
             </div>
             <div>
               <span class="font-serif text-xl font-bold text-white block">Bella Flora</span>
-              <span class="text-sm text-brandBlue font-bold uppercase tracking-wider block">Manipulação & Suplementos</span>
+              <span class="text-sm text-brandBlue font-bold uppercase tracking-wider block">Suplementos & Bem-Estar</span>
             </div>
           </div>
           <p class="leading-relaxed text-gray-300 text-sm max-w-sm">
-            Atendimento especializado em fórmulas personalizadas, Manitol e linha própria de suplementação pura em São José dos Campos e Jacareí, com envios para todo o Brasil.
+            Linha própria de suplementação pura, vitaminas, aminoácidos e minerais quelatos em São José dos Campos e Jacareí, com envios para todo o Brasil.
           </p>
         </div>
 
@@ -2188,22 +2201,22 @@
     
     <!-- Tooltip Desktop -->
     <a
-      href="https://wa.me/5512988164931?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Bella%20Flora%20e%20gostaria%20de%20fazer%20um%20or%C3%A7amento%20da%20minha%20receita."
+      href="https://wa.me/5512988164931?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Bella%20Flora%20e%20gostaria%20de%20pedir%20suplementos%20da%20Linha%20BF."
       target="_blank"
       rel="noopener noreferrer"
       class="hidden sm:inline-flex items-center gap-2 mr-3 bg-white text-emerald-950 text-sm font-bold py-2 px-3.5 rounded-full shadow-elevated border border-sand-200 transition-transform duration-200 group-hover:scale-105"
     >
       <span class="w-2 h-2 rounded-full bg-wa animate-ping"></span>
-      <span>Orce sua receita médica aqui</span>
+      <span>Pedir Suplementos no WhatsApp</span>
     </a>
 
     <!-- Botão Redondo com Ícone WhatsApp -->
     <a
-      href="https://wa.me/5512988164931?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Bella%20Flora%20e%20gostaria%20de%20fazer%20um%20or%C3%A7amento%20da%20minha%20receita."
+      href="https://wa.me/5512988164931?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Bella%20Flora%20e%20gostaria%20de%20pedir%20suplementos%20da%20Linha%20BF."
       target="_blank"
       rel="noopener noreferrer"
       class="relative flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 bg-wa hover:bg-wa-hover text-white rounded-full shadow-glow-wa transition-all duration-200 hover:scale-110 active:scale-95"
-      aria-label="Abrir conversa no WhatsApp para orçamento de receita"
+      aria-label="Abrir conversa no WhatsApp para pedir suplementos Linha BF"
     >
       <!-- Pulso Visual -->
       <span class="absolute inline-flex h-full w-full rounded-full bg-wa opacity-40 animate-ping"></span>
@@ -2223,17 +2236,17 @@
   <!-- ========================================== -->
   <div class="sm:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-sand-200 p-3 shadow-elevated flex items-center gap-3">
     <div class="flex-1">
-      <span class="text-sm uppercase font-bold text-emerald-800 tracking-wider block">Plantão Aberto</span>
-      <span class="text-sm font-bold text-emerald-950 block leading-tight">Envie sua Receita</span>
+      <span class="text-sm uppercase font-bold text-emerald-800 tracking-wider block">Atendimento Online</span>
+      <span class="text-sm font-bold text-emerald-950 block leading-tight">Suplementos Linha BF</span>
     </div>
     <a
-      href="https://wa.me/5512988164931?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Bella%20Flora%20e%20gostaria%20de%20fazer%20um%20or%C3%A7amento%20da%20minha%20receita."
+      href="https://wa.me/5512988164931?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20Bella%20Flora%20e%20gostaria%20de%20pedir%20suplementos%20da%20Linha%20BF."
       target="_blank"
       rel="noopener noreferrer"
       class="flex items-center gap-2 bg-wa hover:bg-wa-hover text-white font-bold text-sm py-3 px-5 rounded-xl shadow-glow-wa active:scale-95"
     >
       <i class="bi bi-whatsapp text-base"></i>
-      <span>Orçar no WhatsApp</span>
+      <span>Pedir no WhatsApp</span>
     </a>
   </div>
 
@@ -2251,7 +2264,7 @@
         title: "São José dos Campos (Sede & Delivery Local)",
         type: "🛵 Delivery Próprio via Motoboy",
         badge: "Entrega em até 24h ou Mesmo Dia",
-        desc: "Atendimento direto em todos os bairros de São José dos Campos (Zona Sul, Zona Oeste, Centro, Aquarius, Urbanova, etc.). Sua fórmula ou suplemento sai do nosso laboratório em embalagem com proteção térmica e lacre de segurança inviolável.",
+        desc: "Atendimento direto em todos os bairros de São José dos Campos (Zona Sul, Zona Oeste, Centro, Aquarius, Urbanova, etc.). Seu pedido sai da nossa central de expedição em embalagem com proteção térmica e lacre de segurança inviolável.",
         terms: "Consulte nossa disponibilidade de entrega • Entrega grátis (consulte nossas condições de entrega).",
         waQuery: "Gostaria de saber o prazo e disponibilidade de entrega para São José dos Campos."
       },
@@ -2259,7 +2272,7 @@
         title: "Jacareí (Região Metropolitana Vale)",
         type: "🛵 Delivery Próprio via Motoboy",
         badge: "Entrega Rápida Residencial",
-        desc: "Atendemos Jacareí com equipe própria de entrega, garantindo agilidade e conservação ideal de produtos que exigem controle térmico. Receba seus suplementos e fórmulas no conforto de sua casa.",
+        desc: "Atendemos Jacareí com equipe própria de entrega, garantindo agilidade e conservação ideal de suplementos que exigem controle térmico. Receba sua Linha BF no conforto de sua casa.",
         terms: "Consulte nossa disponibilidade de entrega para seu endereço • Entrega grátis (consulte condições).",
         waQuery: "Gostaria de consultar a entrega por motoboy para Jacareí."
       },
@@ -2269,13 +2282,13 @@
         badge: "Rastreamento Online Imediato",
         desc: "Para Caçapava, Taubaté e todo o Vale do Paraíba, realizamos despacho diário via Correios Sedex com código de rastreio automático enviado pelo WhatsApp, caixa anti-impacto e embalagem térmica protetora.",
         terms: "Consulte o prazo e valor de envio para seu CEP • Condições especiais para compras recorrentes.",
-        waQuery: "Gostaria de orçar o envio via Correios para Caçapava / Vale do Paraíba."
+        waQuery: "Gostaria de consultar o envio via Correios para Caçapava / Vale do Paraíba."
       },
       brasil: {
         title: "Todo o Brasil (Envio Nacional)",
         type: "📦 Envio com Seguro e Rastreio Nacional",
         badge: "Entrega em Todo o Brasil",
-        desc: "Enviamos fórmulas magistrais e a linha completa de suplementação para qualquer estado do Brasil via Correios com seguro de carga e controle de qualidade garantido.",
+        desc: "Enviamos a linha completa de suplementos alimentares para qualquer estado do Brasil via Correios com seguro de carga e controle de qualidade garantido.",
         terms: "Consulte o frete informando seu CEP no WhatsApp de atendimento.",
         waQuery: "Gostaria de saber o valor do frete e prazo de entrega para meu CEP fora do Vale."
       }
@@ -2401,17 +2414,23 @@
 
     // Submissão Inteligente do Simulador para o WhatsApp
     function submitQuickBudget() {
-      const name = document.getElementById('userName').value.trim() || 'Cliente';
-      const type = document.getElementById('recipeType').value;
+      const nameEl = document.getElementById('userName');
+      const name = (nameEl && nameEl.value.trim()) ? nameEl.value.trim() : 'Cliente';
+      const typeEl = document.getElementById('recipeType');
+      const type = typeEl ? typeEl.value : 'Suplementos Linha BF';
       const durationEl = document.querySelector('input[name="duration"]:checked');
       const duration = durationEl ? durationEl.value : '30 dias';
       const deliveryEl = document.querySelector('input[name="delivery"]:checked');
       const delivery = deliveryEl ? deliveryEl.value : 'Receber em Casa';
 
-      const text = `Olá! Meu nome é ${name}.\nGostaria de orçar uma receita médica com a Bella Flora Farmácia de Manipulação.\n\n• Especialidade: ${type}\n• Duração prevista: ${duration}\n• Preferência: ${delivery}\n\nEstou enviando a foto / arquivo da receita em anexo:`;
+      const text = `Olá! Meu nome é ${name}.\nGostaria de pedir suplementos da Bella Flora Linha BF.\n\n• Linha / Produto: ${type}\n• Duração prevista: ${duration}\n• Preferência de entrega: ${delivery}\n\nPoderia confirmar disponibilidade e valor para meu pedido?`;
       const encoded = encodeURIComponent(text);
       const url = `https://wa.me/5512988164931?text=${encoded}`;
-      
+
+      if (typeof trackWhatsAppConversion === 'function') {
+        trackWhatsAppConversion(url, 'simulador_whatsapp');
+      }
+
       window.open(url, '_blank');
     }
 
@@ -2451,7 +2470,7 @@
 
     document.addEventListener('DOMContentLoaded', initCookieConsent);
 
-    // Scroll reveal observer para animações suaves 60fps
+    // Scroll reveal observer + rastreamento global de conversão WhatsApp
     document.addEventListener('DOMContentLoaded', () => {
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -2463,6 +2482,14 @@
       }, { threshold: 0.1 });
 
       document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+      document.addEventListener('click', (event) => {
+        const waLink = event.target.closest('a[href*="wa.me"]');
+        if (waLink && typeof trackWhatsAppConversion === 'function') {
+          const label = (waLink.innerText || waLink.getAttribute('aria-label') || 'whatsapp_link').trim().slice(0, 60);
+          trackWhatsAppConversion(waLink.href, label);
+        }
+      });
     });
   </script>
 
@@ -2477,7 +2504,7 @@
       <div class="flex-1">
         <h4 class="font-bold text-white text-sm mb-1">Privacidade, Cookies & Cache</h4>
         <p class="text-gray-200 text-sm leading-relaxed mb-3">
-          Utilizamos cookies essenciais e tecnologias de cache local para assegurar a velocidade da navegação, integridade das sessões e segurança no envio de receitas via WhatsApp (em conformidade com a LGPD).
+          Utilizamos cookies essenciais e tecnologias de cache local para assegurar a velocidade da navegação, integridade das sessões e segurança no atendimento via WhatsApp (em conformidade com a LGPD).
         </p>
         <div class="flex flex-wrap items-center gap-2.5">
           <button

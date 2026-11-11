@@ -6,9 +6,9 @@
   <base href="/" />
 
   <!-- SEO & Metadados: Linha Exclusiva de Suplementos Alimentares BF -->
-  <title>Linha BF Suplementos & Nutracêuticos | Coenzima Q10, Zinco, Spirulina e Vitaminas</title>
-  <meta name="description" content="Conheça a Vitrine de Suplementos Alimentares Linha BF: Coenzima Q10, Laranja Moro, Zinco Quelato, Cabelo Pele & Unhas, Spirulina com Cromo, Cranberry e Beta-Alanina. Delivery em São José dos Campos e Jacareí, e envio via Correios para todo o Brasil." />
-  <meta name="keywords" content="suplementos alimentares, coenzima q10, zinco quelato, laranja moro, spirulina com cromo, cabelo pele e unhas, cranberry suplemento, beta alanina, suplementos são josé dos campos, jacareí, linha bf" />
+  <title>Linha BF Suplementos & Vitaminas | Magnésio, Vitamina D3, Ômega 3, B12, Colágeno e Mais</title>
+  <meta name="description" content="Vitrine de Suplementos Linha BF: Magnésio Glicinato e Dimalato, Melatonina, Vitamina B12, D3, C, K2, Ômega 3 EPA/DHA, Psyllium, Probióticos, Colágeno, Glutamina, L-Carnitina, Curcumina, Coenzima Q10, Zinco e mais. Delivery em SJC, Jacareí e envio para Taubaté e Vale." />
+  <meta name="keywords" content="suplementos alimentares, magnesio glicinato, magnesio dimalato, melatonina, vitamina b12, vitamina d3, vitamina c, vitamina k2, omega 3, colageno, psyllium, probioticos, glutamina, ferro quelato, coenzima q10, acido folico, biotina, l-carnitina, inositol, curcumina, nac, calcio, complexo b, zinco quelato, suplementos são josé dos campos, jacareí, taubaté" />
   <meta name="author" content="Bella Flora Linha Nutricional" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
   <meta name="theme-color" content="#081C15" />
@@ -40,6 +40,42 @@
 
   <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- ======================================================== -->
+  <!-- RASTREAMENTO DE CONVERSÃO WHATSAPP (GOOGLE ADS / GTAG)   -->
+  <!-- Preencha GOOGLE_ADS_ID e GOOGLE_ADS_WA_SEND_TO quando     -->
+  <!-- criar a ação de conversão em Google Ads > Metas          -->
+  <!-- ======================================================== -->
+  <script>
+    window.GOOGLE_ADS_ID = ''; // Ex: 'AW-123456789'
+    window.GOOGLE_ADS_WA_SEND_TO = ''; // Ex: 'AW-123456789/AbCdEfGhIjKlMn'
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+
+    if (window.GOOGLE_ADS_ID) {
+      var gScript = document.createElement('script');
+      gScript.async = true;
+      gScript.src = 'https://www.googletagmanager.com/gtag/js?id=' + window.GOOGLE_ADS_ID;
+      document.head.appendChild(gScript);
+      gtag('js', new Date());
+      gtag('config', window.GOOGLE_ADS_ID);
+    }
+
+    function trackWhatsAppConversion(targetUrl, labelInfo) {
+      try {
+        gtag('event', 'whatsapp_click', {
+          'event_category': 'conversion',
+          'event_label': labelInfo || 'whatsapp_vitrine'
+        });
+        if (window.GOOGLE_ADS_WA_SEND_TO && typeof gtag === 'function') {
+          gtag('event', 'conversion', {
+            'send_to': window.GOOGLE_ADS_WA_SEND_TO
+          });
+        }
+      } catch (e) {}
+      return true;
+    }
+  </script>
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -542,10 +578,53 @@
         </div>
 
       </div>
+
+      <!-- CATÁLOGO COMPLETO DE SUPLEMENTOS LIBERADOS (23+ ATIVOS LINHA BF) -->
+      <div id="todos-suplementos" class="mt-20 pt-14 border-t border-sand-200">
+        <div class="text-center max-w-3xl mx-auto mb-8">
+          <span class="inline-flex items-center gap-1.5 text-xs uppercase tracking-widest text-emerald-900 font-bold bg-emerald-50 px-3.5 py-1.5 rounded-full border border-emerald-200">
+            <i class="bi bi-grid-fill text-wa"></i> Catálogo Completo • Venda Livre
+          </span>
+          <h3 class="font-serif text-2xl sm:text-3xl font-bold text-emerald-950 mt-3 mb-2">
+            Mais Suplementos, Vitaminas & Minerais Disponíveis
+          </h3>
+          <p class="text-sage-700 text-sm">
+            Encontre o suplemento ideal para sua rotina diária e peça direto pelo WhatsApp com entrega rápida em São José dos Campos, Jacareí, Taubaté e todo o Vale.
+          </p>
+        </div>
+
+        <!-- Busca e Filtros Rápidos do Catálogo Completo -->
+        <div class="max-w-2xl mx-auto mb-6">
+          <div class="relative">
+            <i class="bi bi-search absolute left-4 top-3.5 text-sage-500"></i>
+            <input
+              type="search"
+              id="catalogSearchInput"
+              oninput="renderFullCatalog()"
+              placeholder="Buscar suplemento (ex: Magnésio, Vitamina D3, B12, Ômega 3, Psyllium, Melatonina...)"
+              class="w-full pl-11 pr-4 py-3 text-sm bg-white border border-sand-300 rounded-2xl shadow-sm focus:border-brandBlue focus:outline-none"
+            />
+          </div>
+        </div>
+
+        <div class="flex flex-wrap items-center justify-center gap-2 mb-8">
+          <button onclick="setCatalogCategory('all', this)" class="fullcat-btn px-3.5 py-1.5 rounded-xl text-xs font-bold bg-emerald-900 text-white apple-btn">Todos (25)</button>
+          <button onclick="setCatalogCategory('vitaminas', this)" class="fullcat-btn px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-white text-sage-700 border border-sand-200 apple-btn">Vitaminas</button>
+          <button onclick="setCatalogCategory('minerais', this)" class="fullcat-btn px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-white text-sage-700 border border-sand-200 apple-btn">Magnésio & Minerais</button>
+          <button onclick="setCatalogCategory('esporte', this)" class="fullcat-btn px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-white text-sage-700 border border-sand-200 apple-btn">Esporte & Energia</button>
+          <button onclick="setCatalogCategory('intestino', this)" class="fullcat-btn px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-white text-sage-700 border border-sand-200 apple-btn">Fibras & Intestino</button>
+          <button onclick="setCatalogCategory('bemestar', this)" class="fullcat-btn px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-white text-sage-700 border border-sand-200 apple-btn">Sono, Beleza & Bem-Estar</button>
+        </div>
+
+        <div id="fullCatalogGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <!-- Renderizado via JS -->
+        </div>
+      </div>
+
     </div>
   </section>
 
-  <!-- COBERTURA LOGÍSTICA INTERATIVA (SJC, JACAREÍ, CAÇAPAVA, BRASIL) -->
+  <!-- COBERTURA LOGÍSTICA INTERATIVA (SJC, JACAREÍ, TAUBATÉ, CAÇAPAVA, BRASIL) -->
   <section id="cobertura" class="py-16 px-4 sm:px-6 lg:px-8 bg-white border-b border-sand-200">
     <div class="max-w-5xl mx-auto">
       <div class="apple-card rounded-3xl p-6 sm:p-10 bg-gradient-to-b from-white to-sand-50/50">
@@ -560,7 +639,7 @@
           <div class="flex flex-wrap gap-2">
             <button onclick="selectGeoCity('sjc', this)" class="geo-pill-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-emerald-900 text-white shadow-sm apple-btn" data-city="sjc">📍 São José dos Campos</button>
             <button onclick="selectGeoCity('jacarei', this)" class="geo-pill-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white text-sage-800 border border-sand-200 apple-btn" data-city="jacarei">📍 Jacareí</button>
-            <button onclick="selectGeoCity('cacapava', this)" class="geo-pill-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white text-sage-800 border border-sand-200 apple-btn" data-city="cacapava">📦 Caçapava & Vale</button>
+            <button onclick="selectGeoCity('cacapava', this)" class="geo-pill-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white text-sage-800 border border-sand-200 apple-btn" data-city="cacapava">📦 Taubaté, Caçapava & Vale</button>
             <button onclick="selectGeoCity('brasil', this)" class="geo-pill-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white text-sage-800 border border-sand-200 apple-btn" data-city="brasil">🇧🇷 Todo o Brasil</button>
           </div>
         </div>
@@ -705,12 +784,12 @@
         waQuery: "Gostaria de consultar o delivery de suplementos para Jacareí."
       },
       cacapava: {
-        title: "Caçapava & Vale do Paraíba",
+        title: "Taubaté, Caçapava & Vale do Paraíba",
         type: "📦 Envio Expresso via Correios (Sedex / PAC)",
         badge: "Código de Rastreio",
-        desc: "Para Caçapava e cidades vizinhas do Vale do Paraíba, enviamos rapidamente via Correios com código de rastreamento.",
+        desc: "Para Taubaté, Caçapava e cidades vizinhas do Vale do Paraíba, enviamos rapidamente via Correios com código de rastreamento.",
         terms: "Consulte o prazo e condições de frete pelo WhatsApp.",
-        waQuery: "Gostaria de consultar o frete via Correios para Caçapava."
+        waQuery: "Gostaria de consultar o frete via Correios para Taubaté / Caçapava / Vale."
       },
       brasil: {
         title: "Todo o Brasil (Envio Nacional)",
@@ -792,8 +871,93 @@
       if (e.target === document.getElementById('productModal')) closeProductModal();
     });
 
+    const fullCatalogItems = [
+      { name: "Melatonina", cat: "bemestar", tag: "Rotina Noturna", desc: "Suplemento para apoio à rotina de descanso noturno e bem-estar." },
+      { name: "Magnésio Glicinato", cat: "minerais", tag: "Alta Absorção", desc: "Suplementação de magnésio quelatado suave para equilíbrio neuromuscular." },
+      { name: "Vitamina B12", cat: "vitaminas", tag: "Suplementação Vitamínica", desc: "Auxilia no metabolismo energético, disposição e formação de células." },
+      { name: "Psyllium", cat: "intestino", tag: "Fibras & Intestino", desc: "Fibra alimentar solúvel para saciedade e funcionamento intestinal regular." },
+      { name: "Vitamina D3", cat: "vitaminas", tag: "Suplementação Vitamínica", desc: "Contribui para saúde óssea, absorção de cálcio e sistema imune." },
+      { name: "Ômega 3 (EPA e DHA)", cat: "bemestar", tag: "Ácidos Graxos", desc: "Óleo purificado rico em EPA e DHA para suporte nutricional diário." },
+      { name: "Colágeno", cat: "bemestar", tag: "Pele & Articulações", desc: "Proteína estrutural para elasticidade cutânea e suporte articular." },
+      { name: "Magnésio Dimalato", cat: "minerais", tag: "Energia Muscular", desc: "Combinação de magnésio e ácido málico para vitalidade física." },
+      { name: "Vitamina C", cat: "vitaminas", tag: "Antioxidante", desc: "Auxilia na proteção antioxidante e no sistema imunológico." },
+      { name: "Zinco Quelato", cat: "minerais", tag: "Suplementação Mineral", desc: "Mineral essencial de alta absorção para imunidade, pele e cabelos." },
+      { name: "Glutamina", cat: "esporte", tag: "Nutrição Esportiva", desc: "Aminoácido puro para recuperação muscular e integridade nutricional." },
+      { name: "Probióticos", cat: "intestino", tag: "Saúde Intestinal", desc: "Equilíbrio da microbiota intestinal e conforto digestivo diário." },
+      { name: "Ferro Quelato", cat: "minerais", tag: "Suplementação de Ferro", desc: "Forma quelatada de ótima tolerabilidade e alta biodisponibilidade." },
+      { name: "Coenzima Q10", cat: "esporte", tag: "Energia Celular", desc: "Suplemento antioxidante voltado à vitalidade e disposição diária." },
+      { name: "Ácido Fólico (Vitamina B9)", cat: "vitaminas", tag: "Vitamina B9", desc: "Essencial para divisão celular, vitalidade e rotina nutricional." },
+      { name: "Biotina", cat: "bemestar", tag: "Cabelos & Unhas", desc: "Vitamina do complexo B voltada ao fortalecimento de fios e unhas." },
+      { name: "L-Carnitina", cat: "esporte", tag: "Nutrição Esportiva", desc: "Aminoácido voltado ao metabolismo energético e rotina de treinos." },
+      { name: "Inositol", cat: "bemestar", tag: "Bem-Estar Diário", desc: "Nutriente versátil para suporte metabólico e equilíbrio diário." },
+      { name: "Curcumina", cat: "bemestar", tag: "Antioxidante Natural", desc: "Extrato padronizado concentrado de cúrcuma com ação antioxidante." },
+      { name: "Vitamina K2", cat: "vitaminas", tag: "Saúde Óssea", desc: "Auxilia na fixação de cálcio e equilíbrio nutricional ósseo." },
+      { name: "NAC (N-Acetilcisteína)", cat: "esporte", tag: "Aminoácido Puro", desc: "Precursor de glutationa para suporte antioxidante celular." },
+      { name: "Cálcio", cat: "minerais", tag: "Saúde Óssea", desc: "Suplementação mineral para manutenção de ossos e dentes." },
+      { name: "Complexo B", cat: "vitaminas", tag: "Vitaminas B1 a B12", desc: "Conjunto equilibrado de vitaminas B para energia e metabolismo." },
+      { name: "Spirulina + Cromo", cat: "esporte", tag: "Superalimento", desc: "Microalga nutritiva combinada ao Picolinato de Cromo 100% VDR." },
+      { name: "Cranberry & Beta-Alanina", cat: "esporte", tag: "Performance & Bem-Estar", desc: "Antioxidantes do Cranberry concentrado e Beta-Alanina para resistência." }
+    ];
+
+    let activeCatalogCategory = 'all';
+
+    function setCatalogCategory(cat, btnElement) {
+      activeCatalogCategory = cat;
+      document.querySelectorAll('.fullcat-btn').forEach(btn => {
+        btn.classList.remove('bg-emerald-900', 'text-white', 'font-bold');
+        btn.classList.add('bg-white', 'text-sage-700', 'font-semibold', 'border', 'border-sand-200');
+      });
+      if (btnElement) {
+        btnElement.classList.remove('bg-white', 'text-sage-700', 'font-semibold', 'border', 'border-sand-200');
+        btnElement.classList.add('bg-emerald-900', 'text-white', 'font-bold');
+      }
+      renderFullCatalog();
+    }
+
+    function renderFullCatalog() {
+      const grid = document.getElementById('fullCatalogGrid');
+      if (!grid) return;
+      const queryInput = document.getElementById('catalogSearchInput');
+      const query = queryInput ? queryInput.value.trim().toLowerCase() : '';
+
+      const filtered = fullCatalogItems.filter(item => {
+        const matchCat = activeCatalogCategory === 'all' || item.cat === activeCatalogCategory;
+        const matchQuery = !query || item.name.toLowerCase().includes(query) || item.desc.toLowerCase().includes(query) || item.tag.toLowerCase().includes(query);
+        return matchCat && matchQuery;
+      });
+
+      if (filtered.length === 0) {
+        const safeQuery = query.replace(/[&<>"']/g, ch => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch]));
+        grid.innerHTML = `<div class="col-span-full text-center py-8 bg-white rounded-2xl border border-sand-200 text-sage-600 text-sm">Nenhum suplemento encontrado com "${safeQuery}". <a href="https://wa.me/5512988164931?text=${encodeURIComponent('Olá! Gostaria de consultar a disponibilidade do suplemento: ' + query)}" target="_blank" rel="noopener noreferrer" class="text-wa font-bold underline ml-1">Consultar no WhatsApp</a></div>`;
+        return;
+      }
+
+      grid.innerHTML = filtered.map(item => `
+        <div class="bg-white rounded-2xl p-5 border border-sand-200 shadow-sm hover:shadow-soft transition-all flex flex-col justify-between gap-4">
+          <div>
+            <span class="inline-block text-[11px] font-bold uppercase tracking-wider text-brandBlue-dark bg-brandBlue-light px-2.5 py-0.5 rounded-full mb-2">${item.tag}</span>
+            <h4 class="font-serif text-lg font-bold text-emerald-950 mb-1">${item.name}</h4>
+            <p class="text-xs sm:text-sm text-sage-700 leading-relaxed">${item.desc}</p>
+          </div>
+          <a href="https://wa.me/5512988164931?text=${encodeURIComponent('Olá! Vi na Vitrine BF o suplemento ' + item.name + ' e gostaria de pedir pelo WhatsApp.')}" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 px-3.5 bg-wa hover:bg-wa-hover text-white font-bold text-xs sm:text-sm rounded-xl flex items-center justify-center gap-2 transition-colors apple-btn">
+            <i class="bi bi-whatsapp"></i><span>Pedir ${item.name}</span>
+          </a>
+        </div>
+      `).join('');
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
       selectGeoCity('sjc', document.querySelector('[data-city="sjc"]'));
+      renderFullCatalog();
+    });
+
+    // Delegação global para disparar conversão em TODOS os links de WhatsApp
+    document.addEventListener('click', (e) => {
+      const link = e.target.closest('a[href*="wa.me"]');
+      if (link) {
+        const label = (link.textContent || 'whatsapp_cta').trim().slice(0, 60);
+        trackWhatsAppConversion(link.href, label);
+      }
     });
   </script>
 </body>
